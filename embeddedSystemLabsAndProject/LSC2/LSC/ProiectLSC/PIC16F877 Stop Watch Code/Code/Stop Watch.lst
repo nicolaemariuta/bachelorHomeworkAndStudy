@@ -1,0 +1,2064 @@
+
+
+HI-TECH Software PIC PRO Macro Assembler V9.83 build 10920 
+                                                                                               Sun Dec 16 23:48:13 2012
+
+HI-TECH Software Omniscient Code Generator (PRO mode) build 10920
+     1                           	processor	16F877
+     2                           	opt	pw 120
+     3                           	opt	pm
+     4                           	psect	config,global,class=CONFIG,delta=2
+     5                           	psect	idataCOMMON,global,class=CODE,delta=2
+     6                           	psect	cinit,global,class=CODE,delta=2
+     7                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1
+     8                           	psect	dataCOMMON,global,class=COMMON,space=1,delta=1
+     9                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+    10                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+    11                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+    12                           	psect	maintext,global,class=CODE,delta=2
+    13                           	psect	text413,local,class=CODE,delta=2
+    14                           	psect	text418,local,class=CODE,delta=2
+    15                           	psect	text423,local,class=CODE,delta=2
+    16                           	psect	text424,local,class=CODE,delta=2
+    17                           	psect	intentry,global,class=CODE,delta=2
+    18                           	psect	text425,local,class=CODE,delta=2
+    19                           	psect	pa_nodes,global,class=CODE,delta=2
+    20                           	dabs	1,0x7E,2
+    21  000A                     	;#
+    22                           
+    23                           	psect	config
+    24  2007  FF72               	dw	65394	;#
+    25                           
+    26                           	psect	idataCOMMON
+    27  0000                     __pidataCOMMON:	
+    28  0006                     _PORTB	set	6
+    29  0001                     _TMR0	set	1
+    30  005F                     _GIE	set	95
+    31  0030                     _RB0	set	48
+    32  0031                     _RB1	set	49
+    33  0034                     _RB4	set	52
+    34  0035                     _RB5	set	53
+    35  0036                     _RB6	set	54
+    36  0037                     _RB7	set	55
+    37  0040                     _RD0	set	64
+    38  0048                     _RE0	set	72
+    39  0049                     _RE1	set	73
+    40  004A                     _RE2	set	74
+    41  005D                     _T0IE	set	93
+    42  005A                     _T0IF	set	90
+    43  009F                     _ADCON1	set	159
+    44  0081                     _OPTION_REG	set	129
+    45  0089                     _TRISE	set	137
+    46  0430                     _TRISB0	set	1072
+    47  0431                     _TRISB1	set	1073
+    48  0434                     _TRISB4	set	1076
+    49  0435                     _TRISB5	set	1077
+    50  0436                     _TRISB6	set	1078
+    51  0437                     _TRISB7	set	1079
+    52  0440                     _TRISD0	set	1088
+    53                           
+    54                           	psect	cinit
+    55  02DD                     start_initialization:	
+    56  02DD  300A               	movlw	10
+    57                           
+    58                           ; Clear objects allocated to COMMON
+    59  02DE  01F8               	clrf	__pbssCOMMON& (0+127)
+    60  02DF  01F9               	clrf	(__pbssCOMMON+1)& (0+127)
+    61                           
+    62                           ; Clear objects allocated to BANK0
+    63  02E0  01AA               	clrf	__pbssBANK0& (0+127)
+    64  02E1  01AB               	clrf	(__pbssBANK0+1)& (0+127)
+    65  02E2  01AC               	clrf	(__pbssBANK0+2)& (0+127)
+    66  02E3  01AD               	clrf	(__pbssBANK0+3)& (0+127)
+    67                           
+    68                           ;initializer for _secCounter
+    69  02E4  00FA               	movwf	__pdataCOMMON& (0+127)
+    70  02E5  01FB               	clrf	(__pdataCOMMON+1)& (0+127)
+    71  02E6                     end_of_initialization:	
+    72                           ;End of C runtime variable initialization code
+    73                           
+    74  02E6  0183               	clrf	3
+    75  02E7  120A  118A  298B   	ljmp	_main	;jump to C main() function
+    76                           
+    77                           	psect	bssCOMMON
+    78  0078                     __pbssCOMMON:	
+    79  0078                     _minCounter:	
+    80  0078                     	ds	2
+    81                           
+    82                           	psect	dataCOMMON
+    83  007A                     __pdataCOMMON:	
+    84  007A                     _secCounter:	
+    85  007A                     	ds	2
+    86                           
+    87                           	psect	bssBANK0
+    88  002A                     __pbssBANK0:	
+    89  002A                     _hrCounter:	
+    90  002A                     	ds	2
+    91  002C                     _msCounter:	
+    92  002C                     	ds	2
+    93                           
+    94                           	psect	cstackCOMMON
+    95  0070                     __pcstackCOMMON:	
+    96  0070                     ?_Init1msecTimerInterrupt:	
+    97  0070                     ?_UpdateTimeCounters:	
+    98                           ; 0 bytes @ 0x0
+    99                           
+   100  0070                     ?_ISR:	
+   101                           ; 0 bytes @ 0x0
+   102                           
+   103  0070                     ??_ISR:	
+   104                           ; 0 bytes @ 0x0
+   105                           
+   106  0070                     ?_ToggleEpinOfLCD:	
+   107                           ; 0 bytes @ 0x0
+   108                           
+   109  0070                     ?_WriteCommandToLCD:	
+   110                           ; 0 bytes @ 0x0
+   111                           
+   112  0070                     ?_WriteDataToLCD:	
+   113                           ; 0 bytes @ 0x0
+   114                           
+   115  0070                     ?_InitLCD:	
+   116                           ; 0 bytes @ 0x0
+   117                           
+   118  0070                     ?_ClearLCDScreen:	
+   119                           ; 0 bytes @ 0x0
+   120                           
+   121  0070                     ?_main:	
+   122                           ; 0 bytes @ 0x0
+   123                           
+   124  0070                     ?_InitTimer0:	
+   125                           ; 0 bytes @ 0x0
+   126                           
+   127                           
+   128                           ; 0 bytes @ 0x0
+   129  0070                     	ds	2
+   130  0072                     ??_Init1msecTimerInterrupt:	
+   131  0072                     ??_UpdateTimeCounters:	
+   132                           ; 0 bytes @ 0x2
+   133                           
+   134  0072                     ??_ToggleEpinOfLCD:	
+   135                           ; 0 bytes @ 0x2
+   136                           
+   137  0072                     ??_InitTimer0:	
+   138                           ; 0 bytes @ 0x2
+   139                           
+   140  0072                     ?___lwdiv:	
+   141                           ; 0 bytes @ 0x2
+   142                           
+   143  0072                     ?___lwmod:	
+   144                           ; 2 bytes @ 0x2
+   145                           
+   146  0072                     UpdateTimeCounters@State:	
+   147                           ; 2 bytes @ 0x2
+   148                           
+   149  0072                     ___lwdiv@divisor:	
+   150                           ; 1 bytes @ 0x2
+   151                           
+   152  0072                     ___lwmod@divisor:	
+   153                           ; 2 bytes @ 0x2
+   154                           
+   155                           
+   156                           ; 2 bytes @ 0x2
+   157  0072                     	ds	1
+   158  0073                     ??_WriteCommandToLCD:	
+   159  0073                     ??_WriteDataToLCD:	
+   160                           ; 0 bytes @ 0x3
+   161                           
+   162  0073                     WriteCommandToLCD@Command:	
+   163                           ; 0 bytes @ 0x3
+   164                           
+   165  0073                     WriteDataToLCD@LCDChar:	
+   166                           ; 1 bytes @ 0x3
+   167                           
+   168                           
+   169                           ; 1 bytes @ 0x3
+   170  0073                     	ds	1
+   171  0074                     ??_InitLCD:	
+   172  0074                     ??_ClearLCDScreen:	
+   173                           ; 0 bytes @ 0x4
+   174                           
+   175  0074                     ___lwdiv@dividend:	
+   176                           ; 0 bytes @ 0x4
+   177                           
+   178  0074                     ___lwmod@dividend:	
+   179                           ; 2 bytes @ 0x4
+   180                           
+   181                           
+   182                           ; 2 bytes @ 0x4
+   183  0074                     	ds	2
+   184  0076                     ??___lwdiv:	
+   185  0076                     ??___lwmod:	
+   186                           ; 0 bytes @ 0x6
+   187                           
+   188  0076                     ___lwmod@counter:	
+   189                           ; 0 bytes @ 0x6
+   190                           
+   191                           
+   192                           ; 1 bytes @ 0x6
+   193  0076                     	ds	1
+   194  0077                     ??_DisplayTimeToLCD:	
+   195  0077                     ??_main:	
+   196                           ; 0 bytes @ 0x7
+   197                           
+   198  0077                     main@State:	
+   199                           ; 0 bytes @ 0x7
+   200                           
+   201                           
+   202                           ; 1 bytes @ 0x7
+   203  0077                     	ds	1
+   204                           
+   205                           	psect	cstackBANK0
+   206  0020                     __pcstackBANK0:	
+   207  0020                     ___lwdiv@counter:	
+   208                           
+   209                           ; 1 bytes @ 0x0
+   210  0020                     	ds	1
+   211  0021                     ___lwdiv@quotient:	
+   212                           
+   213                           ; 2 bytes @ 0x1
+   214  0021                     	ds	2
+   215  0023                     ?_DisplayTimeToLCD:	
+   216  0023                     DisplayTimeToLCD@h:	
+   217                           ; 0 bytes @ 0x3
+   218                           
+   219                           
+   220                           ; 2 bytes @ 0x3
+   221  0023                     	ds	2
+   222  0025                     DisplayTimeToLCD@m:	
+   223                           
+   224                           ; 2 bytes @ 0x5
+   225  0025                     	ds	2
+   226  0027                     DisplayTimeToLCD@s:	
+   227                           
+   228                           ; 2 bytes @ 0x7
+   229  0027                     	ds	2
+   230  0029                     DisplayTimeToLCD@State:	
+   231                           
+   232                           ; 1 bytes @ 0x9
+   233  0029                     	ds	1
+   234                           
+   235                           	psect	maintext
+   236  018B                     __pmaintext:	
+   237 ;;Data sizes: Strings 0, constant 0, data 2, bss 6, persistent 0 stack 0
+   238 ;;Auto spaces:   Size  Autos    Used
+   239 ;; COMMON          14      8      12
+   240 ;; BANK0           80     10      14
+   241 ;; BANK1           80      0       0
+   242 ;; BANK3           96      0       0
+   243 ;; BANK2           96      0       0
+   244 ;;
+   245 ;; Pointer list with targets:
+   246 ;; ?___lwmod	unsigned int  size(1) Largest target is 0
+   247 ;;
+   248 ;; ?___lwdiv	unsigned int  size(1) Largest target is 0
+   249 ;;
+   250 ;;
+   251 ;; Critical Paths under _main in COMMON
+   252 ;;
+   253 ;;   _DisplayTimeToLCD->___lwmod
+   254 ;;   _ClearLCDScreen->_WriteCommandToLCD
+   255 ;;   _InitLCD->_WriteCommandToLCD
+   256 ;;   _WriteDataToLCD->_ToggleEpinOfLCD
+   257 ;;   _WriteCommandToLCD->_ToggleEpinOfLCD
+   258 ;;
+   259 ;; Critical Paths under _ISR in COMMON
+   260 ;;
+   261 ;;   None.
+   262 ;;
+   263 ;; Critical Paths under _main in BANK0
+   264 ;;
+   265 ;;   _main->_DisplayTimeToLCD
+   266 ;;   _DisplayTimeToLCD->___lwdiv
+   267 ;;
+   268 ;; Critical Paths under _ISR in BANK0
+   269 ;;
+   270 ;;   None.
+   271 ;;
+   272 ;; Critical Paths under _main in BANK1
+   273 ;;
+   274 ;;   None.
+   275 ;;
+   276 ;; Critical Paths under _ISR in BANK1
+   277 ;;
+   278 ;;   None.
+   279 ;;
+   280 ;; Critical Paths under _main in BANK3
+   281 ;;
+   282 ;;   None.
+   283 ;;
+   284 ;; Critical Paths under _ISR in BANK3
+   285 ;;
+   286 ;;   None.
+   287 ;;
+   288 ;; Critical Paths under _main in BANK2
+   289 ;;
+   290 ;;   None.
+   291 ;;
+   292 ;; Critical Paths under _ISR in BANK2
+   293 ;;
+   294 ;;   None.
+   295 ;;
+   296 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   297 ;;
+   298 ;;
+   299 ;;Call Graph Tables:
+   300 ;;
+   301 ;; ---------------------------------------------------------------------------------
+   302 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   303 ;; ---------------------------------------------------------------------------------
+   304 ;; (0) _main                                                 1     1      0    1189
+   305 ;;                                              7 COMMON     1     1      0
+   306 ;;                            _InitLCD
+   307 ;;            _Init1msecTimerInterrupt
+   308 ;;                 _UpdateTimeCounters
+   309 ;;                   _DisplayTimeToLCD
+   310 ;; ---------------------------------------------------------------------------------
+   311 ;; (1) _DisplayTimeToLCD                                     7     0      7     767
+   312 ;;                                              3 BANK0      7     0      7
+   313 ;;                     _ClearLCDScreen
+   314 ;;                     _WriteDataToLCD
+   315 ;;                            ___lwdiv
+   316 ;;                            ___lwmod
+   317 ;; ---------------------------------------------------------------------------------
+   318 ;; (2) _ClearLCDScreen                                       2     2      0      44
+   319 ;;                                              4 COMMON     2     2      0
+   320 ;;                  _WriteCommandToLCD
+   321 ;; ---------------------------------------------------------------------------------
+   322 ;; (1) _InitLCD                                              2     2      0      44
+   323 ;;                                              4 COMMON     2     2      0
+   324 ;;                    _ToggleEpinOfLCD
+   325 ;;                  _WriteCommandToLCD
+   326 ;; ---------------------------------------------------------------------------------
+   327 ;; (2) _WriteDataToLCD                                       1     1      0      44
+   328 ;;                                              3 COMMON     1     1      0
+   329 ;;                    _ToggleEpinOfLCD
+   330 ;; ---------------------------------------------------------------------------------
+   331 ;; (3) _WriteCommandToLCD                                    1     1      0      44
+   332 ;;                                              3 COMMON     1     1      0
+   333 ;;                    _ToggleEpinOfLCD
+   334 ;; ---------------------------------------------------------------------------------
+   335 ;; (1) _Init1msecTimerInterrupt                              0     0      0       0
+   336 ;;                         _InitTimer0
+   337 ;; ---------------------------------------------------------------------------------
+   338 ;; (3) _ToggleEpinOfLCD                                      1     1      0       0
+   339 ;;                                              2 COMMON     1     1      0
+   340 ;; ---------------------------------------------------------------------------------
+   341 ;; (2) ___lwmod                                              5     1      4     159
+   342 ;;                                              2 COMMON     5     1      4
+   343 ;; ---------------------------------------------------------------------------------
+   344 ;; (2) ___lwdiv                                              7     3      4     241
+   345 ;;                                              2 COMMON     4     0      4
+   346 ;;                                              0 BANK0      3     3      0
+   347 ;; ---------------------------------------------------------------------------------
+   348 ;; (2) _InitTimer0                                           0     0      0       0
+   349 ;; ---------------------------------------------------------------------------------
+   350 ;; (1) _UpdateTimeCounters                                   1     1      0      22
+   351 ;;                                              2 COMMON     1     1      0
+   352 ;; ---------------------------------------------------------------------------------
+   353 ;; Estimated maximum stack depth 3
+   354 ;; ---------------------------------------------------------------------------------
+   355 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   356 ;; ---------------------------------------------------------------------------------
+   357 ;; (5) _ISR                                                  2     2      0       0
+   358 ;;                                              0 COMMON     2     2      0
+   359 ;; ---------------------------------------------------------------------------------
+   360 ;; Estimated maximum stack depth 5
+   361 ;; ---------------------------------------------------------------------------------
+   362 ;; Call Graph Graphs:
+   363 ;; _main (ROOT)
+   364 ;;   _InitLCD
+   365 ;;     _ToggleEpinOfLCD
+   366 ;;     _WriteCommandToLCD
+   367 ;;       _ToggleEpinOfLCD
+   368 ;;   _Init1msecTimerInterrupt
+   369 ;;     _InitTimer0
+   370 ;;   _UpdateTimeCounters
+   371 ;;   _DisplayTimeToLCD
+   372 ;;     _ClearLCDScreen
+   373 ;;       _WriteCommandToLCD
+   374 ;;         _ToggleEpinOfLCD
+   375 ;;     _WriteDataToLCD
+   376 ;;       _ToggleEpinOfLCD
+   377 ;;     ___lwdiv
+   378 ;;     ___lwmod
+   379 ;;
+   380 ;; _ISR (ROOT)
+   381 ;;
+   382 ;; Address spaces:
+   383 ;;Name               Size   Autos  Total    Cost      Usage
+   384 ;;BANK3               60      0       0       9        0.0%
+   385 ;;BITBANK3            60      0       0       8        0.0%
+   386 ;;SFR3                 0      0       0       4        0.0%
+   387 ;;BITSFR3              0      0       0       4        0.0%
+   388 ;;BANK2               60      0       0      11        0.0%
+   389 ;;BITBANK2            60      0       0      10        0.0%
+   390 ;;SFR2                 0      0       0       5        0.0%
+   391 ;;BITSFR2              0      0       0       5        0.0%
+   392 ;;SFR1                 0      0       0       2        0.0%
+   393 ;;BITSFR1              0      0       0       2        0.0%
+   394 ;;BANK1               50      0       0       7        0.0%
+   395 ;;BITBANK1            50      0       0       6        0.0%
+   396 ;;CODE                 0      0       0       0        0.0%
+   397 ;;DATA                 0      0      1E      12        0.0%
+   398 ;;ABS                  0      0      1A       3        0.0%
+   399 ;;NULL                 0      0       0       0        0.0%
+   400 ;;STACK                0      0       4       2        0.0%
+   401 ;;BANK0               50      A       E       5       17.5%
+   402 ;;BITBANK0            50      0       0       4        0.0%
+   403 ;;SFR0                 0      0       0       1        0.0%
+   404 ;;BITSFR0              0      0       0       1        0.0%
+   405 ;;COMMON               E      8       C       1       85.7%
+   406 ;;BITCOMMON            E      0       0       0        0.0%
+   407 ;;EEDATA             100      0       0       0        0.0%
+   408                           
+   409                           
+   410 ;; *************** function _main *****************
+   411 ;; Defined at:
+   412 ;;		line 16 in file "C:\Users\Saeed\Desktop\PIC16F877 Stop Watch Code\Code\Main.c"
+   413 ;; Parameters:    Size  Location     Type
+   414 ;;		None
+   415 ;; Auto vars:     Size  Location     Type
+   416 ;;  State           1    7[COMMON] unsigned char 
+   417 ;; Return value:  Size  Location     Type
+   418 ;;		None               void
+   419 ;; Registers used:
+   420 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   421 ;; Tracked objects:
+   422 ;;		On entry : 17F/0
+   423 ;;		On exit  : 0/0
+   424 ;;		Unchanged: 0/0
+   425 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   426 ;;      Params:         0       0       0       0       0
+   427 ;;      Locals:         1       0       0       0       0
+   428 ;;      Temps:          0       0       0       0       0
+   429 ;;      Totals:         1       0       0       0       0
+   430 ;;Total ram usage:        1 bytes
+   431 ;; Hardware stack levels required when called:    5
+   432 ;; This function calls:
+   433 ;;		_InitLCD
+   434 ;;		_Init1msecTimerInterrupt
+   435 ;;		_UpdateTimeCounters
+   436 ;;		_DisplayTimeToLCD
+   437 ;; This function is called by:
+   438 ;;		Startup code after reset
+   439 ;; This function uses a non-reentrant model
+   440 ;;
+   441  018B                     _main:	
+   442                           
+   443                           ;Main.c: 17: unsigned char State = 0;
+   444                           
+   445                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   446  018B  01F7               	clrf	main@State
+   447                           
+   448                           ;Main.c: 19: TRISD0 = 0;
+   449  018C  1683               	bsf	3,5	;RP0=1, select bank1
+   450  018D  1008               	bcf	8,0
+   451                           
+   452                           ;Main.c: 20: RD0 = 0;
+   453  018E  1283               	bcf	3,5	;RP0=0, select bank0
+   454  018F  3007               	movlw	7
+   455  0190  1008               	bcf	8,0
+   456                           
+   457                           ;Main.c: 21: TRISE = 0x07;
+   458  0191  1683               	bsf	3,5	;RP0=1, select bank1
+   459  0192  0089               	movwf	9	;volatile
+   460                           
+   461                           ;Main.c: 22: ADCON1 = 0x07;
+   462  0193  009F               	movwf	31	;volatile
+   463                           
+   464                           ;Main.c: 25: InitLCD();
+   465  0194  120A  118A  20F4   	fcall	_InitLCD
+      +       120A  118A         
+   466                           
+   467                           ;Main.c: 26: Init1msecTimerInterrupt();
+   468  0199  120A  118A  22EA   	fcall	_Init1msecTimerInterrupt
+      +       120A  118A         
+   469  019E                     l4448:	
+   470                           
+   471                           ;Main.c: 29: {
+   472                           ;Main.c: 30: if(State == 0)
+   473  019E  08F7               	movf	main@State,f
+   474  019F  1D03               	skipz
+   475  01A0  29C0               	goto	l1972
+   476                           
+   477                           ;Main.c: 31: {
+   478                           ;Main.c: 32: if(!RE0)
+   479  01A1  1283               	bcf	3,5	;RP0=0, select bank0
+   480  01A2  1303               	bcf	3,6	;RP1=0, select bank0
+   481  01A3  1809               	btfsc	9,0
+   482  01A4  29B0               	goto	l4458
+   483                           
+   484                           ;Main.c: 33: {
+   485                           ;Main.c: 34: State = 1;
+   486  01A5  01F7               	clrf	main@State
+   487  01A6  0AF7               	incf	main@State,f
+   488  01A7                     l4456:	
+   489                           ;Main.c: 36: while(!RE0)
+   490                           
+   491  01A7  1809               	btfsc	9,0
+   492  01A8  29B0               	goto	l4458
+   493                           
+   494                           ;Main.c: 37: UpdateTimeCounters(State);
+   495  01A9  0877               	movf	main@State,w
+   496  01AA  120A  118A  2296   	fcall	_UpdateTimeCounters
+      +       120A  118A         
+   497  01AF  29A7               	goto	l4456
+   498  01B0                     l4458:	
+   499                           
+   500                           ;Main.c: 38: }
+   501                           ;Main.c: 40: if( secCounter == 0 && minCounter == 0 && hrCounter == 0 )
+   502  01B0  087B               	movf	_secCounter+1,w
+   503  01B1  047A               	iorwf	_secCounter,w
+   504  01B2  1D03               	skipz
+   505  01B3  29BE               	goto	l1977
+   506  01B4  0879               	movf	_minCounter+1,w
+   507  01B5  0478               	iorwf	_minCounter,w
+   508  01B6  1D03               	skipz
+   509  01B7  29BE               	goto	l1977
+   510  01B8  082B               	movf	_hrCounter+1,w
+   511  01B9  042A               	iorwf	_hrCounter,w
+   512  01BA  1D03               	skipz
+   513  01BB  29BE               	goto	l1977
+   514                           
+   515                           ;Main.c: 41: RD0 = 1;
+   516  01BC  1408               	bsf	8,0
+   517  01BD  2A5C               	goto	l4538
+   518  01BE                     l1977:	
+   519                           
+   520                           ;Main.c: 42: else
+   521                           ;Main.c: 43: RD0 = 0;
+   522  01BE  1008               	bcf	8,0
+   523  01BF  2A5C               	goto	l4538
+   524  01C0                     l1972:	
+   525                           
+   526                           ;Main.c: 46: else
+   527                           ;Main.c: 47: {
+   528                           ;Main.c: 48: if(!RE1)
+   529  01C0  1283               	bcf	3,5	;RP0=0, select bank0
+   530  01C1  1303               	bcf	3,6	;RP1=0, select bank0
+   531  01C2  1C89               	btfss	9,1
+   532  01C3  29CB               	goto	l4470
+   533  01C4  29FA               	goto	l1980
+   534  01C5                     l4468:	
+   535                           
+   536                           ;Main.c: 51: UpdateTimeCounters(State);
+   537  01C5  0877               	movf	main@State,w
+   538  01C6  120A  118A  2296   	fcall	_UpdateTimeCounters
+      +       120A  118A         
+   539  01CB                     l4470:	
+   540  01CB  1889               	btfsc	9,1
+   541  01CC  29EF               	goto	l4492
+   542  01CD  29C5               	goto	l4468
+   543  01CE                     l4472:	
+   544  01CE  087A               	movf	_secCounter,w
+   545  01CF  3A3B               	xorlw	59
+   546  01D0  047B               	iorwf	_secCounter+1,w
+   547  01D1  1D03               	skipz
+   548  01D2  29D5               	goto	l4476
+   549                           
+   550                           ;Main.c: 56: secCounter = 0;
+   551  01D3  01FA               	clrf	_secCounter
+   552  01D4  2A0C               	goto	L1
+   553  01D5                     l4476:	
+   554                           
+   555                           ;Main.c: 57: else
+   556                           ;Main.c: 58: secCounter++;
+   557  01D5  0AFA               	incf	_secCounter,f
+   558  01D6  1903               	skipnz
+   559  01D7  0AFB               	incf	_secCounter+1,f
+   560  01D8  2A5C               	goto	l4538
+   561  01D9                     l4478:	
+   562  01D9  0878               	movf	_minCounter,w
+   563  01DA  3A3B               	xorlw	59
+   564  01DB  0479               	iorwf	_minCounter+1,w
+   565  01DC  1D03               	skipz
+   566  01DD  29E0               	goto	l4482
+   567                           
+   568                           ;Main.c: 61: minCounter = 0;
+   569  01DE  01F8               	clrf	_minCounter
+   570  01DF  2A1B               	goto	L2
+   571  01E0                     l4482:	
+   572                           
+   573                           ;Main.c: 62: else
+   574                           ;Main.c: 63: minCounter++;
+   575  01E0  0AF8               	incf	_minCounter,f
+   576  01E1  1903               	skipnz
+   577  01E2  0AF9               	incf	_minCounter+1,f
+   578  01E3  2A5C               	goto	l4538
+   579  01E4                     l4484:	
+   580  01E4  082A               	movf	_hrCounter,w
+   581  01E5  3A17               	xorlw	23
+   582  01E6  042B               	iorwf	_hrCounter+1,w
+   583  01E7  1D03               	skipz
+   584  01E8  29EB               	goto	l4488
+   585                           
+   586                           ;Main.c: 66: hrCounter = 0;
+   587  01E9  01AA               	clrf	_hrCounter
+   588  01EA  2A2A               	goto	L3
+   589  01EB                     l4488:	
+   590                           
+   591                           ;Main.c: 67: else
+   592                           ;Main.c: 68: hrCounter++;
+   593  01EB  0AAA               	incf	_hrCounter,f
+   594  01EC  1903               	skipnz
+   595  01ED  0AAB               	incf	_hrCounter+1,f
+   596  01EE  2A5C               	goto	l4538
+   597  01EF                     l4492:	
+   598  01EF  0877               	movf	main@State,w
+   599                           
+   600                           ; Switch size 1, requested type "space"
+   601                           ; Number of cases is 3, Range of values is 1 to 3
+   602                           ; switch strategies available:
+   603                           ; Name         Instructions Cycles
+   604                           ; simple_byte           10     6 (average)
+   605                           ; direct_byte           20    11 (fixed)
+   606                           ; jumptable            263     9 (fixed)
+   607                           ;	Chosen strategy is simple_byte
+   608  01F0  3A01               	xorlw	1	; case 1
+   609  01F1  1903               	skipnz
+   610  01F2  29E4               	goto	l4484
+   611  01F3  3A03               	xorlw	3	; case 2
+   612  01F4  1903               	skipnz
+   613  01F5  29D9               	goto	l4478
+   614  01F6  3A01               	xorlw	1	; case 3
+   615  01F7  1903               	skipnz
+   616  01F8  29CE               	goto	l4472
+   617  01F9  2A5C               	goto	l4538
+   618  01FA                     l1980:	
+   619                           
+   620                           ;Main.c: 72: else if(!RE2)
+   621  01FA  1D09               	btfss	9,2
+   622  01FB  2A03               	goto	l4498
+   623  01FC  2A3E               	goto	l1996
+   624  01FD                     l4496:	
+   625                           
+   626                           ;Main.c: 75: UpdateTimeCounters(State);
+   627  01FD  0877               	movf	main@State,w
+   628  01FE  120A  118A  2296   	fcall	_UpdateTimeCounters
+      +       120A  118A         
+   629  0203                     l4498:	
+   630  0203  1909               	btfsc	9,2
+   631  0204  2A33               	goto	l4520
+   632  0205  29FD               	goto	l4496
+   633  0206                     l4500:	
+   634  0206  087B               	movf	_secCounter+1,w
+   635  0207  047A               	iorwf	_secCounter,w
+   636  0208  1D03               	skipz
+   637  0209  2A0E               	goto	l4504
+   638                           
+   639                           ;Main.c: 80: secCounter = 59;
+   640  020A  303B               	movlw	59
+   641  020B  00FA               	movwf	_secCounter
+   642  020C                     L1:	
+   643  020C  01FB               	clrf	_secCounter+1
+   644  020D  2A5C               	goto	l4538
+   645  020E                     l4504:	
+   646                           
+   647                           ;Main.c: 81: else
+   648                           ;Main.c: 82: secCounter--;
+   649  020E  3001               	movlw	1
+   650  020F  02FA               	subwf	_secCounter,f
+   651  0210  3000               	movlw	0
+   652  0211  1C03               	skipc
+   653  0212  03FB               	decf	_secCounter+1,f
+   654  0213  02FB               	subwf	_secCounter+1,f
+   655  0214  2A5C               	goto	l4538
+   656  0215                     l4506:	
+   657  0215  0879               	movf	_minCounter+1,w
+   658  0216  0478               	iorwf	_minCounter,w
+   659  0217  1D03               	skipz
+   660  0218  2A1D               	goto	l4510
+   661                           
+   662                           ;Main.c: 85: minCounter = 59;
+   663  0219  303B               	movlw	59
+   664  021A  00F8               	movwf	_minCounter
+   665  021B                     L2:	
+   666  021B  01F9               	clrf	_minCounter+1
+   667  021C  2A5C               	goto	l4538
+   668  021D                     l4510:	
+   669                           
+   670                           ;Main.c: 86: else
+   671                           ;Main.c: 87: minCounter--;
+   672  021D  3001               	movlw	1
+   673  021E  02F8               	subwf	_minCounter,f
+   674  021F  3000               	movlw	0
+   675  0220  1C03               	skipc
+   676  0221  03F9               	decf	_minCounter+1,f
+   677  0222  02F9               	subwf	_minCounter+1,f
+   678  0223  2A5C               	goto	l4538
+   679  0224                     l4512:	
+   680  0224  082B               	movf	_hrCounter+1,w
+   681  0225  042A               	iorwf	_hrCounter,w
+   682  0226  1D03               	skipz
+   683  0227  2A2C               	goto	l4516
+   684                           
+   685                           ;Main.c: 90: hrCounter = 23;
+   686  0228  3017               	movlw	23
+   687  0229  00AA               	movwf	_hrCounter
+   688  022A                     L3:	
+   689  022A  01AB               	clrf	_hrCounter+1
+   690  022B  2A5C               	goto	l4538
+   691  022C                     l4516:	
+   692                           
+   693                           ;Main.c: 91: else
+   694                           ;Main.c: 92: hrCounter--;
+   695  022C  3001               	movlw	1
+   696  022D  02AA               	subwf	_hrCounter,f
+   697  022E  3000               	movlw	0
+   698  022F  1C03               	skipc
+   699  0230  03AB               	decf	_hrCounter+1,f
+   700  0231  02AB               	subwf	_hrCounter+1,f
+   701  0232  2A5C               	goto	l4538
+   702  0233                     l4520:	
+   703  0233  0877               	movf	main@State,w
+   704                           
+   705                           ; Switch size 1, requested type "space"
+   706                           ; Number of cases is 3, Range of values is 1 to 3
+   707                           ; switch strategies available:
+   708                           ; Name         Instructions Cycles
+   709                           ; simple_byte           10     6 (average)
+   710                           ; direct_byte           20    11 (fixed)
+   711                           ; jumptable            263     9 (fixed)
+   712                           ;	Chosen strategy is simple_byte
+   713  0234  3A01               	xorlw	1	; case 1
+   714  0235  1903               	skipnz
+   715  0236  2A24               	goto	l4512
+   716  0237  3A03               	xorlw	3	; case 2
+   717  0238  1903               	skipnz
+   718  0239  2A15               	goto	l4506
+   719  023A  3A01               	xorlw	1	; case 3
+   720  023B  1903               	skipnz
+   721  023C  2A06               	goto	l4500
+   722  023D  2A5C               	goto	l4538
+   723  023E                     l1996:	
+   724                           
+   725                           ;Main.c: 96: else if(!RE0)
+   726  023E  1C09               	btfss	9,0
+   727  023F  2A47               	goto	l4526
+   728  0240  2A5C               	goto	l4538
+   729  0241                     l4524:	
+   730                           
+   731                           ;Main.c: 99: UpdateTimeCounters(State);
+   732  0241  0877               	movf	main@State,w
+   733  0242  120A  118A  2296   	fcall	_UpdateTimeCounters
+      +       120A  118A         
+   734  0247                     l4526:	
+   735  0247  1809               	btfsc	9,0
+   736  0248  2A51               	goto	l4536
+   737  0249  2A41               	goto	l4524
+   738  024A                     l4528:	
+   739  024A  3002               	movlw	2
+   740  024B  2A4D               	goto	L4
+   741  024C                     l4530:	
+   742  024C  3003               	movlw	3
+   743  024D                     L4:	
+   744  024D  00F7               	movwf	main@State
+   745  024E  2A5C               	goto	l4538
+   746  024F                     l4532:	
+   747  024F  01F7               	clrf	main@State
+   748  0250  2A5C               	goto	l4538
+   749  0251                     l4536:	
+   750  0251  0877               	movf	main@State,w
+   751                           
+   752                           ; Switch size 1, requested type "space"
+   753                           ; Number of cases is 3, Range of values is 1 to 3
+   754                           ; switch strategies available:
+   755                           ; Name         Instructions Cycles
+   756                           ; simple_byte           10     6 (average)
+   757                           ; direct_byte           20    11 (fixed)
+   758                           ; jumptable            263     9 (fixed)
+   759                           ;	Chosen strategy is simple_byte
+   760  0252  3A01               	xorlw	1	; case 1
+   761  0253  1903               	skipnz
+   762  0254  2A4A               	goto	l4528
+   763  0255  3A03               	xorlw	3	; case 2
+   764  0256  1903               	skipnz
+   765  0257  2A4C               	goto	l4530
+   766  0258  3A01               	xorlw	1	; case 3
+   767  0259  1903               	skipnz
+   768  025A  2A4F               	goto	l4532
+   769  025B  2A5C               	goto	l4538
+   770  025C                     l4538:	
+   771                           
+   772                           ;Main.c: 108: }
+   773                           ;Main.c: 109: }
+   774                           ;Main.c: 111: UpdateTimeCounters(State);
+   775  025C  0877               	movf	main@State,w
+   776  025D  120A  118A  2296   	fcall	_UpdateTimeCounters
+      +       120A  118A         
+   777                           
+   778                           ;Main.c: 113: if( msCounter == 0 )
+   779  0262  082D               	movf	_msCounter+1,w
+   780  0263  042C               	iorwf	_msCounter,w
+   781  0264  1D03               	skipz
+   782  0265  2A79               	goto	l4544
+   783                           
+   784                           ;Main.c: 114: {
+   785                           ;Main.c: 116: DisplayTimeToLCD(hrCounter, minCounter, secCounter, 0);
+   786  0266  082B               	movf	_hrCounter+1,w
+   787  0267  00A4               	movwf	?_DisplayTimeToLCD+1
+   788  0268  082A               	movf	_hrCounter,w
+   789  0269  00A3               	movwf	?_DisplayTimeToLCD
+   790  026A  0879               	movf	_minCounter+1,w
+   791  026B  00A6               	movwf	?_DisplayTimeToLCD+3
+   792  026C  0878               	movf	_minCounter,w
+   793  026D  00A5               	movwf	?_DisplayTimeToLCD+2
+   794  026E  087B               	movf	_secCounter+1,w
+   795  026F  00A8               	movwf	?_DisplayTimeToLCD+5
+   796  0270  087A               	movf	_secCounter,w
+   797  0271  00A7               	movwf	?_DisplayTimeToLCD+4
+   798  0272  01A9               	clrf	?_DisplayTimeToLCD+6
+   799  0273  120A  118A  200F   	fcall	_DisplayTimeToLCD
+      +       120A  118A         
+   800                           
+   801                           ;Main.c: 117: }
+   802  0278  299E               	goto	l4448
+   803  0279                     l4544:	
+   804                           
+   805                           ;Main.c: 118: else if( msCounter == 500 && State != 0 )
+   806  0279  032D               	decf	_msCounter+1,w
+   807  027A  30F4               	movlw	244
+   808  027B  1903               	skipnz
+   809  027C  062C               	xorwf	_msCounter,w
+   810  027D  1D03               	skipz
+   811  027E  299E               	goto	l4448
+   812  027F  0877               	movf	main@State,w
+   813  0280  1903               	btfsc	3,2
+   814  0281  299E               	goto	l4448
+   815                           
+   816                           ;Main.c: 119: {
+   817                           ;Main.c: 122: DisplayTimeToLCD(hrCounter, minCounter, secCounter, State);
+   818  0282  082B               	movf	_hrCounter+1,w
+   819  0283  00A4               	movwf	?_DisplayTimeToLCD+1
+   820  0284  082A               	movf	_hrCounter,w
+   821  0285  00A3               	movwf	?_DisplayTimeToLCD
+   822  0286  0879               	movf	_minCounter+1,w
+   823  0287  00A6               	movwf	?_DisplayTimeToLCD+3
+   824  0288  0878               	movf	_minCounter,w
+   825  0289  00A5               	movwf	?_DisplayTimeToLCD+2
+   826  028A  087B               	movf	_secCounter+1,w
+   827  028B  00A8               	movwf	?_DisplayTimeToLCD+5
+   828  028C  087A               	movf	_secCounter,w
+   829  028D  00A7               	movwf	?_DisplayTimeToLCD+4
+   830  028E  0877               	movf	main@State,w
+   831  028F  00A9               	movwf	?_DisplayTimeToLCD+6
+   832  0290  120A  118A  200F   	fcall	_DisplayTimeToLCD
+      +       120A  118A         
+   833  0295  299E               	goto	l4448
+   834  0296                     __end_of_main:	
+   835                           
+   836                           	psect	text413
+   837  000F                     __ptext413:	
+   838 ;; =============== function _main ends ============
+   839                           
+   840                           
+   841 ;; *************** function _DisplayTimeToLCD *****************
+   842 ;; Defined at:
+   843 ;;		line 107 in file "C:\Users\Saeed\Desktop\PIC16F877 Stop Watch Code\Code\LCD.c"
+   844 ;; Parameters:    Size  Location     Type
+   845 ;;  h               2    3[BANK0 ] unsigned int 
+   846 ;;  m               2    5[BANK0 ] unsigned int 
+   847 ;;  s               2    7[BANK0 ] unsigned int 
+   848 ;;  State           1    9[BANK0 ] unsigned char 
+   849 ;; Auto vars:     Size  Location     Type
+   850 ;;		None
+   851 ;; Return value:  Size  Location     Type
+   852 ;;		None               void
+   853 ;; Registers used:
+   854 ;;		wreg, status,2, status,0, pclath, cstack
+   855 ;; Tracked objects:
+   856 ;;		On entry : 60/0
+   857 ;;		On exit  : 0/0
+   858 ;;		Unchanged: 0/0
+   859 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   860 ;;      Params:         0       7       0       0       0
+   861 ;;      Locals:         0       0       0       0       0
+   862 ;;      Temps:          0       0       0       0       0
+   863 ;;      Totals:         0       7       0       0       0
+   864 ;;Total ram usage:        7 bytes
+   865 ;; Hardware stack levels used:    1
+   866 ;; Hardware stack levels required when called:    4
+   867 ;; This function calls:
+   868 ;;		_ClearLCDScreen
+   869 ;;		_WriteDataToLCD
+   870 ;;		___lwdiv
+   871 ;;		___lwmod
+   872 ;; This function is called by:
+   873 ;;		_main
+   874 ;; This function uses a non-reentrant model
+   875 ;;
+   876  000F                     _DisplayTimeToLCD:	
+   877                           
+   878                           ;LCD.c: 108: ClearLCDScreen();
+   879                           
+   880                           ; Regs used in _DisplayTimeToLCD: [wreg+status,2+status,0+pclath+cstack]
+   881  000F  216C  120A  118A   	fcall	_ClearLCDScreen
+   882  0012  2188               	call	PL4	;select bank 0
+   883                           
+   884                           ;LCD.c: 110: if(State == 1)
+   885  0013  0B29               	decfsz	DisplayTimeToLCD@State,w
+   886  0014  281B               	goto	l4420
+   887                           
+   888                           ;LCD.c: 111: {
+   889                           ;LCD.c: 112: WriteDataToLCD( ' ' );
+   890  0015  3020               	movlw	32
+   891  0016  2094  120A  118A   	fcall	_WriteDataToLCD
+   892                           
+   893                           ;LCD.c: 113: WriteDataToLCD( ' ' );
+   894  0019  3020               	movlw	32
+   895  001A  2837               	goto	L5
+   896  001B                     l4420:	
+   897                           ;LCD.c: 114: }
+   898                           
+   899                           
+   900                           ;LCD.c: 115: else
+   901                           ;LCD.c: 116: {
+   902                           ;LCD.c: 117: WriteDataToLCD( (h/10)+0x30 );
+   903  001B  300A               	movlw	10
+   904  001C  00F2               	movwf	?___lwdiv
+   905  001D  01F3               	clrf	?___lwdiv+1
+   906  001E  0824               	movf	DisplayTimeToLCD@h+1,w
+   907  001F  00F5               	movwf	?___lwdiv+3
+   908  0020  0823               	movf	DisplayTimeToLCD@h,w
+   909  0021  00F4               	movwf	?___lwdiv+2
+   910  0022  20A6  120A  118A   	fcall	___lwdiv
+   911  0025  0872               	movf	?___lwdiv,w
+   912  0026  3E30               	addlw	48
+   913  0027  2094  120A  118A   	fcall	_WriteDataToLCD
+   914                           
+   915                           ;LCD.c: 118: WriteDataToLCD( (h%10)+0x30 );
+   916  002A  300A               	movlw	10
+   917  002B  00F2               	movwf	?___lwmod
+   918  002C  01F3               	clrf	?___lwmod+1
+   919  002D  2188               	call	PL4	;select bank 0
+   920  002E  0824               	movf	DisplayTimeToLCD@h+1,w
+   921  002F  00F5               	movwf	?___lwmod+3
+   922  0030  0823               	movf	DisplayTimeToLCD@h,w
+   923  0031  00F4               	movwf	?___lwmod+2
+   924  0032  20D0  120A  118A   	fcall	___lwmod
+   925  0035  0872               	movf	?___lwmod,w
+   926  0036  3E30               	addlw	48
+   927  0037                     L5:	
+   928  0037  2094  120A  118A   	fcall	_WriteDataToLCD
+   929                           
+   930                           ;LCD.c: 119: }
+   931                           ;LCD.c: 122: WriteDataToLCD(':');
+   932  003A  303A               	movlw	58
+   933  003B  2094  120A  118A   	fcall	_WriteDataToLCD
+   934  003E  2188               	call	PL4	;select bank 0
+   935                           
+   936                           ;LCD.c: 124: if(State == 2)
+   937  003F  0829               	movf	DisplayTimeToLCD@State,w
+   938  0040  3A02               	xorlw	2
+   939  0041  1D03               	skipz
+   940  0042  2849               	goto	l4426
+   941                           
+   942                           ;LCD.c: 125: {
+   943                           ;LCD.c: 126: WriteDataToLCD( ' ' );
+   944  0043  3020               	movlw	32
+   945  0044  2094  120A  118A   	fcall	_WriteDataToLCD
+   946                           
+   947                           ;LCD.c: 127: WriteDataToLCD( ' ' );
+   948  0047  3020               	movlw	32
+   949  0048  2865               	goto	L6
+   950  0049                     l4426:	
+   951                           ;LCD.c: 128: }
+   952                           
+   953                           
+   954                           ;LCD.c: 129: else
+   955                           ;LCD.c: 130: {
+   956                           ;LCD.c: 131: WriteDataToLCD( (m/10)+0x30 );
+   957  0049  300A               	movlw	10
+   958  004A  00F2               	movwf	?___lwdiv
+   959  004B  01F3               	clrf	?___lwdiv+1
+   960  004C  0826               	movf	DisplayTimeToLCD@m+1,w
+   961  004D  00F5               	movwf	?___lwdiv+3
+   962  004E  0825               	movf	DisplayTimeToLCD@m,w
+   963  004F  00F4               	movwf	?___lwdiv+2
+   964  0050  20A6  120A  118A   	fcall	___lwdiv
+   965  0053  0872               	movf	?___lwdiv,w
+   966  0054  3E30               	addlw	48
+   967  0055  2094  120A  118A   	fcall	_WriteDataToLCD
+   968                           
+   969                           ;LCD.c: 132: WriteDataToLCD( (m%10)+0x30 );
+   970  0058  300A               	movlw	10
+   971  0059  00F2               	movwf	?___lwmod
+   972  005A  01F3               	clrf	?___lwmod+1
+   973  005B  2188               	call	PL4	;select bank 0
+   974  005C  0826               	movf	DisplayTimeToLCD@m+1,w
+   975  005D  00F5               	movwf	?___lwmod+3
+   976  005E  0825               	movf	DisplayTimeToLCD@m,w
+   977  005F  00F4               	movwf	?___lwmod+2
+   978  0060  20D0  120A  118A   	fcall	___lwmod
+   979  0063  0872               	movf	?___lwmod,w
+   980  0064  3E30               	addlw	48
+   981  0065                     L6:	
+   982  0065  2094  120A  118A   	fcall	_WriteDataToLCD
+   983                           
+   984                           ;LCD.c: 133: }
+   985                           ;LCD.c: 136: WriteDataToLCD(':');
+   986  0068  303A               	movlw	58
+   987  0069  2094  120A  118A   	fcall	_WriteDataToLCD
+   988  006C  2188               	call	PL4	;select bank 0
+   989                           
+   990                           ;LCD.c: 138: if(State == 3)
+   991  006D  0829               	movf	DisplayTimeToLCD@State,w
+   992  006E  3A03               	xorlw	3
+   993  006F  1D03               	skipz
+   994  0070  2877               	goto	l4432
+   995                           
+   996                           ;LCD.c: 139: {
+   997                           ;LCD.c: 140: WriteDataToLCD( ' ' );
+   998  0071  3020               	movlw	32
+   999  0072  2094  120A  118A   	fcall	_WriteDataToLCD
+  1000                           
+  1001                           ;LCD.c: 141: WriteDataToLCD( ' ' );
+  1002  0075  3020               	movlw	32
+  1003  0076  2894               	ljmp	_WriteDataToLCD
+  1004  0077                     l4432:	
+  1005                           ;LCD.c: 142: }
+  1006                           
+  1007                           
+  1008                           ;LCD.c: 143: else
+  1009                           ;LCD.c: 144: {
+  1010                           ;LCD.c: 145: WriteDataToLCD( (s/10)+0x30 );
+  1011  0077  300A               	movlw	10
+  1012  0078  00F2               	movwf	?___lwdiv
+  1013  0079  01F3               	clrf	?___lwdiv+1
+  1014  007A  0828               	movf	DisplayTimeToLCD@s+1,w
+  1015  007B  00F5               	movwf	?___lwdiv+3
+  1016  007C  0827               	movf	DisplayTimeToLCD@s,w
+  1017  007D  00F4               	movwf	?___lwdiv+2
+  1018  007E  20A6  120A  118A   	fcall	___lwdiv
+  1019  0081  0872               	movf	?___lwdiv,w
+  1020  0082  3E30               	addlw	48
+  1021  0083  2094  120A  118A   	fcall	_WriteDataToLCD
+  1022                           
+  1023                           ;LCD.c: 146: WriteDataToLCD( (s%10)+0x30 );
+  1024  0086  300A               	movlw	10
+  1025  0087  00F2               	movwf	?___lwmod
+  1026  0088  01F3               	clrf	?___lwmod+1
+  1027  0089  2188               	call	PL4	;select bank 0
+  1028  008A  0828               	movf	DisplayTimeToLCD@s+1,w
+  1029  008B  00F5               	movwf	?___lwmod+3
+  1030  008C  0827               	movf	DisplayTimeToLCD@s,w
+  1031  008D  00F4               	movwf	?___lwmod+2
+  1032  008E  20D0  120A  118A   	fcall	___lwmod
+  1033  0091  0872               	movf	?___lwmod,w
+  1034  0092  3E30               	addlw	48
+  1035  0093  2894               	ljmp	_WriteDataToLCD
+  1036  0094                     __end_of_DisplayTimeToLCD:	
+  1037  0094                     __ptext416:	
+  1038 ;; =============== function _InitLCD ends ============
+  1039                           
+  1040                           
+  1041 ;; *************** function _WriteDataToLCD *****************
+  1042 ;; Defined at:
+  1043 ;;		line 28 in file "C:\Users\Saeed\Desktop\PIC16F877 Stop Watch Code\Code\LCD.c"
+  1044 ;; Parameters:    Size  Location     Type
+  1045 ;;  LCDChar         1    wreg     unsigned char 
+  1046 ;; Auto vars:     Size  Location     Type
+  1047 ;;  LCDChar         1    3[COMMON] unsigned char 
+  1048 ;; Return value:  Size  Location     Type
+  1049 ;;		None               void
+  1050 ;; Registers used:
+  1051 ;;		wreg, status,2, status,0, pclath, cstack
+  1052 ;; Tracked objects:
+  1053 ;;		On entry : 0/0
+  1054 ;;		On exit  : 0/0
+  1055 ;;		Unchanged: 0/0
+  1056 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1057 ;;      Params:         0       0       0       0       0
+  1058 ;;      Locals:         1       0       0       0       0
+  1059 ;;      Temps:          0       0       0       0       0
+  1060 ;;      Totals:         1       0       0       0       0
+  1061 ;;Total ram usage:        1 bytes
+  1062 ;; Hardware stack levels used:    1
+  1063 ;; Hardware stack levels required when called:    2
+  1064 ;; This function calls:
+  1065 ;;		_ToggleEpinOfLCD
+  1066 ;; This function is called by:
+  1067 ;;		_DisplayTimeToLCD
+  1068 ;; This function uses a non-reentrant model
+  1069 ;;
+  1070  0094                     _WriteDataToLCD:	
+  1071                           
+  1072                           ; Regs used in _WriteDataToLCD: [wreg+status,2+status,0+pclath+cstack]
+  1073                           ;WriteDataToLCD@LCDChar stored from wreg
+  1074  0094  00F3               	movwf	WriteDataToLCD@LCDChar
+  1075  0095  2188               	call	PL4	;select bank 0
+  1076                           
+  1077                           ;LCD.c: 29: RB1 = 1;
+  1078  0096  300F               	movlw	15
+  1079  0097  1486               	bsf	6,1
+  1080                           
+  1081                           ;LCD.c: 31: PORTB &= 0x0F;
+  1082  0098  0586               	andwf	6,f	;volatile
+  1083                           
+  1084                           ;LCD.c: 32: PORTB |= (LCDChar&0xF0);
+  1085  0099  0873               	movf	WriteDataToLCD@LCDChar,w
+  1086  009A  39F0               	andlw	240
+  1087  009B  0486               	iorwf	6,f	;volatile
+  1088                           
+  1089                           ;LCD.c: 33: ToggleEpinOfLCD();
+  1090  009C  214C  120A  118A   	fcall	_ToggleEpinOfLCD
+  1091                           
+  1092                           ;LCD.c: 35: PORTB &= 0x0F;
+  1093  009F  300F               	movlw	15
+  1094  00A0  2188               	call	PL4	;select bank 0
+  1095  00A1  0586               	andwf	6,f	;volatile
+  1096                           
+  1097                           ;LCD.c: 36: PORTB |= ((LCDChar<<4)&0xF0);
+  1098  00A2  0E73               	swapf	WriteDataToLCD@LCDChar,w
+  1099  00A3  39F0               	andlw	240
+  1100  00A4  0486               	iorwf	6,f	;volatile
+  1101                           
+  1102                           ;LCD.c: 37: ToggleEpinOfLCD();
+  1103  00A5  294C               	ljmp	l4164
+  1104  00A6                     __end_of_WriteDataToLCD:	
+  1105  00A6                     __ptext421:	
+  1106 ;; =============== function ___lwmod ends ============
+  1107                           
+  1108                           
+  1109 ;; *************** function ___lwdiv *****************
+  1110 ;; Defined at:
+  1111 ;;		line 5 in file "C:\Program Files (x86)\HI-TECH Software\PICC\9.83\sources\lwdiv.c"
+  1112 ;; Parameters:    Size  Location     Type
+  1113 ;;  divisor         2    2[COMMON] unsigned int 
+  1114 ;;  dividend        2    4[COMMON] unsigned int 
+  1115 ;; Auto vars:     Size  Location     Type
+  1116 ;;  quotient        2    1[BANK0 ] unsigned int 
+  1117 ;;  counter         1    0[BANK0 ] unsigned char 
+  1118 ;; Return value:  Size  Location     Type
+  1119 ;;                  2    2[COMMON] unsigned int 
+  1120 ;; Registers used:
+  1121 ;;		wreg, status,2, status,0
+  1122 ;; Tracked objects:
+  1123 ;;		On entry : 60/0
+  1124 ;;		On exit  : 60/0
+  1125 ;;		Unchanged: FFF9F/0
+  1126 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1127 ;;      Params:         4       0       0       0       0
+  1128 ;;      Locals:         0       3       0       0       0
+  1129 ;;      Temps:          0       0       0       0       0
+  1130 ;;      Totals:         4       3       0       0       0
+  1131 ;;Total ram usage:        7 bytes
+  1132 ;; Hardware stack levels used:    1
+  1133 ;; Hardware stack levels required when called:    1
+  1134 ;; This function calls:
+  1135 ;;		Nothing
+  1136 ;; This function is called by:
+  1137 ;;		_DisplayTimeToLCD
+  1138 ;; This function uses a non-reentrant model
+  1139 ;;
+  1140  00A6                     ___lwdiv:	
+  1141                           
+  1142                           ; Regs used in ___lwdiv: [wreg+status,2+status,0]
+  1143  00A6  01A1               	clrf	___lwdiv@quotient
+  1144  00A7  01A2               	clrf	___lwdiv@quotient+1
+  1145  00A8  0873               	movf	___lwdiv@divisor+1,w
+  1146  00A9  0472               	iorwf	___lwdiv@divisor,w
+  1147  00AA  1903               	skipnz
+  1148  00AB  28CB               	goto	l4410
+  1149  00AC  01A0               	clrf	___lwdiv@counter
+  1150  00AD                     L9:	
+  1151  00AD  0AA0               	incf	___lwdiv@counter,f
+  1152  00AE  1BF3               	btfsc	___lwdiv@divisor+1,7
+  1153  00AF  28B4               	goto	l4398
+  1154  00B0  1003               	clrc
+  1155  00B1  0DF2               	rlf	___lwdiv@divisor,f
+  1156  00B2  0DF3               	rlf	___lwdiv@divisor+1,f
+  1157  00B3  28AD               	goto	L9
+  1158  00B4                     l4398:	
+  1159  00B4  1003               	clrc
+  1160  00B5  0DA1               	rlf	___lwdiv@quotient,f
+  1161  00B6  0DA2               	rlf	___lwdiv@quotient+1,f
+  1162  00B7  0873               	movf	___lwdiv@divisor+1,w
+  1163  00B8  0275               	subwf	___lwdiv@dividend+1,w
+  1164  00B9  1D03               	skipz
+  1165  00BA  28BD               	goto	u795
+  1166  00BB  0872               	movf	___lwdiv@divisor,w
+  1167  00BC  0274               	subwf	___lwdiv@dividend,w
+  1168  00BD                     u795:	
+  1169  00BD  1C03               	skipc
+  1170  00BE  28C7               	goto	L10
+  1171  00BF  0872               	movf	___lwdiv@divisor,w
+  1172  00C0  02F4               	subwf	___lwdiv@dividend,f
+  1173  00C1  0873               	movf	___lwdiv@divisor+1,w
+  1174  00C2  1C03               	skipc
+  1175  00C3  03F5               	decf	___lwdiv@dividend+1,f
+  1176  00C4  02F5               	subwf	___lwdiv@dividend+1,f
+  1177  00C5  1421               	bsf	___lwdiv@quotient,0
+  1178  00C6  1003               	clrc
+  1179  00C7                     L10:	
+  1180  00C7  0CF3               	rrf	___lwdiv@divisor+1,f
+  1181  00C8  0CF2               	rrf	___lwdiv@divisor,f
+  1182  00C9  0BA0               	decfsz	___lwdiv@counter,f
+  1183  00CA  28B4               	goto	l4398
+  1184  00CB                     l4410:	
+  1185  00CB  0822               	movf	___lwdiv@quotient+1,w
+  1186  00CC  00F3               	movwf	?___lwdiv+1
+  1187  00CD  0821               	movf	___lwdiv@quotient,w
+  1188  00CE  00F2               	movwf	?___lwdiv
+  1189  00CF  0008               	return
+  1190  00D0                     __end_of___lwdiv:	
+  1191  00D0                     __ptext420:	
+  1192 ;; =============== function _ToggleEpinOfLCD ends ============
+  1193                           
+  1194                           
+  1195 ;; *************** function ___lwmod *****************
+  1196 ;; Defined at:
+  1197 ;;		line 5 in file "C:\Program Files (x86)\HI-TECH Software\PICC\9.83\sources\lwmod.c"
+  1198 ;; Parameters:    Size  Location     Type
+  1199 ;;  divisor         2    2[COMMON] unsigned int 
+  1200 ;;  dividend        2    4[COMMON] unsigned int 
+  1201 ;; Auto vars:     Size  Location     Type
+  1202 ;;  counter         1    6[COMMON] unsigned char 
+  1203 ;; Return value:  Size  Location     Type
+  1204 ;;                  2    2[COMMON] unsigned int 
+  1205 ;; Registers used:
+  1206 ;;		wreg, status,2, status,0
+  1207 ;; Tracked objects:
+  1208 ;;		On entry : 60/0
+  1209 ;;		On exit  : 60/0
+  1210 ;;		Unchanged: FFF9F/0
+  1211 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1212 ;;      Params:         4       0       0       0       0
+  1213 ;;      Locals:         1       0       0       0       0
+  1214 ;;      Temps:          0       0       0       0       0
+  1215 ;;      Totals:         5       0       0       0       0
+  1216 ;;Total ram usage:        5 bytes
+  1217 ;; Hardware stack levels used:    1
+  1218 ;; Hardware stack levels required when called:    1
+  1219 ;; This function calls:
+  1220 ;;		Nothing
+  1221 ;; This function is called by:
+  1222 ;;		_DisplayTimeToLCD
+  1223 ;; This function uses a non-reentrant model
+  1224 ;;
+  1225  00D0                     ___lwmod:	
+  1226                           
+  1227                           ; Regs used in ___lwmod: [wreg+status,2+status,0]
+  1228  00D0  0873               	movf	___lwmod@divisor+1,w
+  1229  00D1  0472               	iorwf	___lwmod@divisor,w
+  1230  00D2  1903               	skipnz
+  1231  00D3  28EF               	goto	l4160
+  1232  00D4  01F6               	clrf	___lwmod@counter
+  1233  00D5                     L7:	
+  1234  00D5  0AF6               	incf	___lwmod@counter,f
+  1235  00D6  1BF3               	btfsc	___lwmod@divisor+1,7
+  1236  00D7  28DC               	goto	l4152
+  1237  00D8  1003               	clrc
+  1238  00D9  0DF2               	rlf	___lwmod@divisor,f
+  1239  00DA  0DF3               	rlf	___lwmod@divisor+1,f
+  1240  00DB  28D5               	goto	L7
+  1241  00DC                     l4152:	
+  1242  00DC  0873               	movf	___lwmod@divisor+1,w
+  1243  00DD  0275               	subwf	___lwmod@dividend+1,w
+  1244  00DE  1D03               	skipz
+  1245  00DF  28E2               	goto	u515
+  1246  00E0  0872               	movf	___lwmod@divisor,w
+  1247  00E1  0274               	subwf	___lwmod@dividend,w
+  1248  00E2                     u515:	
+  1249  00E2  1C03               	skipc
+  1250  00E3  28EB               	goto	L8
+  1251  00E4  0872               	movf	___lwmod@divisor,w
+  1252  00E5  02F4               	subwf	___lwmod@dividend,f
+  1253  00E6  0873               	movf	___lwmod@divisor+1,w
+  1254  00E7  1C03               	skipc
+  1255  00E8  03F5               	decf	___lwmod@dividend+1,f
+  1256  00E9  02F5               	subwf	___lwmod@dividend+1,f
+  1257  00EA  1003               	clrc
+  1258  00EB                     L8:	
+  1259  00EB  0CF3               	rrf	___lwmod@divisor+1,f
+  1260  00EC  0CF2               	rrf	___lwmod@divisor,f
+  1261  00ED  0BF6               	decfsz	___lwmod@counter,f
+  1262  00EE  28DC               	goto	l4152
+  1263  00EF                     l4160:	
+  1264  00EF  0875               	movf	___lwmod@dividend+1,w
+  1265  00F0  00F3               	movwf	?___lwmod+1
+  1266  00F1  0874               	movf	___lwmod@dividend,w
+  1267  00F2  00F2               	movwf	?___lwmod
+  1268  00F3  0008               	return
+  1269  00F4                     __end_of___lwmod:	
+  1270  00F4                     __ptext415:	
+  1271 ;; =============== function _ClearLCDScreen ends ============
+  1272                           
+  1273                           
+  1274 ;; *************** function _InitLCD *****************
+  1275 ;; Defined at:
+  1276 ;;		line 42 in file "C:\Users\Saeed\Desktop\PIC16F877 Stop Watch Code\Code\LCD.c"
+  1277 ;; Parameters:    Size  Location     Type
+  1278 ;;		None
+  1279 ;; Auto vars:     Size  Location     Type
+  1280 ;;		None
+  1281 ;; Return value:  Size  Location     Type
+  1282 ;;		None               void
+  1283 ;; Registers used:
+  1284 ;;		wreg, status,2, status,0, pclath, cstack
+  1285 ;; Tracked objects:
+  1286 ;;		On entry : 17F/20
+  1287 ;;		On exit  : 0/0
+  1288 ;;		Unchanged: 0/0
+  1289 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1290 ;;      Params:         0       0       0       0       0
+  1291 ;;      Locals:         0       0       0       0       0
+  1292 ;;      Temps:          2       0       0       0       0
+  1293 ;;      Totals:         2       0       0       0       0
+  1294 ;;Total ram usage:        2 bytes
+  1295 ;; Hardware stack levels used:    1
+  1296 ;; Hardware stack levels required when called:    3
+  1297 ;; This function calls:
+  1298 ;;		_ToggleEpinOfLCD
+  1299 ;;		_WriteCommandToLCD
+  1300 ;; This function is called by:
+  1301 ;;		_main
+  1302 ;; This function uses a non-reentrant model
+  1303 ;;
+  1304  00F4                     _InitLCD:	
+  1305                           
+  1306                           ;LCD.c: 44: RB0 = 0;
+  1307                           
+  1308                           ; Regs used in _InitLCD: [wreg+status,2+status,0+pclath+cstack]
+  1309  00F4  1283               	bcf	3,5	;RP0=0, select bank0
+  1310                           
+  1311                           ;LCD.c: 45: RB1 = 0;
+  1312                           
+  1313                           ;LCD.c: 46: RB4 = 0;
+  1314                           
+  1315                           ;LCD.c: 47: RB5 = 0;
+  1316                           
+  1317                           ;LCD.c: 48: RB6 = 0;
+  1318                           
+  1319                           ;LCD.c: 49: RB7 = 0;
+  1320  00F5  2181  120A  118A   	fcall	PL3	;call to abstracted procedure
+  1321                           
+  1322                           ;LCD.c: 50: TRISB0 = 0;
+  1323  00F8  1683               	bsf	3,5	;RP0=1, select bank1
+  1324  00F9  3034               	movlw	52
+  1325                           
+  1326                           ;LCD.c: 51: TRISB1 = 0;
+  1327                           
+  1328                           ;LCD.c: 52: TRISB4 = 0;
+  1329                           
+  1330                           ;LCD.c: 53: TRISB5 = 0;
+  1331                           
+  1332                           ;LCD.c: 54: TRISB6 = 0;
+  1333                           
+  1334                           ;LCD.c: 55: TRISB7 = 0;
+  1335  00FA  2181  120A  118A   	fcall	PL3	;call to abstracted procedure
+  1336                           
+  1337                           ;LCD.c: 58: _delay((unsigned long)((40)*(4000000/4000.0)));
+  1338  00FD  00F5               	movwf	??_InitLCD+1
+  1339  00FE  30F1               	movlw	241
+  1340  00FF  00F4               	movwf	??_InitLCD
+  1341  0100                     u1067:	
+  1342  0100  0BF4               	decfsz	??_InitLCD,f
+  1343  0101  2900               	goto	u1067
+  1344  0102  0BF5               	decfsz	??_InitLCD+1,f
+  1345  0103  2900               	goto	u1067
+  1346  0104  2905               	nop2
+  1347                           
+  1348                           ;LCD.c: 60: PORTB &= 0x0F;
+  1349                           
+  1350                           ;LCD.c: 61: PORTB |= 0x30;
+  1351  0105  217A  120A  118A   	fcall	PL2	;call to abstracted procedure
+  1352                           
+  1353                           ;LCD.c: 62: ToggleEpinOfLCD();
+  1354  0108  214C  120A  118A   	fcall	_ToggleEpinOfLCD
+  1355                           
+  1356                           ;LCD.c: 64: _delay((unsigned long)((6)*(4000000/4000.0)));
+  1357  010B  3008               	movlw	8
+  1358  010C  00F5               	movwf	??_InitLCD+1
+  1359  010D  30C9               	movlw	201
+  1360  010E  00F4               	movwf	??_InitLCD
+  1361  010F                     u1077:	
+  1362  010F  0BF4               	decfsz	??_InitLCD,f
+  1363  0110  290F               	goto	u1077
+  1364  0111  0BF5               	decfsz	??_InitLCD+1,f
+  1365  0112  290F               	goto	u1077
+  1366  0113  2914               	nop2
+  1367                           
+  1368                           ;LCD.c: 66: PORTB &= 0x0F;
+  1369                           
+  1370                           ;LCD.c: 67: PORTB |= 0x30;
+  1371  0114  217A  120A  118A   	fcall	PL2	;call to abstracted procedure
+  1372                           
+  1373                           ;LCD.c: 68: ToggleEpinOfLCD();
+  1374  0117  214C  120A  118A   	fcall	_ToggleEpinOfLCD
+  1375                           
+  1376                           ;LCD.c: 70: _delay((unsigned long)((300)*(4000000/4000000.0)));
+  1377  011A  3063               	movlw	99
+  1378  011B  00F4               	movwf	??_InitLCD
+  1379  011C                     u1087:	
+  1380  011C  0BF4               	decfsz	??_InitLCD,f
+  1381  011D  291C               	goto	u1087
+  1382  011E  291F               	nop2	;nop
+  1383                           
+  1384                           ;LCD.c: 72: PORTB &= 0x0F;
+  1385                           
+  1386                           ;LCD.c: 73: PORTB |= 0x30;
+  1387  011F  217A  120A  118A   	fcall	PL2	;call to abstracted procedure
+  1388                           
+  1389                           ;LCD.c: 74: ToggleEpinOfLCD();
+  1390  0122  214C  120A  118A   	fcall	_ToggleEpinOfLCD
+  1391                           
+  1392                           ;LCD.c: 76: _delay((unsigned long)((2)*(4000000/4000.0)));
+  1393  0125  3003               	movlw	3
+  1394  0126  00F5               	movwf	??_InitLCD+1
+  1395  0127  3097               	movlw	151
+  1396  0128  00F4               	movwf	??_InitLCD
+  1397  0129                     u1097:	
+  1398  0129  0BF4               	decfsz	??_InitLCD,f
+  1399  012A  2929               	goto	u1097
+  1400  012B  0BF5               	decfsz	??_InitLCD+1,f
+  1401  012C  2929               	goto	u1097
+  1402  012D  292E               	nop2
+  1403                           
+  1404                           ;LCD.c: 78: PORTB &= 0x0F;
+  1405  012E  300F               	movlw	15
+  1406  012F  2188               	call	PL4	;select bank 0
+  1407  0130  0586               	andwf	6,f	;volatile
+  1408                           
+  1409                           ;LCD.c: 79: PORTB |= 0x20;
+  1410  0131  1686               	bsf	6,5	;volatile
+  1411                           
+  1412                           ;LCD.c: 80: ToggleEpinOfLCD();
+  1413  0132  214C  120A  118A   	fcall	_ToggleEpinOfLCD
+  1414                           
+  1415                           ;LCD.c: 82: _delay((unsigned long)((2)*(4000000/4000.0)));
+  1416  0135  3003               	movlw	3
+  1417  0136  00F5               	movwf	??_InitLCD+1
+  1418  0137  3097               	movlw	151
+  1419  0138  00F4               	movwf	??_InitLCD
+  1420  0139                     u1107:	
+  1421  0139  0BF4               	decfsz	??_InitLCD,f
+  1422  013A  2939               	goto	u1107
+  1423  013B  0BF5               	decfsz	??_InitLCD+1,f
+  1424  013C  2939               	goto	u1107
+  1425  013D  293E               	nop2
+  1426                           
+  1427                           ;LCD.c: 84: WriteCommandToLCD(0x28);
+  1428  013E  3028               	movlw	40
+  1429  013F  215A  120A  118A   	fcall	_WriteCommandToLCD
+  1430                           
+  1431                           ;LCD.c: 85: WriteCommandToLCD(0x0c);
+  1432  0142  300C               	movlw	12
+  1433  0143  215A  120A  118A   	fcall	_WriteCommandToLCD
+  1434                           
+  1435                           ;LCD.c: 86: WriteCommandToLCD(0x01);
+  1436  0146  3001               	movlw	1
+  1437  0147  215A  120A  118A   	fcall	_WriteCommandToLCD
+  1438                           
+  1439                           ;LCD.c: 87: WriteCommandToLCD(0x06);
+  1440  014A  3006               	movlw	6
+  1441  014B  295A               	ljmp	_WriteCommandToLCD
+  1442  014C                     __end_of_InitLCD:	
+  1443  014C                     __ptext419:	
+  1444 ;; =============== function _Init1msecTimerInterrupt ends ============
+  1445                           
+  1446                           
+  1447 ;; *************** function _ToggleEpinOfLCD *****************
+  1448 ;; Defined at:
+  1449 ;;		line 5 in file "C:\Users\Saeed\Desktop\PIC16F877 Stop Watch Code\Code\LCD.c"
+  1450 ;; Parameters:    Size  Location     Type
+  1451 ;;		None
+  1452 ;; Auto vars:     Size  Location     Type
+  1453 ;;		None
+  1454 ;; Return value:  Size  Location     Type
+  1455 ;;		None               void
+  1456 ;; Registers used:
+  1457 ;;		wreg
+  1458 ;; Tracked objects:
+  1459 ;;		On entry : 60/0
+  1460 ;;		On exit  : 0/0
+  1461 ;;		Unchanged: 0/0
+  1462 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1463 ;;      Params:         0       0       0       0       0
+  1464 ;;      Locals:         0       0       0       0       0
+  1465 ;;      Temps:          1       0       0       0       0
+  1466 ;;      Totals:         1       0       0       0       0
+  1467 ;;Total ram usage:        1 bytes
+  1468 ;; Hardware stack levels used:    1
+  1469 ;; Hardware stack levels required when called:    1
+  1470 ;; This function calls:
+  1471 ;;		Nothing
+  1472 ;; This function is called by:
+  1473 ;;		_WriteCommandToLCD
+  1474 ;;		_WriteDataToLCD
+  1475 ;;		_InitLCD
+  1476 ;; This function uses a non-reentrant model
+  1477 ;;
+  1478  014C                     _ToggleEpinOfLCD:	
+  1479  014C                     l4164:	
+  1480                           ; Regs used in _ToggleEpinOfLCD: [wreg]
+  1481                           
+  1482  014C  3010               	movlw	16
+  1483                           
+  1484                           ;LCD.c: 6: RB0 = 1;
+  1485  014D  1406               	bsf	6,0
+  1486                           
+  1487                           ;LCD.c: 7: _delay((unsigned long)((50)*(4000000/4000000.0)));
+  1488  014E  00F2               	movwf	??_ToggleEpinOfLCD
+  1489  014F                     u1117:	
+  1490  014F  0BF2               	decfsz	??_ToggleEpinOfLCD,f
+  1491  0150  294F               	goto	u1117
+  1492  0151  0064               	clrwdt
+  1493  0152  2188               	call	PL4	;select bank 0
+  1494                           
+  1495                           ;LCD.c: 8: RB0 = 0;
+  1496  0153  3010               	movlw	16
+  1497  0154  1006               	bcf	6,0
+  1498                           
+  1499                           ;LCD.c: 9: _delay((unsigned long)((50)*(4000000/4000000.0)));
+  1500  0155  00F2               	movwf	??_ToggleEpinOfLCD
+  1501  0156                     u1127:	
+  1502  0156  0BF2               	decfsz	??_ToggleEpinOfLCD,f
+  1503  0157  2956               	goto	u1127
+  1504  0158  0064               	clrwdt
+  1505  0159  0008               	return
+  1506  015A                     __end_of_ToggleEpinOfLCD:	
+  1507  015A                     __ptext417:	
+  1508 ;; =============== function _WriteDataToLCD ends ============
+  1509                           
+  1510                           
+  1511 ;; *************** function _WriteCommandToLCD *****************
+  1512 ;; Defined at:
+  1513 ;;		line 14 in file "C:\Users\Saeed\Desktop\PIC16F877 Stop Watch Code\Code\LCD.c"
+  1514 ;; Parameters:    Size  Location     Type
+  1515 ;;  Command         1    wreg     unsigned char 
+  1516 ;; Auto vars:     Size  Location     Type
+  1517 ;;  Command         1    3[COMMON] unsigned char 
+  1518 ;; Return value:  Size  Location     Type
+  1519 ;;		None               void
+  1520 ;; Registers used:
+  1521 ;;		wreg, status,2, status,0, pclath, cstack
+  1522 ;; Tracked objects:
+  1523 ;;		On entry : 0/0
+  1524 ;;		On exit  : 0/0
+  1525 ;;		Unchanged: 0/0
+  1526 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1527 ;;      Params:         0       0       0       0       0
+  1528 ;;      Locals:         1       0       0       0       0
+  1529 ;;      Temps:          0       0       0       0       0
+  1530 ;;      Totals:         1       0       0       0       0
+  1531 ;;Total ram usage:        1 bytes
+  1532 ;; Hardware stack levels used:    1
+  1533 ;; Hardware stack levels required when called:    2
+  1534 ;; This function calls:
+  1535 ;;		_ToggleEpinOfLCD
+  1536 ;; This function is called by:
+  1537 ;;		_InitLCD
+  1538 ;;		_ClearLCDScreen
+  1539 ;; This function uses a non-reentrant model
+  1540 ;;
+  1541  015A                     _WriteCommandToLCD:	
+  1542                           
+  1543                           ; Regs used in _WriteCommandToLCD: [wreg+status,2+status,0+pclath+cstack]
+  1544                           ;WriteCommandToLCD@Command stored from wreg
+  1545  015A  00F3               	movwf	WriteCommandToLCD@Command
+  1546  015B  2188               	call	PL4	;select bank 0
+  1547                           
+  1548                           ;LCD.c: 15: RB1 = 0;
+  1549  015C  300F               	movlw	15
+  1550  015D  1086               	bcf	6,1
+  1551                           
+  1552                           ;LCD.c: 17: PORTB &= 0x0F;
+  1553  015E  0586               	andwf	6,f	;volatile
+  1554                           
+  1555                           ;LCD.c: 18: PORTB |= (Command&0xF0);
+  1556  015F  0873               	movf	WriteCommandToLCD@Command,w
+  1557  0160  39F0               	andlw	240
+  1558  0161  0486               	iorwf	6,f	;volatile
+  1559                           
+  1560                           ;LCD.c: 19: ToggleEpinOfLCD();
+  1561  0162  214C  120A  118A   	fcall	_ToggleEpinOfLCD
+  1562                           
+  1563                           ;LCD.c: 21: PORTB &= 0x0F;
+  1564  0165  300F               	movlw	15
+  1565  0166  2188               	call	PL4	;select bank 0
+  1566  0167  0586               	andwf	6,f	;volatile
+  1567                           
+  1568                           ;LCD.c: 22: PORTB |= ((Command<<4)&0xF0);
+  1569  0168  0E73               	swapf	WriteCommandToLCD@Command,w
+  1570  0169  39F0               	andlw	240
+  1571  016A  0486               	iorwf	6,f	;volatile
+  1572                           
+  1573                           ;LCD.c: 23: ToggleEpinOfLCD();
+  1574  016B  294C               	ljmp	l4164
+  1575  016C                     __end_of_WriteCommandToLCD:	
+  1576  016C                     __ptext414:	
+  1577 ;; =============== function _DisplayTimeToLCD ends ============
+  1578                           
+  1579                           
+  1580 ;; *************** function _ClearLCDScreen *****************
+  1581 ;; Defined at:
+  1582 ;;		line 99 in file "C:\Users\Saeed\Desktop\PIC16F877 Stop Watch Code\Code\LCD.c"
+  1583 ;; Parameters:    Size  Location     Type
+  1584 ;;		None
+  1585 ;; Auto vars:     Size  Location     Type
+  1586 ;;		None
+  1587 ;; Return value:  Size  Location     Type
+  1588 ;;		None               void
+  1589 ;; Registers used:
+  1590 ;;		wreg, status,2, status,0, pclath, cstack
+  1591 ;; Tracked objects:
+  1592 ;;		On entry : 60/0
+  1593 ;;		On exit  : 0/0
+  1594 ;;		Unchanged: 0/0
+  1595 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1596 ;;      Params:         0       0       0       0       0
+  1597 ;;      Locals:         0       0       0       0       0
+  1598 ;;      Temps:          2       0       0       0       0
+  1599 ;;      Totals:         2       0       0       0       0
+  1600 ;;Total ram usage:        2 bytes
+  1601 ;; Hardware stack levels used:    1
+  1602 ;; Hardware stack levels required when called:    3
+  1603 ;; This function calls:
+  1604 ;;		_WriteCommandToLCD
+  1605 ;; This function is called by:
+  1606 ;;		_DisplayTimeToLCD
+  1607 ;; This function uses a non-reentrant model
+  1608 ;;
+  1609  016C                     _ClearLCDScreen:	
+  1610                           
+  1611                           ;LCD.c: 100: WriteCommandToLCD(0x01);
+  1612                           
+  1613                           ; Regs used in _ClearLCDScreen: [wreg+status,2+status,0+pclath+cstack]
+  1614  016C  3001               	movlw	1
+  1615  016D  215A  120A  118A   	fcall	_WriteCommandToLCD
+  1616                           
+  1617                           ;LCD.c: 101: _delay((unsigned long)((2)*(4000000/4000.0)));
+  1618  0170  3003               	movlw	3
+  1619  0171  00F5               	movwf	??_ClearLCDScreen+1
+  1620  0172  3097               	movlw	151
+  1621  0173  00F4               	movwf	??_ClearLCDScreen
+  1622  0174                     u1057:	
+  1623  0174  0BF4               	decfsz	??_ClearLCDScreen,f
+  1624  0175  2974               	goto	u1057
+  1625  0176  0BF5               	decfsz	??_ClearLCDScreen+1,f
+  1626  0177  2974               	goto	u1057
+  1627  0178  2979               	nop2
+  1628  0179  0008               	return
+  1629  017A                     __end_of_ClearLCDScreen:	
+  1630  017A                     PL2:	
+  1631  017A  300F               	movlw	15
+  1632  017B  1283               	bcf	3,5	;RP0=0, select bank0
+  1633  017C  1303               	bcf	3,6	;RP1=0, select bank0
+  1634  017D  0586               	andwf	6,f	;volatile
+  1635  017E  3030               	movlw	48
+  1636  017F  0486               	iorwf	6,f	;volatile
+  1637  0180  0008               	return
+  1638  0181                     PL3:	
+  1639  0181  1006               	bcf	6,0
+  1640  0182  1086               	bcf	6,1
+  1641  0183  1206               	bcf	6,4
+  1642  0184  1286               	bcf	6,5
+  1643  0185  1306               	bcf	6,6
+  1644  0186  1386               	bcf	6,7
+  1645  0187  0008               	return
+  1646  0188                     PL4:	
+  1647  0188  1283               	bcf	3,5	;RP0=0, select bank0
+  1648  0189  1303               	bcf	3,6	;RP1=0, select bank0
+  1649  018A  0008               	return
+  1650                           
+  1651                           	psect	text418
+  1652  02EA                     __ptext418:	
+  1653 ;; =============== function _WriteCommandToLCD ends ============
+  1654                           
+  1655                           
+  1656 ;; *************** function _Init1msecTimerInterrupt *****************
+  1657 ;; Defined at:
+  1658 ;;		line 24 in file "C:\Users\Saeed\Desktop\PIC16F877 Stop Watch Code\Code\Timer.c"
+  1659 ;; Parameters:    Size  Location     Type
+  1660 ;;		None
+  1661 ;; Auto vars:     Size  Location     Type
+  1662 ;;		None
+  1663 ;; Return value:  Size  Location     Type
+  1664 ;;		None               void
+  1665 ;; Registers used:
+  1666 ;;		wreg, status,2, status,0, pclath, cstack
+  1667 ;; Tracked objects:
+  1668 ;;		On entry : 0/20
+  1669 ;;		On exit  : 60/20
+  1670 ;;		Unchanged: FFF9F/0
+  1671 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1672 ;;      Params:         0       0       0       0       0
+  1673 ;;      Locals:         0       0       0       0       0
+  1674 ;;      Temps:          0       0       0       0       0
+  1675 ;;      Totals:         0       0       0       0       0
+  1676 ;;Total ram usage:        0 bytes
+  1677 ;; Hardware stack levels used:    1
+  1678 ;; Hardware stack levels required when called:    2
+  1679 ;; This function calls:
+  1680 ;;		_InitTimer0
+  1681 ;; This function is called by:
+  1682 ;;		_main
+  1683 ;; This function uses a non-reentrant model
+  1684 ;;
+  1685  02EA                     _Init1msecTimerInterrupt:	
+  1686                           
+  1687                           ;Timer.c: 25: InitTimer0();
+  1688                           
+  1689                           ; Regs used in _Init1msecTimerInterrupt: [wreg+status,2+status,0+pclath+cstack]
+  1690  02EA  2AEB               	ljmp	l4112
+  1691  02EB                     __end_of_Init1msecTimerInterrupt:	
+  1692  02EB                     __ptext422:	
+  1693 ;; =============== function ___lwdiv ends ============
+  1694                           
+  1695                           
+  1696 ;; *************** function _InitTimer0 *****************
+  1697 ;; Defined at:
+  1698 ;;		line 14 in file "C:\Users\Saeed\Desktop\PIC16F877 Stop Watch Code\Code\Timer.c"
+  1699 ;; Parameters:    Size  Location     Type
+  1700 ;;		None
+  1701 ;; Auto vars:     Size  Location     Type
+  1702 ;;		None
+  1703 ;; Return value:  Size  Location     Type
+  1704 ;;		None               void
+  1705 ;; Registers used:
+  1706 ;;		wreg, status,2, status,0
+  1707 ;; Tracked objects:
+  1708 ;;		On entry : 0/20
+  1709 ;;		On exit  : 60/20
+  1710 ;;		Unchanged: FFF9F/0
+  1711 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1712 ;;      Params:         0       0       0       0       0
+  1713 ;;      Locals:         0       0       0       0       0
+  1714 ;;      Temps:          0       0       0       0       0
+  1715 ;;      Totals:         0       0       0       0       0
+  1716 ;;Total ram usage:        0 bytes
+  1717 ;; Hardware stack levels used:    1
+  1718 ;; Hardware stack levels required when called:    1
+  1719 ;; This function calls:
+  1720 ;;		Nothing
+  1721 ;; This function is called by:
+  1722 ;;		_Init1msecTimerInterrupt
+  1723 ;; This function uses a non-reentrant model
+  1724 ;;
+  1725  02EB                     _InitTimer0:	
+  1726  02EB                     l4112:	
+  1727                           ; Regs used in _InitTimer0: [wreg+status,2+status,0]
+  1728                           
+  1729                           
+  1730                           ;Timer.c: 16: OPTION_REG &= 0xC1;
+  1731  02EB  30C1               	movlw	193
+  1732  02EC  1683               	bsf	3,5	;RP0=1, select bank1
+  1733  02ED  1303               	bcf	3,6	;RP1=0, select bank1
+  1734  02EE  0581               	andwf	1,f	;volatile
+  1735                           
+  1736                           ;Timer.c: 18: T0IE = 1;
+  1737  02EF  168B               	bsf	11,5
+  1738                           
+  1739                           ;Timer.c: 19: GIE = 1;
+  1740  02F0  178B               	bsf	11,7
+  1741  02F1  0008               	return
+  1742  02F2                     __end_of_InitTimer0:	
+  1743                           
+  1744                           	psect	text423
+  1745  0296                     __ptext423:	
+  1746 ;; =============== function _InitTimer0 ends ============
+  1747                           
+  1748                           
+  1749 ;; *************** function _UpdateTimeCounters *****************
+  1750 ;; Defined at:
+  1751 ;;		line 32 in file "C:\Users\Saeed\Desktop\PIC16F877 Stop Watch Code\Code\Timer.c"
+  1752 ;; Parameters:    Size  Location     Type
+  1753 ;;  State           1    wreg     unsigned char 
+  1754 ;; Auto vars:     Size  Location     Type
+  1755 ;;  State           1    2[COMMON] unsigned char 
+  1756 ;; Return value:  Size  Location     Type
+  1757 ;;		None               void
+  1758 ;; Registers used:
+  1759 ;;		wreg, status,2, status,0
+  1760 ;; Tracked objects:
+  1761 ;;		On entry : 60/0
+  1762 ;;		On exit  : 60/0
+  1763 ;;		Unchanged: FFF9F/0
+  1764 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1765 ;;      Params:         0       0       0       0       0
+  1766 ;;      Locals:         1       0       0       0       0
+  1767 ;;      Temps:          0       0       0       0       0
+  1768 ;;      Totals:         1       0       0       0       0
+  1769 ;;Total ram usage:        1 bytes
+  1770 ;; Hardware stack levels used:    1
+  1771 ;; Hardware stack levels required when called:    1
+  1772 ;; This function calls:
+  1773 ;;		Nothing
+  1774 ;; This function is called by:
+  1775 ;;		_main
+  1776 ;; This function uses a non-reentrant model
+  1777 ;;
+  1778  0296                     _UpdateTimeCounters:	
+  1779                           
+  1780                           ; Regs used in _UpdateTimeCounters: [wreg+status,2+status,0]
+  1781                           ;UpdateTimeCounters@State stored from wreg
+  1782  0296  00F2               	movwf	UpdateTimeCounters@State
+  1783                           
+  1784                           ;Timer.c: 33: if(msCounter==1000)
+  1785  0297  082D               	movf	_msCounter+1,w
+  1786  0298  3A03               	xorlw	3
+  1787  0299  30E8               	movlw	232
+  1788  029A  1903               	skipnz
+  1789  029B  062C               	xorwf	_msCounter,w
+  1790  029C  1D03               	skipz
+  1791  029D  0008               	return
+  1792                           
+  1793                           ;Timer.c: 34: {
+  1794                           ;Timer.c: 35: msCounter=0;
+  1795  029E  01AC               	clrf	_msCounter
+  1796  029F  01AD               	clrf	_msCounter+1
+  1797                           
+  1798                           ;Timer.c: 37: if(State == 0)
+  1799  02A0  08F2               	movf	UpdateTimeCounters@State,f
+  1800  02A1  1D03               	skipz
+  1801  02A2  0008               	return
+  1802                           
+  1803                           ;Timer.c: 38: {
+  1804                           ;Timer.c: 39: if(secCounter==0)
+  1805  02A3  087B               	movf	_secCounter+1,w
+  1806  02A4  047A               	iorwf	_secCounter,w
+  1807  02A5  1D03               	skipz
+  1808  02A6  2AC5               	goto	l4110
+  1809                           
+  1810                           ;Timer.c: 40: {
+  1811                           ;Timer.c: 41: if(minCounter==0)
+  1812  02A7  0879               	movf	_minCounter+1,w
+  1813  02A8  0478               	iorwf	_minCounter,w
+  1814  02A9  1D03               	skipz
+  1815  02AA  2ABB               	goto	l4108
+  1816                           
+  1817                           ;Timer.c: 42: {
+  1818                           ;Timer.c: 43: if(hrCounter==0)
+  1819  02AB  082B               	movf	_hrCounter+1,w
+  1820  02AC  042A               	iorwf	_hrCounter,w
+  1821  02AD  1903               	btfsc	3,2
+  1822  02AE  0008               	return
+  1823                           
+  1824                           ;Timer.c: 47: else
+  1825                           ;Timer.c: 48: {
+  1826                           ;Timer.c: 49: hrCounter--;
+  1827  02AF  3001               	movlw	1
+  1828  02B0  02AA               	subwf	_hrCounter,f
+  1829  02B1  3000               	movlw	0
+  1830  02B2  1C03               	skipc
+  1831  02B3  03AB               	decf	_hrCounter+1,f
+  1832  02B4  02AB               	subwf	_hrCounter+1,f
+  1833                           
+  1834                           ;Timer.c: 50: minCounter = 59;
+  1835  02B5  303B               	movlw	59
+  1836  02B6  00F8               	movwf	_minCounter
+  1837  02B7  01F9               	clrf	_minCounter+1
+  1838                           
+  1839                           ;Timer.c: 51: secCounter = 59;
+  1840  02B8  00FA               	movwf	_secCounter
+  1841  02B9  01FB               	clrf	_secCounter+1
+  1842  02BA  0008               	return
+  1843  02BB                     l4108:	
+  1844                           
+  1845                           ;Timer.c: 54: else
+  1846                           ;Timer.c: 55: {
+  1847                           ;Timer.c: 56: minCounter--;
+  1848  02BB  3001               	movlw	1
+  1849  02BC  02F8               	subwf	_minCounter,f
+  1850  02BD  3000               	movlw	0
+  1851  02BE  1C03               	skipc
+  1852  02BF  03F9               	decf	_minCounter+1,f
+  1853  02C0  02F9               	subwf	_minCounter+1,f
+  1854                           
+  1855                           ;Timer.c: 57: secCounter = 59;
+  1856  02C1  303B               	movlw	59
+  1857  02C2  00FA               	movwf	_secCounter
+  1858  02C3  01FB               	clrf	_secCounter+1
+  1859  02C4  0008               	return
+  1860  02C5                     l4110:	
+  1861                           
+  1862                           ;Timer.c: 60: else
+  1863                           ;Timer.c: 61: secCounter--;
+  1864  02C5  3001               	movlw	1
+  1865  02C6  02FA               	subwf	_secCounter,f
+  1866  02C7  3000               	movlw	0
+  1867  02C8  1C03               	skipc
+  1868  02C9  03FB               	decf	_secCounter+1,f
+  1869  02CA  02FB               	subwf	_secCounter+1,f
+  1870  02CB  0008               	return
+  1871  02CC                     __end_of_UpdateTimeCounters:	
+  1872                           
+  1873                           	psect	text424
+  1874  02CC                     __ptext424:	
+  1875 ;; =============== function _UpdateTimeCounters ends ============
+  1876                           
+  1877                           
+  1878 ;; *************** function _ISR *****************
+  1879 ;; Defined at:
+  1880 ;;		line 6 in file "C:\Users\Saeed\Desktop\PIC16F877 Stop Watch Code\Code\ISR.c"
+  1881 ;; Parameters:    Size  Location     Type
+  1882 ;;		None
+  1883 ;; Auto vars:     Size  Location     Type
+  1884 ;;		None
+  1885 ;; Return value:  Size  Location     Type
+  1886 ;;		None               void
+  1887 ;; Registers used:
+  1888 ;;		wreg, status,2, status,0
+  1889 ;; Tracked objects:
+  1890 ;;		On entry : 0/0
+  1891 ;;		On exit  : 0/0
+  1892 ;;		Unchanged: FFF9F/0
+  1893 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1894 ;;      Params:         0       0       0       0       0
+  1895 ;;      Locals:         0       0       0       0       0
+  1896 ;;      Temps:          2       0       0       0       0
+  1897 ;;      Totals:         2       0       0       0       0
+  1898 ;;Total ram usage:        2 bytes
+  1899 ;; Hardware stack levels used:    1
+  1900 ;; This function calls:
+  1901 ;;		Nothing
+  1902 ;; This function is called by:
+  1903 ;;		Interrupt level 1
+  1904 ;; This function uses a non-reentrant model
+  1905 ;;
+  1906  02CC                     _ISR:	
+  1907                           
+  1908                           ;ISR.c: 7: if(T0IF)
+  1909  02CC  1D0B               	btfss	11,2
+  1910  02CD  2AD6               	goto	i1l644
+  1911                           
+  1912                           ;ISR.c: 8: {
+  1913                           ;ISR.c: 9: TMR0 = 0x08;
+  1914  02CE  3008               	movlw	8
+  1915  02CF  1283               	bcf	3,5	;RP0=0, select bank0
+  1916  02D0  1303               	bcf	3,6	;RP1=0, select bank0
+  1917  02D1  0081               	movwf	1	;volatile
+  1918                           
+  1919                           ;ISR.c: 10: T0IF = 0;
+  1920  02D2  110B               	bcf	11,2
+  1921                           
+  1922                           ;ISR.c: 11: msCounter++;
+  1923  02D3  0AAC               	incf	_msCounter,f
+  1924  02D4  1903               	skipnz
+  1925  02D5  0AAD               	incf	_msCounter+1,f
+  1926  02D6                     i1l644:	
+  1927  02D6  0871               	movf	??_ISR+1,w
+  1928  02D7  008A               	movwf	10
+  1929  02D8  0E70               	swapf	??_ISR^(0+-128),w
+  1930  02D9  0083               	movwf	3
+  1931  02DA  0EFE               	swapf	126,f
+  1932  02DB  0E7E               	swapf	126,w
+  1933  02DC  0009               	retfie
+  1934  02DD                     __end_of_ISR:	
+  1935                           
+  1936                           	psect	intentry
+  1937  0004                     __pintentry:	
+  1938                           ; Regs used in _ISR: [wreg+status,2+status,0]
+  1939                           
+  1940  0004                     interrupt_function:	
+  1941  007E                     saved_w	set	btemp
+  1942  0004  00FE               	movwf	btemp
+  1943  0005  0E03               	swapf	3,w
+  1944  0006  00F0               	movwf	??_ISR
+  1945  0007  080A               	movf	10,w
+  1946  0008  00F1               	movwf	??_ISR+1
+  1947  0009  120A  118A  2ACC   	ljmp	_ISR
+  1948                           
+  1949                           	psect	text425
+  1950  0000                     __ptext425:	
+  1951 ;; =============== function _ISR ends ============
+  1952                           
+  1953  007E                     btemp	set	126	;btemp
+  1954  007E                     wtemp0	set	126
+
+
+HI-TECH Software PICC Macro Assembler V9.83 build 10920 
+Symbol Table                                                                                   Sun Dec 16 23:48:13 2012
+
+                             _GIE 005F                               _RB0 0030                               _RB1 0031  
+                             _RD0 0040                               _RB4 0034                               _RB5 0035  
+                             _RE0 0048                               _RB6 0036                               _RE1 0049  
+                             _RB7 0037                               _RE2 004A                               u515 00E2  
+                             _ISR 02CC                               u795 00BD                              ?_ISR 0070  
+                            l1305 0000                              l1290 0000                              l1293 0000  
+                            l4110 02C5                              l1287 0000                              l4112 02EB  
+                            l1296 0000                              l4200 0000                              l4114 0000  
+                            l4210 0000                              l4202 0000                              l4108 02BB  
+                            l4116 0000                              l4220 0000                              l4212 0000  
+                            l4204 0000                              l4230 0000                              l4222 0000  
+                            l4214 0000                              l4206 0000                              l4400 0000  
+                            l4152 00DC                              l4160 00EF                              l4144 0000  
+                            l4232 0000                              l4224 0000                              l4216 0000  
+                            l4208 0000                              l3345 0000                              l4410 00CB  
+                            l4170 0000                              l4234 0000                              l4226 0000  
+                            l4218 0000                              l3355 0000                              l4092 0000  
+                            l4404 0000                              l4164 014C                              l4180 0000  
+                            l4172 0000                              l4228 0000                              l4236 0000  
+                            l4420 001B                              l4500 0206                              l4158 0000  
+                            l4166 0000                              l4182 0000                              l4174 0000  
+                            l4190 0000                              l4238 0000                              l4422 0000  
+                            l4414 0000                              l4510 021D                              l4096 0000  
+                            l4408 0000                              l4168 0000                              l4176 0000  
+                            l4192 0000                              l4184 0000                              l4432 0077  
+                            l4416 0000                              l4512 0224                              l4504 020E  
+                            l4520 0233                              l4440 0000                              l4178 0000  
+                            l4194 0000                              l4186 0000                              l4426 0049  
+                            l4418 0000                              l4530 024C                              l4506 0215  
+                            l4442 0000                              l4434 0000                              l2675 0000  
+                            l4188 0000                              l4196 0000                              l4428 0000  
+                            l4540 0000                              l4532 024F                              l4524 0241  
+                            l4516 022C                              l1980 01FA                              l1972 01C0  
+                            l4444 0000                              l4436 0000                              l4390 0000  
+                            l2678 0000                              l4198 0000                              l4526 0247  
+                            l4470 01CB                              l4446 0000                              l4438 0000  
+                            l4544 0279                              l4528 024A                              l4536 0251  
+                            l4472 01CE                              l4456 01A7                              l4448 019E  
+                            l1977 01BE                              l4482 01E0                              l4538 025C  
+                            l4458 01B0                              l4388 0000                              l4548 0000  
+                            l1996 023E                              l4484 01E4                              l4476 01D5  
+                            l4492 01EF                              l4468 01C5                              l4398 00B4  
+                            l4478 01D9                              l4496 01FD                              l4488 01EB  
+                            l4498 0203                              _T0IE 005D                              _T0IF 005A  
+                            u1107 0139                              u1117 014F                              u1127 0156  
+                            u1057 0174                              u1067 0100                              u1077 010F  
+                            u1087 011C                              u1097 0129                              _TMR0 0001  
+                            _main 018B                              btemp 007E                              start 000C  
+                 __end_of_InitLCD 014C                             ??_ISR 0070                             ?_main 0070  
+                 __end_of___lwdiv 00D0                   __end_of___lwmod 00F4                             i1l644 02D6  
+                           _PORTB 0006                             _TRISE 0089                             pclath 000A  
+__size_of_Init1msecTimerInterrupt 0001                             status 0003           __size_of_WriteDataToLCD 0012  
+                           wtemp0 007E                   _ToggleEpinOfLCD 014C                        _InitTimer0 02EB  
+                    __end_of_main 0296                            ??_main 0077                  ??_ClearLCDScreen 0074  
+                          _ADCON1 009F                            i1l4090 0000                            i1l4084 0000  
+                          i1l4088 0000                 DisplayTimeToLCD@h 0023                 DisplayTimeToLCD@m 0025  
+               DisplayTimeToLCD@s 0027                            _TRISB0 0430                            _TRISB1 0431  
+                          _TRISD0 0440                            _TRISB4 0434                            _TRISB5 0435  
+                          _TRISB6 0436                            _TRISB7 0437                         ??_InitLCD 0074  
+         UpdateTimeCounters@State 0072                         ??___lwdiv 0076                         ??___lwmod 0076  
+                    __pdataCOMMON 007A                            saved_w 007E        __end_of_UpdateTimeCounters 02CC  
+         __end_of_ToggleEpinOfLCD 015A         __size_of_DisplayTimeToLCD 0085                       ?_InitTimer0 0070  
+                  __pcstackCOMMON 0070          WriteCommandToLCD@Command 0073           _Init1msecTimerInterrupt 02EA  
+                      __pbssBANK0 002A                    _WriteDataToLCD 0094                        __pmaintext 018B  
+           WriteDataToLCD@LCDChar 0073                        __pintentry 0004               __size_of_InitTimer0 0007  
+          __end_of_WriteDataToLCD 00A6                  ?_ToggleEpinOfLCD 0070                           _InitLCD 00F4  
+                      _minCounter 0078                        _secCounter 007A                           ___lwdiv 00A6  
+                         ___lwmod 00D0                      __size_of_ISR 0011         ??_Init1msecTimerInterrupt 0072  
+            end_of_initialization 02E6                   ?_WriteDataToLCD 0070                  _DisplayTimeToLCD 000F  
+              _UpdateTimeCounters 0296                      ??_InitTimer0 0072               ?_UpdateTimeCounters 0070  
+                   __pidataCOMMON 0000               start_initialization 02DD                       __end_of_ISR 02DD  
+            ??_UpdateTimeCounters 0072                __end_of_InitTimer0 02F2           __size_of_ClearLCDScreen 000E  
+                     __pbssCOMMON 0078                     __pcstackBANK0 0020                          ?_InitLCD 0070  
+                ___lwdiv@dividend 0074                         __ptext420 00D0                         __ptext421 00A6  
+                       __ptext413 000F                         __ptext422 02EB                         __ptext414 016C  
+                       __ptext423 0296                         __ptext415 00F4                         __ptext424 02CC  
+                       __ptext416 0094                         __ptext425 0000                         __ptext417 015A  
+                       __ptext418 02EA                         __ptext419 014C                         _hrCounter 002A  
+                        ?___lwdiv 0072                          ?___lwmod 0072                  ??_WriteDataToLCD 0073  
+                       _msCounter 002C          __end_of_DisplayTimeToLCD 0094                  ___lwdiv@quotient 0021  
+               interrupt_function 0004          __size_of_ToggleEpinOfLCD 000E                         main@State 0077  
+                  _ClearLCDScreen 016C                 _WriteCommandToLCD 015A                ?_WriteCommandToLCD 0070  
+                __size_of_InitLCD 0058               ??_WriteCommandToLCD 0073                  __size_of___lwdiv 002A  
+                __size_of___lwmod 0024          ?_Init1msecTimerInterrupt 0070                   ___lwdiv@divisor 0072  
+          __end_of_ClearLCDScreen 017A                   ___lwdiv@counter 0020         __end_of_WriteCommandToLCD 016C  
+                   __size_of_main 010B                 ??_ToggleEpinOfLCD 0072             DisplayTimeToLCD@State 0029  
+                 ?_ClearLCDScreen 0070       __size_of_UpdateTimeCounters 0036                          intlevel1 0000  
+                ___lwmod@dividend 0074   __end_of_Init1msecTimerInterrupt 02EB                        _OPTION_REG 0081  
+                 ___lwmod@divisor 0072                   ___lwmod@counter 0076                 ?_DisplayTimeToLCD 0023  
+      __size_of_WriteCommandToLCD 0012                ??_DisplayTimeToLCD 0077  

@@ -1,0 +1,26 @@
+#-- Synplicity, Inc.
+#-- Synplify version 3.0
+#-- Project file V:\rel\latest\examples\vhdl\altera\prep2_2.prj
+#-- Written on Tue Jul 15 18:52:51 1997
+
+#device options
+set_option -technology FLEX10K
+set_option -part EPF10K10
+set_option -speed_grade -3
+
+#add_file options
+add_file -constraint "prep2_2.sdc"
+add_file -vhdl -lib work "prep2_2.vhd"
+
+#compilation/mapping options
+set_option -default_enum_encoding onehot
+set_option -symbolic_fsm_compiler true
+
+#map options
+set_option -frequency 20.000
+set_option -map_logic true
+set_option -cliquing false
+
+#set result format/file last
+project -result_format "edif"
+project -result_file "prep2_2.edf"

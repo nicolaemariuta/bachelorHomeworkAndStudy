@@ -1,0 +1,25 @@
+#-- Synplicity, Inc.
+#-- Synplify version 3.0
+#-- Project file V:\rel\latest\examples\vhdl\qlogic\prep2_2.prj
+#-- Written on Tue Jul 15 19:02:00 1997
+
+#device options
+set_option -technology pASIC
+set_option -part p8x12b
+set_option -package pl68
+set_option -speed_grade -x
+
+#add_file options
+add_file -constraint "prep2_2.sdc"
+add_file -vhdl -lib work "prep2_2.vhd"
+
+#compilation/mapping options
+set_option -default_enum_encoding onehot
+set_option -symbolic_fsm_compiler true
+
+#map options
+set_option -frequency 30.000
+set_option -fanout_limit 16
+
+#set result format/file last
+project -result_file "prep2_2.qdf"

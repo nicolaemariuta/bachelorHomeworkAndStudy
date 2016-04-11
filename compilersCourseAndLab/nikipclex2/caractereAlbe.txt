@@ -1,0 +1,17 @@
+%{
+   
+%}
+spatii   ( )+
+newLine   (\n)+
+
+%%
+
+{spatii}   ( );
+newLine   (\n)
+
+%%
+main()
+{
+    yylex();
+    return 0;
+}

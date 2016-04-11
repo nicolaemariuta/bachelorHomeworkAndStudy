@@ -1,0 +1,310 @@
+#
+# Set various optimization flags and
+# part data.
+#
+part "act1" { # act1
+	andcost 1;
+	xorcost 2;
+	muxcost 3;
+	suplim  8;
+	numclks 1; # number of clkbufs
+}
+part "40mx" { # 40mx
+	andcost 1;
+	xorcost 2;
+	muxcost 3;
+	suplim  8;
+	numclks 1; # number of clkbufs
+}
+part "act2" {  # optimization style - act2
+	andcost 1;
+	xorcost 2;
+	muxcost 3;
+	suplim  8;
+	numclks 2; # number of clkbufs
+}
+part "32dx" {  # optimization style - 3200dx
+	andcost 1;
+	xorcost 2;
+	muxcost 3;
+	suplim  8;
+	numclks 2; # number of clkbufs
+}
+part "42mx" {  # optimization style - 42mx
+	andcost 1;
+	xorcost 2;
+	muxcost 3;
+	suplim  8;
+	numclks 2; # number of clkbufs
+}
+part act3 {  # only act3 parts
+	andcost 1;
+	xorcost 2;
+	muxcost 3;
+	suplim  8;
+	numclks 2; # number of clkbufs, hclkbuf treated as special
+}
+part "54sx" {  # optimization style - 54mx
+	andcost 1;
+	xorcost 2;
+	muxcost 3;
+	suplim  8;
+	numclks 2; # number of clkbufs
+}
+
+part "rh1280" { # radiation hardened, make fanout limit hard by default
+	tech "act2";
+	smod 624;
+	cmod 608;
+	timefile rh1280;
+	isfanoutlimithard 1; # set to 1 for hard fanout limit
+	andcost 1;
+	xorcost 2;
+	muxcost 3;
+	suplim  8;
+}
+
+part "a1010a" {
+	tech "act1";
+	smod 0;
+	cmod 295;
+	timefile "act1";
+}
+
+part "a1020a" {
+	tech "act1";
+	smod 0;
+	cmod 547;
+	timefile "act1";
+}
+part "a1010b" {
+	tech "act1";
+	smod 0;
+	cmod 295;
+	timefile "act1";
+}
+
+part "a1020b" {
+	tech "act1";
+	smod 0;
+	cmod 547;
+	timefile "act1";
+}
+
+part "RH1020a" {
+	tech "act1";
+	smod 0;
+	cmod 547;
+	timefile "act1";
+}
+
+part "40mx02" {
+	tech "act1";
+	timefile "40mx";
+	smod 0;
+	cmod 295;
+}
+part "40mx04" {
+	tech "act1";
+	timefile "40mx";
+	smod 0;
+	cmod 547;
+}
+
+part "a1225a" {
+	tech "act2";
+	timefile "act2";
+	smod 231;
+	cmod 220;
+}
+part "a1240a" {
+	tech "act2";
+	timefile "act2";
+	smod 348;
+	cmod 336;
+}
+part "a1280a" {
+	tech "act2";
+	timefile "act2";
+	smod 624;
+	cmod 608;
+}
+part "a1225xl" {
+	tech "act2";
+	timefile "act2xl";
+	smod 231;
+	cmod 220;
+}
+part "a1240xl" {
+	tech "act2";
+	timefile "act2xl";
+	smod 348;
+	cmod 336;
+}
+part "a1280xl" {
+	tech "act2";
+	timefile "act2xl";
+	smod 624;
+	cmod 608;
+}
+part "RP1280a" {
+	tech "act2";
+	timefile "act2";
+	smod 624;
+	cmod 608;
+}
+part "RT1280a" {
+	tech "act2";
+	timefile "act2";
+	smod 624;
+	cmod 608;
+}
+
+part "42mx09" {
+	tech "act2";
+	timefile "42mx";
+	smod 348;
+	cmod 336;
+}
+part "42mx16" {
+	tech "act2";
+	timefile "42mx";
+	smod 624;
+	cmod 608;
+}
+part "42mx24" {
+	tech "act2";
+	timefile "42mx";
+	smod 954;
+	cmod 912;
+}
+part "42mx36" {
+	tech "act2";
+	timefile "42mx";
+	smod 1230;
+	cmod 1184;
+}
+part "a1415a" {
+	tech "act3";
+	timefile "act3";
+	smod 104;
+	cmod 96;
+}
+part "a1425a" {
+	tech "act3";
+	timefile "act3";
+	smod 160;
+	cmod 150;
+}
+part "a1440a" {
+	tech "act3";
+	timefile "act3";
+	smod 288;
+	cmod 276;
+}
+part "a1460a" {
+	tech "act3";
+	timefile "act3";
+	smod 432;
+	cmod 416;
+}
+part "a14100a" {
+	tech "act3";
+	timefile "act3";
+	smod 697;
+	cmod 680;
+}
+part "RT1460a" {
+	tech "act3";
+	timefile "act3";
+	smod 432;
+	cmod 416;
+}
+part "RP14100a" {
+	tech "act3";
+	timefile "act3";
+	smod 697;
+	cmod 680;
+}
+part "RT14100a" {
+	tech "act3";
+	timefile "act3";
+	smod 697;
+	cmod 680;
+}
+part "a3265dx" {
+	tech "act2";
+	timefile "32dx";
+	smod 510;
+	cmod 475;
+}
+part "a32100dx" {
+	tech "act2";
+	timefile "32dx";
+	smod 700;
+	cmod 662;
+}
+part "a32140dx" {
+	tech "act2";
+	timefile "32dx";
+	smod 954;
+	cmod 936;
+}
+part "a32200dx" {
+	tech "act2";
+	timefile "32dx";
+	smod 1276;
+	cmod 1254;
+}
+part "a32300dx" {
+	tech "act2";
+	timefile "32dx";
+	smod 1944;
+	cmod 1917;
+}
+part "a32400dx" {
+	tech "act2";
+	timefile "32dx";
+	smod 2592;
+	cmod 2560;
+}
+
+part "54sx08" {
+	tech "act2";
+	timefile "54sx";
+	smod 256; # no combining
+	cmod 512;
+}
+
+part "54sx16" {
+	tech "act2";
+	timefile "54sx";
+	smod 528; # no combining
+	cmod 924;
+}
+
+part "54sx16p" {
+	tech "act2";
+	timefile "54sx";
+	smod 528; # no combining
+	cmod 924;
+}
+part "54sx32" {
+	tech "act2";
+	timefile "54sx";
+	smod 1080; # no combining
+	cmod 1800;
+}
+part "RT54sx16" {
+	tech "act2";
+	timefile "54sxrt";
+	smod 528; # no combining
+	cmod 924;
+}
+
+part "RT54sx32" {
+	tech "act2";
+	timefile "54sxrt";
+	smod 1080; # no combining
+	cmod 1800;
+}

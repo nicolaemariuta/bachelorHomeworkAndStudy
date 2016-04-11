@@ -1,0 +1,320 @@
+                        .module UART1_RxPoollingMode.c
+                        .area text(rom, con, rel)
+ 0000                   .dbfile D:\Temp\UART1_RxPoollingMode.c
+ 0000                   .dbfunc e port_init _port_init fV
+                        .even
+ 0000           _port_init::
+ 0000                   .dbline -1
+ 0000                   .dbline 9
+ 0000           ; //ICC-AVR application builder : 11/14/2013 1:59:19 PM
+ 0000           ; // Target : M128
+ 0000           ; // Crystal: 11.059Mhz
+ 0000           ; 
+ 0000           ; #include <iom128v.h>
+ 0000           ; #include <macros.h>
+ 0000           ; 
+ 0000           ; void port_init(void)
+ 0000           ; {
+ 0000                   .dbline 10
+ 0000           ;  PORTA = 0x00;
+ 0000 2224              clr R2
+ 0002 2BBA              out 0x1b,R2
+ 0004                   .dbline 11
+ 0004           ;  DDRA  = 0x00;
+ 0004 2ABA              out 0x1a,R2
+ 0006                   .dbline 12
+ 0006           ;  PORTB = 0x00;
+ 0006 28BA              out 0x18,R2
+ 0008                   .dbline 13
+ 0008           ;  DDRB  = 0x00;
+ 0008 27BA              out 0x17,R2
+ 000A                   .dbline 14
+ 000A           ;  PORTC = 0x00; //m103 output only
+ 000A 25BA              out 0x15,R2
+ 000C                   .dbline 15
+ 000C           ;  DDRC  = 0xFF;
+ 000C 8FEF              ldi R24,255
+ 000E 84BB              out 0x14,R24
+ 0010                   .dbline 16
+ 0010           ;  PORTD = 0x00;
+ 0010 22BA              out 0x12,R2
+ 0012                   .dbline 17
+ 0012           ;  DDRD  = 0x00;
+ 0012 21BA              out 0x11,R2
+ 0014                   .dbline 18
+ 0014           ;  PORTE = 0x00;
+ 0014 23B8              out 0x3,R2
+ 0016                   .dbline 19
+ 0016           ;  DDRE  = 0x00;
+ 0016 22B8              out 0x2,R2
+ 0018                   .dbline 20
+ 0018           ;  PORTF = 0x00;
+ 0018 20926200          sts 98,R2
+ 001C                   .dbline 21
+ 001C           ;  DDRF  = 0x00;
+ 001C 20926100          sts 97,R2
+ 0020                   .dbline 22
+ 0020           ;  PORTG = 0x00;
+ 0020 20926500          sts 101,R2
+ 0024                   .dbline 23
+ 0024           ;  DDRG  = 0x00;
+ 0024 20926400          sts 100,R2
+ 0028                   .dbline -2
+ 0028           L1:
+ 0028                   .dbline 0 ; func end
+ 0028 0895              ret
+ 002A                   .dbend
+ 002A                   .dbfunc e uart1_init _uart1_init fV
+                        .even
+ 002A           _uart1_init::
+ 002A                   .dbline -1
+ 002A                   .dbline 27
+ 002A           ; }
+ 002A           ; 
+ 002A           ; void uart1_init(void)
+ 002A           ; {
+ 002A                   .dbline 39
+ 002A           ; // TEMA1 
+ 002A           ; // Reconfigurati registrii de mai jos astfel incat comunicatie seriala 
+ 002A           ; // unidirectionala (PC -> DevKit) sa functioneze corect
+ 002A           ; // - BaudRate: 115200
+ 002A           ; // - Dimensiune caracter: 8 bit
+ 002A           ; // - Paritate: dezactivat
+ 002A           ; // - NumarBiti de STOP = 1
+ 002A           ; // - Control transfer date Hardware/Software(xOn/xOff) = None
+ 002A           ; 
+ 002A           ; 
+ 002A           ; 
+ 002A           ;  UCSR1B = 0x00; 
+ 002A 2224              clr R2
+ 002C 20929A00          sts 154,R2
+ 0030                   .dbline 40
+ 0030           ;  UCSR1A = 0x00;
+ 0030 20929B00          sts 155,R2
+ 0034                   .dbline 41
+ 0034           ;  UCSR1C = 0x06;
+ 0034 86E0              ldi R24,6
+ 0036 80939D00          sts 157,R24
+ 003A                   .dbline 42
+ 003A           ;  UBRR1L = 0x05;
+ 003A 85E0              ldi R24,5
+ 003C 80939900          sts 153,R24
+ 0040                   .dbline 43
+ 0040           ;  UBRR1H = 0x00; 
+ 0040 20929800          sts 152,R2
+ 0044                   .dbline 44
+ 0044           ;  UCSR1B = 0x10;
+ 0044 80E1              ldi R24,16
+ 0046 80939A00          sts 154,R24
+ 004A                   .dbline -2
+ 004A           L2:
+ 004A                   .dbline 0 ; func end
+ 004A 0895              ret
+ 004C                   .dbend
+ 004C                   .dbfunc e init_devices _init_devices fV
+                        .even
+ 004C           _init_devices::
+ 004C                   .dbline -1
+ 004C                   .dbline 50
+ 004C           ; 
+ 004C           ; }
+ 004C           ; 
+ 004C           ; 
+ 004C           ; void init_devices(void)
+ 004C           ; {
+ 004C                   .dbline 51
+ 004C           ;   CLI(); 
+ 004C F894              cli
+ 004E                   .dbline 52
+ 004E           ;  XDIV  = 0x00; 
+ 004E 2224              clr R2
+ 0050 2CBE              out 0x3c,R2
+ 0052                   .dbline 53
+ 0052           ;  XMCRA = 0x00; 
+ 0052 20926D00          sts 109,R2
+ 0056                   .dbline 54
+ 0056           ;  port_init();
+ 0056 D4DF              xcall _port_init
+ 0058                   .dbline 55
+ 0058           ;  uart1_init();
+ 0058 E8DF              xcall _uart1_init
+ 005A                   .dbline 57
+ 005A           ; 
+ 005A           ;  MCUCR = 0x00;
+ 005A 2224              clr R2
+ 005C 25BE              out 0x35,R2
+ 005E                   .dbline 58
+ 005E           ;  EICRA = 0x00; 
+ 005E 20926A00          sts 106,R2
+ 0062                   .dbline 59
+ 0062           ;  EICRB = 0x00; 
+ 0062 2ABE              out 0x3a,R2
+ 0064                   .dbline 60
+ 0064           ;  EIMSK = 0x00;
+ 0064 29BE              out 0x39,R2
+ 0066                   .dbline 61
+ 0066           ;  TIMSK = 0x00; 
+ 0066 27BE              out 0x37,R2
+ 0068                   .dbline 62
+ 0068           ;  ETIMSK = 0x00; 
+ 0068 20927D00          sts 125,R2
+ 006C                   .dbline 63
+ 006C           ;  SEI(); 
+ 006C 7894              sei
+ 006E                   .dbline -2
+ 006E           L3:
+ 006E                   .dbline 0 ; func end
+ 006E 0895              ret
+ 0070                   .dbend
+ 0070                   .dbfunc e putchar _putchar fV
+ 0070           ;              c -> R0
+                        .even
+ 0070           _putchar::
+ 0070                   .dbline -1
+ 0070                   .dbline 67
+ 0070           ; }
+ 0070           ; 
+ 0070           ; void putchar(char c)
+ 0070           ; {
+ 0070                   .dbline -2
+ 0070           L4:
+ 0070                   .dbline 0 ; func end
+ 0070 0895              ret
+ 0072                   .dbsym l c 0 c
+ 0072                   .dbend
+ 0072                   .dbfunc e getchar _getchar fc
+                        .even
+ 0072           _getchar::
+ 0072                   .dbline -1
+ 0072                   .dbline 73
+ 0072           ; // LABORATORUL VIITOR
+ 0072           ; }
+ 0072           ;                 
+ 0072           ;       
+ 0072           ; unsigned char getchar(void)
+ 0072           ; {
+ 0072           L6:
+ 0072                   .dbline 79
+ 0072           L7:
+ 0072                   .dbline 79
+ 0072           ; // TEMA2 
+ 0072           ; // - introduceti instructiunile necesare astfel incat:
+ 0072           ; //   a) rutina (getchar) sa astepte (la infinit) sosirea unei noi date (char)
+ 0072           ; //   b) sa returneze noua data (char) sosita 
+ 0072           ; 
+ 0072           ; while(!(UCSR1A & 0x80));
+ 0072 20909B00          lds R2,155
+ 0076 27FE              sbrs R2,7
+ 0078 FCCF              rjmp L6
+ 007A                   .dbline 80
+ 007A           ;                         return UDR1;
+ 007A 00919C00          lds R16,156
+ 007E                   .dbline -2
+ 007E           L5:
+ 007E                   .dbline 0 ; func end
+ 007E 0895              ret
+ 0080                   .dbend
+ 0080                   .dbfunc e main _main fV
+ 0080           ;            tmp -> R20
+                        .even
+ 0080           _main::
+ 0080                   .dbline -1
+ 0080                   .dbline 86
+ 0080           ;     
+ 0080           ; }
+ 0080           ; 
+ 0080           ; //
+ 0080           ; void main(void)
+ 0080           ; {
+ 0080                   .dbline 87
+ 0080           ;  unsigned char tmp=0;
+ 0080 4427              clr R20
+ 0082                   .dbline 88
+ 0082           ;  init_devices();
+ 0082 E4DF              xcall _init_devices
+ 0084 1BC0              xjmp L11
+ 0086           L10:
+ 0086                   .dbline 90
+ 0086           ;  while(1)
+ 0086           ;    {
+ 0086                   .dbline 91
+ 0086           ;        tmp=getchar();
+ 0086 F5DF              xcall _getchar
+ 0088 402F              mov R20,R16
+ 008A                   .dbline 92
+ 008A           ;        if(tmp=='1')
+ 008A 0133              cpi R16,49
+ 008C 09F4              brne L13
+ 008E                   .dbline 93
+ 008E           ;           tmp=0x01;
+ 008E 41E0              ldi R20,1
+ 0090           L13:
+ 0090                   .dbline 94
+ 0090           ;        if(tmp=='2')
+ 0090 4233              cpi R20,50
+ 0092 09F4              brne L15
+ 0094                   .dbline 95
+ 0094           ;           tmp=0x02;
+ 0094 42E0              ldi R20,2
+ 0096           L15:
+ 0096                   .dbline 96
+ 0096           ;        if(tmp=='3')
+ 0096 4333              cpi R20,51
+ 0098 09F4              brne L17
+ 009A                   .dbline 97
+ 009A           ;           tmp=0x04;
+ 009A 44E0              ldi R20,4
+ 009C           L17:
+ 009C                   .dbline 98
+ 009C           ;        if(tmp=='4')
+ 009C 4433              cpi R20,52
+ 009E 09F4              brne L19
+ 00A0                   .dbline 99
+ 00A0           ;           tmp=0x08;
+ 00A0 48E0              ldi R20,8
+ 00A2           L19:
+ 00A2                   .dbline 100
+ 00A2           ;        if(tmp=='5')
+ 00A2 4533              cpi R20,53
+ 00A4 09F4              brne L21
+ 00A6                   .dbline 101
+ 00A6           ;           tmp=0x10;
+ 00A6 40E1              ldi R20,16
+ 00A8           L21:
+ 00A8                   .dbline 102
+ 00A8           ;        if(tmp=='6')
+ 00A8 4633              cpi R20,54
+ 00AA 09F4              brne L23
+ 00AC                   .dbline 103
+ 00AC           ;           tmp=0x20;
+ 00AC 40E2              ldi R20,32
+ 00AE           L23:
+ 00AE                   .dbline 104
+ 00AE           ;       if(tmp=='7')
+ 00AE 4733              cpi R20,55
+ 00B0 09F4              brne L25
+ 00B2                   .dbline 105
+ 00B2           ;           tmp=0x40;
+ 00B2 40E4              ldi R20,64
+ 00B4           L25:
+ 00B4                   .dbline 106
+ 00B4           ;       if(tmp=='8')
+ 00B4 4833              cpi R20,56
+ 00B6 09F4              brne L27
+ 00B8                   .dbline 107
+ 00B8           ;           tmp=0x80;
+ 00B8 40E8              ldi R20,128
+ 00BA           L27:
+ 00BA                   .dbline 108
+ 00BA 45BB              out 0x15,R20
+ 00BC                   .dbline 115
+ 00BC           L11:
+ 00BC                   .dbline 89
+ 00BC E4CF              xjmp L10
+ 00BE           X0:
+ 00BE                   .dbline -2
+ 00BE           L9:
+ 00BE                   .dbline 0 ; func end
+ 00BE 0895              ret
+ 00C0                   .dbsym r tmp 20 c
+ 00C0                   .dbend

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Simple media player"/>
+	<classpathentry kind="src" path="Video Player"/>
+	<classpathentry kind="src" path="Transmisiune Media"/>
+	<classpathentry kind="src" path="Media Player"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

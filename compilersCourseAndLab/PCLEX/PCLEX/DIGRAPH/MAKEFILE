@@ -1,0 +1,27 @@
+#
+#	MAKEFILE -- UNIX style makefile for digraph examples
+#
+CC=cl
+CFLAGS=-c
+
+all : reject.exe yyless.exe
+
+.obj.exe :
+	$(CC) $*.obj
+
+.c.obj :
+	$(CC) $(CFLAGS) $*.c
+
+reject.exe : reject.obj
+
+yyless.exe : yyless.obj
+
+reject.obj : reject.c
+
+yyless.obj : yyless.c
+
+reject.c : reject.l
+	pclex -s reject.l
+
+yyless.c : yyless.l
+	pclex -s yyless.l

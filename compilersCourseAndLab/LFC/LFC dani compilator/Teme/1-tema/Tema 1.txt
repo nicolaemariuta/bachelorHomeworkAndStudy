@@ -1,0 +1,115 @@
+package tema;
+
+import java.io.*;
+import java.util.*;
+public class tema {
+
+public static String replaceCharAt(String s, int pos, char c) {
+	      
+	return s.substring(0,pos) + c + s.substring(pos+1);
+	      }
+	
+    public static void main(String[] args) {
+       
+//Fie 4 cuvinte citite de la tastatura.
+//Sa se determine cate caractere comune au cele 4 cuvinte.
+        
+    	BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        String []cuvinte=new String [4];
+        
+        for(int i=0;i<cuvinte.length;i++){
+            System.out.print("Dati cuvantul "+(i+1)+":");
+            try{
+                cuvinte[i]=in.readLine();
+                }catch(IOException e){
+                    e.printStackTrace();
+                }
+        }
+        
+        for(int i=0;i<cuvinte[0].length();i++){
+            int y=1;
+            int ori=0;
+            for(int j=1;j<cuvinte.length;j++){
+                int x=0;
+                for(int k=0;k<cuvinte[j].length();k++){
+                    if(cuvinte[0].charAt(i)!=cuvinte[j].charAt(k)){
+                        x++;
+                    }else{
+                        ori++;
+                    }
+                }
+                if(x==cuvinte[j].length()){
+                    break;
+                }else {y++;}
+     
+            }
+            if(y==4){
+                System.out.println("Caracterul "+cuvinte[0].charAt(i)+" este comun tuturor cuvintelor si apare de "+(ori+1)+"!");
+            }else
+                System.out.println("Caracterul "+cuvinte[0].charAt(i)+" nu este comun tuturor cuvintelor!");
+        }
+        
+        
+        
+        
+//Fie o serie de reguli de forma a->b . Introduceti de la tastatura un cuvant.
+//Sa se determine conform regulilor date care este cuvantul rezultat(regulile se aplica in ordine)!
+//Reguli :  	   1. a->b
+//                 2. a->c (nu are rost ca inlocuieste deja a-urile cu b)
+//                 3. b->d
+//                 4. d->f
+     
+     
+     
+          BufferedReader intro = new BufferedReader(new InputStreamReader(System.in));
+          String cuvant=null;
+          System.out.print("Introduceti cuvantul: ");
+          try{
+              cuvant=intro.readLine();
+              }catch(IOException e){
+                  e.printStackTrace();
+              }
+          System.out.println(cuvant);
+          for(int i=0;i<cuvant.length();i++){
+              if(cuvant.charAt(i)=='a'){
+                  cuvant=replaceCharAt(cuvant,i,'b');
+              }
+          }
+          for(int i=0;i<cuvant.length();i++){
+              if(cuvant.charAt(i)=='a'){
+                  cuvant=replaceCharAt(cuvant,i,'c');
+              }
+          }
+          for(int i=0;i<cuvant.length();i++){
+              if(cuvant.charAt(i)=='b'){
+                  cuvant=replaceCharAt(cuvant,i,'d');
+              }
+          }
+          for(int i=0;i<cuvant.length();i++){
+              if(cuvant.charAt(i)=='d'){
+                  cuvant=replaceCharAt(cuvant,i,'f');
+              }
+          }
+          System.out.println(cuvant);
+      
+        
+        
+//Se da un cuvant. Sa se afiseze toate prefixele acelui cuvant
+    	
+        System.out.println("anaana");
+    	String cuv="anaana";
+    	   for(int i=0;i<6;i++){
+    	     cuv = cuv.substring(0, cuv.length() - 1);
+             System.out.println(cuv);
+    	       }
+    
+//Se da o fraza. Sa se imparta fraza punand in evidenta cuvintele care fac parte din ea    	   
+    	  
+    	   String prop = "Ana are mere si pere";
+           
+           StringTokenizer st = new StringTokenizer(prop);
+           while (st.hasMoreTokens()) {
+              System.out.println(st.nextToken());
+           }
+      }
+}

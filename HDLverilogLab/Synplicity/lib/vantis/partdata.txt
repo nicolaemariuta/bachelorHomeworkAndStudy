@@ -1,0 +1,34 @@
+# part descriptions for Vantis parts
+
+part VF1012 {
+    numreg 784;
+    numcell 196;
+    numio 168;
+    ramblocks 28;
+    numpll 2;
+}
+
+part VF1020 {
+    numreg 1296;
+    numcell 324;
+    numio 216;
+    ramblocks 36;
+    numpll 2;
+}
+
+part VF1025 {
+    numreg 1600;
+    numcell 400;
+    numio 240;
+    ramblocks 40;
+    numpll 2;
+}
+
+part VF1036 {
+    numreg 2304;
+    numcell 576;
+    numio 288;
+    ramblocks 48;
+    numpll 2;
+}
+

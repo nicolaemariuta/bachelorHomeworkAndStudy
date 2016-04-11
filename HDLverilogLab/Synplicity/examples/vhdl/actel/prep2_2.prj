@@ -1,0 +1,25 @@
+#-- Synplicity, Inc.
+#-- Synplify version 3.0
+#-- Project file V:\rel\latest\examples\vhdl\actel\prep2_2.prj
+#-- Written on Tue Jul 15 18:51:51 1997
+
+#device options
+set_option -technology act2
+set_option -part A1225A
+set_option -speed_grade Std
+
+#add_file options
+add_file -vhdl -lib work "prep2_2.vhd"
+add_file -constraint "prep2_2.sdc"
+
+#compilation/mapping options
+set_option -default_enum_encoding onehot
+set_option -symbolic_fsm_compiler true
+
+#map options
+set_option -frequency 25.000
+set_option -fanout_limit 16
+set_option -disable_io_insertion false
+
+#set result format/file last
+project -result_file "prep2_2.edn"

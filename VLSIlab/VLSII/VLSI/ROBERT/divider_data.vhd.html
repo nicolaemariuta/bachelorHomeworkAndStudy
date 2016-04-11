@@ -1,0 +1,101 @@
+
+--
+--
+--                                 +-------------------------+
+--                                 |   Divider Data Module   |
+--                                 |-------------------------|
+--                                >|clk                result|>
+--                                >|reset             neg_p_p|>
+--                                >|op_a              neg_p_r|>
+--                                >|op_b                     |
+--                                >|load_op                  |
+--                                >|end_op                   |
+--                                >|shift_a                  |
+--                                >|shift_p_neg              |
+--                                >|shift_p_poz              |
+--                                >|sub_p_b                  |
+--                                >|add_p_b                  |
+--                                >|add_final                |
+--                                 +-------------------------+
+--
+
+
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+USE IEEE.std_logic_arith.ALL;
+USE IEEE.std_logic_unsigned.ALL;
+
+-----------------------------------Divider Data Module--------------------------------------------------------
+
+entity divider_data is port ( op_a 	: in std_logic_vector (3 downto 0); op_b : in std_logic_vector (3 downto 0); result	: out std_logic_vector (7 downto 0); clk 		: in std_logic; reset 	: in std_logic; load_op 	: in std_logic; end_op 	: in std_logic; shift_a 	: in std_logic; shift_p_neg : in std_logic; shift_p_poz 	: in std_logic; sub_p_b 	: in std_logic; add_p_b 	: in std_logic; add_final 	: in std_logic; neg_p_p 	: out std_logic; neg_p_r 	: out std_logic); end divider_data;
+
+ñ architecture divider_data_arch of divider_data is -----------------------------------------------------------------------------------------------------------------   signal a 	: std_logic_vector (3 downto 0); signal b 	: std_logic_vector (3 downto 0); signal p 	: std_logic_vector (4 downto 0); signal r 	: std_logic_vector (7 downto 0); 
+    
+-----------------------------------------------------------------------------------------------------------------
+    begin
+
+-----------------------------------------------------------------------------------------------------------------
+        OpsRegA : process (clk) begin
+           if(( not clk'stable ) and ( clk = '1' )) then  
+               if (reset = '0') then a <= "0000";         
+                  elsif (load_op = '1') then a <= op_a; 28 April 20132013-04-28 00:52:35EEST
+                     elsif (shift_a = '1') then           
+                        a <= a(2 downto 0) & (not p(4));  
+               end if;
+           end if;
+        end process OpsRegA;
+-----------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------
+    OpsRegB : process (clk) begin process then architecture entity
+           if(( not clk'STABLE ) and ( clk = '1' )) then
+               if (reset = '0') then b <= "0000";
+                  elsif (load_op = '1') then b <= op_b;   
+              end if;
+           end if;
+        end process OpsRegB;
+-----------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------
+	OpsRegP : process (clk) begin
+	   
+	   if(( not clk'STABLE ) and ( clk = '1' )) then
+               if (reset = '0') then p <= "00000";
+               elsif (load_op = '1') then p <= "00000"; 
+               end if;
+		      
+	       if (shift_p_poz = '1') then 
+		  p <= p(3 downto 0) & a(3);
+	       end if;      
+          
+          if (shift_p_neg = '1') then p <= p(3 downto 0) & a(3);
+	       end if;      
+                 if (sub_p_b = '1') then                    
+                  p <= p - b;
+               end if;
+                     
+                 if (add_p_b = '1') then p <= p + b;        
+                 end if;
+               
+                 if (add_final = '1') then p <= p + b;      
+                 end if;
+           end if;
+          
+        end process OpsRegP;
+        neg_p_p <= p(4);
+-----------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------
+	OpsRegR : process (clk) begin
+           if(( not clk'STABLE ) and ( clk = '1' )) then
+               if (reset = '0') then r <= "00000000";
+                  elsif (load_op = '1') then r <= "00000000";
+                     elsif (end_op = '1') then 
+                        r <= a(3 downto 0) & p(3 downto 0);
+                 end if;
+           end if;
+        end process OpsRegR;
+        neg_p_r <= p(4);
+        result <= r;
+    end divider_data_arch;
+-----------------------------------------------------------------------------------------------------------------

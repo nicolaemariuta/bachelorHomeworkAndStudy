@@ -1,0 +1,2322 @@
+target ORCA1C {
+    part 1C03 {
+        grade -2;
+        grade -1;
+        grade -0;
+    }
+    part 1C05 {
+        grade -2;
+        grade -1;
+        grade -0;
+    }
+    part 1C07 {
+        grade -2;
+        grade -1;
+        grade -0;
+    }
+    part 1C09 {
+        grade -2;
+        grade -1;
+        grade -0;
+    }
+}
+
+target ORCA2C {
+    part 2C04A {
+        grade -5;
+        grade -4;
+        grade -3;
+        grade -2;
+    }
+    part 2C06A {
+        grade -5;
+        grade -4;
+        grade -3;
+        grade -2;
+    }
+    part 2C08A {
+        grade -5;
+        grade -4;
+        grade -3;
+        grade -2;
+    }
+    part 2C10A {
+        grade -5;
+        grade -4;
+        grade -3;
+        grade -2;
+    }
+    part 2C12A {
+        grade -5;
+        grade -4;
+        grade -3;
+        grade -2;
+    }
+    part 2C15A {
+        grade -5;
+        grade -4;
+        grade -3;
+        grade -2;
+    }
+    part 2C26A {
+        grade -5;
+        grade -4;
+        grade -3;
+        grade -2;
+    }
+    part 2C40A {
+        grade -5;
+        grade -4;
+        grade -3;
+        grade -2;
+    }
+    part 2T04A {
+        grade -5;
+        grade -4;
+        grade -3;
+        grade -2;
+    }
+    part 2T06A {
+        grade -5;
+        grade -4;
+        grade -3;
+        grade -2;
+    }
+    part 2T08A {
+        grade -5;
+        grade -4;
+        grade -3;
+        grade -2;
+    }
+    part 2T10A {
+        grade -5;
+        grade -4;
+        grade -3;
+        grade -2;
+    }
+    part 2T12A {
+        grade -5;
+        grade -4;
+        grade -3;
+        grade -2;
+    }
+    part 2T15A {
+        grade -5;
+        grade -4;
+        grade -3;
+        grade -2;
+    }
+    part 2T26A {
+        grade -5;
+        grade -4;
+        grade -3;
+        grade -2;
+    }
+    part 2T40A {
+        grade -5;
+        grade -4;
+        grade -3;
+        grade -2;
+    }
+    part 2C04 {
+        grade -3;
+        grade -2;
+    }
+    part 2C06 {
+        grade -3;
+        grade -2;
+    }
+    part 2C08 {
+        grade -3;
+        grade -2;
+    }
+    part 2C10 {
+        grade -3;
+        grade -2;
+    }
+    part 2C12 {
+        grade -3;
+        grade -2;
+    }
+    part 2C15 {
+        grade -3;
+        grade -2;
+    }
+    part 2C26 {
+        grade -3;
+        grade -2;
+    }
+    part 2C40 {
+        grade -3;
+        grade -2;
+    }
+}
+
+target ORCA3C {
+    part 3T30 {
+        grade -6;
+        grade -5;
+    }
+    part 3C55 {
+        grade -6;
+        grade -5;
+        grade -4;
+    }
+    part 3T55 {
+        grade -6;
+        grade -5;
+        grade -4;
+    }
+    part 3C80 {
+        grade -6;
+        grade -5;
+        grade -4;
+    }
+    part 3T80 {
+        grade -6;
+        grade -5;
+        grade -4;
+    }
+    part 3T125 {
+        grade -6;
+        grade -5;
+        grade -4;
+    }
+}
+target act1 {
+    part oem A1010B {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part oem A1020B {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part oem A1010A {
+        grade Std;
+        grade -1;
+        grade -2;
+    }
+    part oem A1020A {
+        grade Std;
+        grade -1;
+        grade -2;
+    } 
+    part oem RH1020A {
+        grade Std;
+        grade -1;
+        grade -2;
+    }
+
+}
+
+target act2 {
+    part oem A1225A {
+        grade Std;
+        grade -1;
+        grade -2;
+    }
+    part oem A1240A {
+        grade Std;
+        grade -1;
+        grade -2;
+    }
+    part oem A1280A {
+        grade Std;
+        grade -1;
+        grade -2;
+    }
+    part oem A1225XL {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -F;
+    }
+    part oem A1240XL {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -F;
+        
+    }
+    part oem A1280XL {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -F;
+    }
+    part oem RH1280 {
+        grade Std;
+    }
+    part oem RP1280A {
+        grade Std;
+        grade -1;
+        grade -2;
+    }
+    part oem RT1280A {
+        grade Std;
+        grade -1;
+        grade -2;
+    }
+}
+
+target act3 {
+    part oem A1415A {
+        grade Std;
+        grade -1;
+        grade -2; 
+        grade -3;       
+    }
+    part oem A1425A {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part oem A1440A {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part oem A1460A {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part oem A14100A {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part oem RT1460A {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part oem RP14100A {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part oem RT14100A {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+}
+
+target 3200dx {
+    part oem A3265DX {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -F;
+    }
+    part oem A32100DX {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -F;
+    }    
+    
+    part oem A32140DX {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -F;
+    }
+    part A32200DX {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -F;
+        
+    }
+    part A32300DX {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -F;
+    }
+    part A32400DX {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -F;
+    }
+}
+
+target 40mx {
+    part oem 40MX02 {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part oem 40MX04 {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+}
+
+target 42mx {
+    part oem 42MX09 {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+
+    }
+    part oem 42MX16 {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part oem 42MX24 {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part 42MX36 {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+   
+}
+target 54sx {
+    part oem 54SX08 {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part oem 54SX16 {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part oem 54SX16P {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part oem 54SX32 {
+        grade Std;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part oem RT54SX16 {
+        grade Std;
+        grade -1;
+    }
+    part oem RT54SX32 {
+        grade Std;
+        grade -1;
+        grade -2;
+    }
+}
+
+target max5000 {
+    part EPM5016 {
+    }
+    part EPM5032 {
+    }
+    part EPM5064 {
+    }
+    part EPS464 {
+    }
+    part EPM5128 {
+    }
+    part EPM5128A {
+    }
+    part EPM5130 {
+    }
+    part EPM5192 {
+    }
+}
+
+target flex6000 {
+    part EPF6010A {
+        package TC100;
+        package TC144;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part EPF6016 {
+        package TC144;
+        package TI144;
+        package QC208;
+        package QI208;
+        package QC240;
+        package BC256;
+        grade -2;
+        grade -3;
+    }
+    part EPF6016A {
+        package TC100;
+        package TC144;
+        package QC208;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part EPF6024A {
+        package TC144;
+        package QC208;
+        package QC240;
+        package BC256;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+}
+
+target max7000 {
+    part EPM7032 {
+    }
+    part EPM7032V {
+    }
+    part EPM7064 {
+    }
+    part EPM7096 {
+    }
+    part EPM7128E {
+    }
+    part EPM7160E {
+    }
+    part EPM7192E {
+    }
+    part EPM7256E {
+    }
+    part EPM7512AE {
+    }
+    part EPM7384AE {
+    }
+    part EPM7256A {
+    }
+    part EPM7192S {
+    }
+    part EPM7160S {
+    }
+    part EPM7128A {
+    }
+    part EPM7128S {
+    }
+    part EPM7064AE {
+    }
+    part EPM7032S {
+    }
+    part EPM7032AE {
+    }
+    part EPM7064S {
+    }
+    part EPM7256S {
+    }
+}
+
+target flex8000 {
+    part EPF8282A {
+        package LC84;
+        package LI84;
+        package TC100;
+        package TI100;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+    part EPF8282AV {
+        package TC100;
+        grade -3;
+        grade -4;
+    }
+    part EPF8452A {
+        package LC84;
+        package LI84;
+        package TC100;
+        package QC160;
+        package QI160;
+        package GC160;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+    part EPF8636A {
+        package LC84;
+        package LI84;
+        package QC160;
+        package QC208;
+        package RC208;
+        package GC192;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+    part EPF8820A {
+        package TC144;
+        package QC160;
+        package QC208;
+        package RC208;
+        package RI208;
+        package BC225;
+        package GC192;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+    part EPF81188A {
+        package QC208;
+        package QI208;
+        package QC240;
+        package RC240;
+        package RI240;
+        package GC232;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+    part EPF81500A {
+        package QC240;
+        package RC240;
+        package RI240;
+        package RC304;
+        package GC280;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+}
+
+target max9000 {
+    part EPM9320 {
+    }
+    part EPM9400 {
+    }
+    part EPM9480 {
+    }
+    part EPM9560 {
+    }
+}
+
+target flex10K {
+    part EPF10K10A {
+        package TC100;
+        package TC144;
+        package QC208;
+        package FC256;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part EPF10K10 {
+        package LC84;
+        package LI84;
+        package TC144;
+        package TI144;
+        package QC208;
+        package QI208;
+        grade -3;
+        grade -4;
+    }
+    part EPF10K20 {
+        package TC144;
+        package TI144;
+        package RC208;
+        package RI208;
+        package RC240;
+        package RI240;
+        grade -3;
+        grade -4;
+    }
+    part EPF10K30E {
+        package TC144;
+        package QC208;
+        package FC256;
+        package FC484;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part EPF10K30A {
+        package TC144;
+        package TI144;
+        package QC208;
+        package QI208;
+        package QC240;
+        package QI240;
+        package FC256;
+        package BC356;
+        package BI356;
+        package FC484;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part EPF10K30 {
+        package RC208;
+        package RI208;
+        package RC240;
+        package RI240;
+        package BC356;
+        grade -3;
+        grade -4;
+    }
+    part EPF10K40 {
+        package RC208;
+        package RC240;
+        grade -3;
+        grade -4;
+    }
+    part EPF10K50E {
+        package TC144;
+        package QC208;
+        package QC240;
+        package FC256;
+        package FC484;
+    grade -1;
+        grade -2;
+        grade -3;
+    }
+    part EPF10K50V {
+        package RC240;
+        package RI240;
+        package BC356;
+        package BI356;
+    grade -1;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+    part EPF10K50 {
+        package RC240;
+        package RI240;
+        package BC356;
+        package GC403;
+        grade -3;
+        grade -4;
+    }
+    part EPF10K70 {
+        package RC240;
+        package GC503;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+    part EPF10K100E {
+    package QC208;
+    package QC240;
+    package BC356;
+    package FC484;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part EPF10K100B {
+        package QC208;
+        package QC240;
+        package FC256;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part EPF10K100A {
+        package RC240;
+        package RI240;
+        package BC356;
+        package BI356;
+        package BC600;
+        package FC484;
+        package BC600;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part EPF10K100 {
+        package GC503;
+        grade -3DX;
+        grade -3;
+        grade -4;
+    }
+    part EPF10K130E {
+        package QC240;
+        package FC484;
+        package FC672;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part EPF10K130V {
+        package GC599;
+        package BC600;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+    part EPF10K200E {
+        package GC599;
+        package BC600;
+        package FC672;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part EPF10K250A {
+        package GC599;
+        package BC600;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+}
+
+target pASIC1 {
+   part p8x12b {
+      package pl68;
+      package pl44;
+      package pf100;
+      package cg68;
+      grade -x;
+      grade -0;
+      grade -1;
+      grade -2;
+   }
+   part p12x16b {
+      package pl84;
+      package pl68;
+      package pf100;
+      package cg84;
+      package cf100;
+      grade -x;
+      grade -0;
+      grade -1;
+      grade -2;
+   }
+   part p16x24b {
+      package pf144;
+      package pf100;
+      package pl84;
+      package cg144;
+      package cf160;
+      grade -x;
+      grade -0;
+      grade -1;
+      grade -2;
+   }
+   part p24x32b {
+      package pf144;
+      package pq208;
+      package cf208;
+      grade -x;
+      grade -0;
+      grade -1;
+      grade -2;
+   }
+   part p8x12bl {
+      package pl68;
+      package pl44;
+      package pf100;
+      grade -0;
+      grade -1;
+      grade -2;
+   }
+   part p12x16bl {
+      package pl84;
+      package pl68;
+      package pf100;
+      grade -0;
+      grade -1;
+      grade -2;
+   }
+   part p16x24bl {
+      package pf144;
+      package pf100;
+      package pl84;
+      grade -0;
+      grade -1;
+      grade -2;
+   }
+   part p24x32bl {
+      package pf144;
+      package pq208;
+      grade -0;
+      grade -1;
+      grade -2;
+   }
+}
+target pASIC2 {
+   part ql2003 {
+      package pl84;
+      package pf100;
+      package pf144;
+      grade -x;
+      grade -0;
+      grade -1;
+      grade -2;
+   }
+   part ql2005 {
+      package pl84;
+      package pf144;
+      package pq208;
+      grade -x;
+      grade -0;
+      grade -1;
+      grade -2;
+   }
+   part ql2007 {
+      package pq208;
+      package pf144;
+      package pl84;
+      grade -x;
+      grade -0;
+      grade -1;
+      grade -2;
+   }
+   part ql2009 {
+      package pq208;
+      package pf144;
+      package pb256;
+      grade -x;
+      grade -0;
+      grade -1;
+      grade -2;
+   }
+}
+target pASIC3 {
+   part ql3012 {
+      package pl84;
+      package pf100;
+      package pf144;
+      grade -0;
+      grade -1;
+      grade -2;
+      grade -3;
+   }
+   part ql3025 {
+      package pf144;
+      package pq208;
+      package pb256;
+      grade -0;
+      grade -1;
+      grade -2;
+      grade -3;
+   }
+   part ql3040 {
+      package pq208;
+      package pq240;
+      package pb456;
+      grade -0;
+      grade -1;
+      grade -2;
+      grade -3;
+   }
+   part ql3060 {
+      package pq208;
+      package pq240;
+      package pb456;
+      grade -0;
+      grade -1;
+      grade -2;
+      grade -3;
+   }
+}
+
+target QuickRAM {
+   part ql4016 {
+      package pl84;
+      package pf100;
+      package pf144;
+      grade -0;
+      grade -1;
+      grade -2;
+      grade -3;
+      grade -4;
+   }
+   part ql4036 {
+      package pf144;
+      package pq208;
+      package pb256;
+      grade -0;
+      grade -1;
+      grade -2;
+      grade -3;
+      grade -4;
+   }
+   part ql4058 {
+      package pq208;
+      package pq240;
+      package pb456;
+      grade -0;
+      grade -1;
+      grade -2;
+      grade -3;
+      grade -4;
+   }
+   part ql4090 {
+      package pq208;
+      package pq240;
+      package pb456;
+      grade -0;
+      grade -1;
+      grade -2;
+      grade -3;
+      grade -4;
+   }
+}
+
+target xc3000 {
+    part XC3020A {
+        package PC68;
+        package PC84;
+        package PG84;
+        package CB100;
+        package PQ100;
+        grade -6;
+        grade -7;
+    }
+    part XC3030A {
+        package PC44;
+        package VQ64;
+        package PC68;
+        package PC84;
+        package PG84;
+        package PQ100;
+        package VQ100;
+        grade -6;
+        grade -7;
+    }
+    part XC3042A {
+        package PC84;
+        package PG84;
+        package CB100;
+        package PQ100;
+        package VQ100;
+        package PP132;
+        package PG132;
+        package TQ144;
+        grade -6;
+        grade -7;
+    }
+    part XC3064A {
+        package PC84;
+        package PP132;
+        package PG132;
+        package TQ144;
+        package PQ160;
+        grade -6;
+        grade -7;   
+    }
+    part XC3090A {
+        package PC84;
+        package TQ144;
+        package CB164;
+        package PQ160;
+        package PP175;
+        package PG175;
+        package TQ176;
+        package PQ208;
+        grade -6;
+        grade -7;
+    }
+    part XC3020L {
+        package PC84;
+        grade -8;
+    }
+    part XC3030L {
+        package VQ64;
+        package PC84;
+        package VQ100;
+        grade -8;
+    }
+    part XC3042L {
+        package PC84;
+        package VQ100;
+        package TQ144;
+        grade -8;
+    }
+    part XC3064L {
+        package PC84;
+        package TQ144;  
+        grade -8;
+    }
+    part XC3090L {
+        package PC84;
+        package TQ144;  
+        package TQ176;
+        grade -8;
+    }
+    part XC3142L {
+        package PC84;
+        package VQ100;
+        package TQ144;
+        grade -2;
+        grade -3;
+    }
+    part XC3190L {
+        package PC84;
+        package TQ144;
+        package TQ176;
+        grade -2;
+        grade -3;
+    }
+    part XC3120A {
+        package PC68;
+        package PC84;
+        package PG84;
+        package CB100;
+        package PQ100;
+        grade -09;
+        grade -1;
+        grade -2;
+        grade -3;
+        grade -4;
+        grade -5;
+    }
+    part XC3130A {
+        package PC44;
+        package VQ64;
+        package PC68;
+        package PC84;
+        package PG84;
+        package PQ100;
+        package VQ100;
+        grade -09;
+        grade -1;
+        grade -2;
+        grade -3;
+        grade -4;
+        grade -5;
+    }
+    part XC3142A {
+        package PC84;
+        package PG84;
+        package CB100;
+        package PQ100;
+        package VQ100;
+        package PP132;
+        package PG132;
+        package TQ144;
+        grade -09;
+        grade -1;
+        grade -2;
+        grade -3;
+        grade -4;
+        grade -5;
+    }
+    part XC3164A {
+        package PC84;
+        package PP132;
+        package PG132;
+        package TQ144;
+        package PQ160;
+        grade -09;
+        grade -1;
+        grade -2;
+        grade -3;
+        grade -4;
+        grade -5;   
+    }
+    part XC3190A {
+        package PC84;
+        package PQ160;
+        package TQ144;
+        package CB164;
+        package PP175;
+        package PG175;
+        package TQ176;
+        package PQ208;
+        grade -09;
+        grade -1;
+        grade -2;
+        grade -3;
+        grade -4;
+        grade -5;
+    }
+    part XC3195A {
+        package PC84;
+        package PQ160;
+        package CB164;
+        package PG175;
+        package PP175;
+        package PQ208;
+        package PG223;
+        grade -09;
+        grade -1;
+        grade -2;
+        grade -3;
+        grade -4;
+        grade -5;
+    }
+    part XC3142L {
+        package PC84;
+        package VQ100;
+        package TQ144;
+        grade -2;
+        grade -3;  
+    }
+    part XC3190L {
+        package PC84;
+        package TQ144;
+        package TQ176;
+        grade -2;
+        grade -3;  
+    }
+}
+target xc4000 {
+    part XC4002A {
+        grade -5;
+        grade -6;
+        package PC84;
+        package PQ100;
+        package VQ100;
+        package PG120;
+    }
+    part XC4003 {
+        grade -4;
+        grade -5;
+        grade -6;
+        package PC84;
+        package PQ100;
+        package PG120;
+    }
+    part XC4003A {
+        grade -4;
+        grade -5;
+        grade -6;
+        grade -10;
+        package PC84;
+        package PQ100;
+        package VQ100;
+        package CB100;
+        package PG120;
+    }
+    part XC4003H {
+        grade -5;
+        grade -6;
+        package PG191;
+        package PQ208;
+    }
+    part XC4004A {
+        grade -5;
+        grade -6;
+        package PC84;
+        package PG120;
+        package TQ144;
+        package PQ160;
+    }
+    part XC4005 {
+        grade -4;
+        grade -5;
+        grade -6;
+        grade -6B;
+        grade -10;
+        package PC84;
+        package PQ100;
+        package PG156;
+        package PQ160;
+        package CB164;
+        package PQ208;
+    }
+    part XC4005A {
+        grade -4;
+        grade -5;
+        grade -6;
+        package PC84;
+        package TQ144;
+        package PG156;
+        package PQ160;
+        package PQ208;
+    }
+    part XC4005L {
+        grade -5;
+        package PC84;
+        package PQ100;
+        package PQ208;
+    }
+    part XC4005H {
+        grade -5;
+        grade -6;
+        package PG223;
+        package PQ240;
+        package MQ240;
+    }
+    part XC4006 {
+        grade -4;
+        grade -5;
+        grade -6;
+        package PC84;
+        package PG156;
+        package PQ160;
+        package PQ208;
+    }
+    part XC4008 {
+        grade -4;
+        grade -5;
+        grade -6;
+        package PC84;
+        package PQ160;
+        package PG191;
+        package PQ208;
+        package MQ208;
+    }
+    part XC4010 {
+        grade -4;
+        grade -5;
+        grade -6;
+        grade -10;
+        package PC84;
+        package PQ160;
+        package PG191;
+        package CB196;
+        package PQ208;
+        package MQ208;
+        package BG225;
+    }
+    part XC4010D {
+        grade -5;
+        grade -6;
+        package PC84;
+        package PQ160;
+        package PQ208;
+        package BG225;
+    }
+    part XC4010L {
+        grade -5;
+        package PC84;
+        package TQ176;
+        package PQ208;
+    }
+    part XC4013 {
+        grade -4;
+        grade -5;
+        grade -6;
+        grade -10;
+        package PQ160;
+        package MQ208;
+        package PQ208;
+        package PG223;
+        package BG225;
+        package CB228;
+        package PQ240;
+        package MQ240;
+    }
+    part XC4013D {
+        grade -5;
+        grade -6;
+        package PQ160;
+        package PQ208;
+        package BG225;
+        package PQ240;
+    }
+    part XC4013L {
+        grade -5;
+        package PQ208;
+        package BG225;
+        package PQ240;
+    }
+    part XC4025 {
+        grade -4;
+        grade -5;
+        grade -6;
+        package MQ208;
+        package PG223;
+        package CB228;
+        package MQ240;
+        package PG299;
+        package HQ304;
+    }
+}
+target xc4000E {
+    part XC4003E {
+        package PC84;
+        package PQ100;
+        package VQ100;
+        package PG120;
+        grade -1;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+    part XC4005E {
+        package PC84;
+        package PG156;
+        package PQ100;
+        package PQ160;
+        package TQ144;
+        package PQ208;
+        package CB164;
+        grade -1;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+    part XC4006E {
+        package PC84;
+        package TQ144;
+        package PG156;
+        package PQ160;
+        package PQ208;
+        grade -1;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+    part XC4008E {
+        package PC84;
+        package PQ160;
+        package PG191;
+        package PQ208;
+        grade -1;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+    part XC4010E {
+        package PC84;
+        package PQ160;
+        package PG191;
+        package PQ208;
+        package HQ208;
+        package BG225;
+        package CB196;
+        grade -1;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+    part XC4013E {
+        package PQ160;
+        package PQ208;
+        package HQ208;
+        package PG223;
+        package BG225;
+        package PQ240;
+        package HQ240;
+        package CB228;
+        grade -1;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+    part XC4020E {
+        package PG223;
+        package HQ208;
+        package HQ240;
+        grade -1;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+    part XC4025E {
+        package PG223;
+        package HQ240;
+        package PG299;
+        package HQ304;
+        package CB228;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+}
+
+target xc4000EX {
+    part XC4028EX {
+        package HQ208;
+        package HQ240;
+        package HQ304;
+        package BG352;
+        package PG299;
+        package CB228;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+    part XC4036EX {
+        package HQ304;
+        package BG432;
+        package PG411;
+        package BG352;
+        package HQ240;
+        grade -2;
+        grade -3;
+        grade -4;
+    }
+}
+
+target xc4000XLA {
+    part XC4013XLA {
+        package BG256;
+        package PQ160;
+        package PQ240;
+        package PQ208;
+        grade -07;
+        grade -08;
+        grade -09;
+    }
+    part XC4020XLA {
+        package BG256;
+        package PQ160;
+        package PQ208;
+        package PQ240;
+        grade -07;
+        grade -08;
+        grade -09;
+    }
+    part XC4028XLA {
+        package BG256;
+        package BG352;
+        package HQ160;
+        package HQ208;
+        package HQ240;
+        package HQ304;
+        grade -07;
+        grade -08;
+        grade -09;
+    }
+    part XC4036XLA {
+        package BG352;
+        package BG432;
+        package HQ160;
+        package HQ208;
+        package HQ240;
+        package HQ304;
+        grade -07;
+        grade -08;
+        grade -09;
+    }
+    part XC4044XLA {
+        package BG352;
+        package BG432;
+        package HQ160;
+        package HQ208;
+        package HQ240;
+        package HQ304;
+        grade -07;
+        grade -08;
+        grade -09;
+    }
+    part XC4052XLA {
+        package BG352;
+        package BG560;
+        package BG432;
+        package HQ160;
+        package HQ208;
+        package HQ240;
+        package HQ304;
+        grade -07;
+        grade -08;
+        grade -09;
+    }
+    part XC4062XLA {
+        package BG352;
+        package BG432;
+        package HQ160;
+        package HQ208;
+        package HQ240;
+        package HQ304;
+        package BG560;
+        grade -07;
+        grade -08;
+        grade -09;
+    }
+    part XC4085XLA {
+        package HQ160;
+        package HQ208;
+        package HQ240;
+        package HQ304;
+        package BG352;
+        package BG432;
+        package BG560;
+        grade -07;
+        grade -08;
+        grade -09;
+    }
+}
+target xc4000XL {
+    part XC4002XL {
+        package PC84;
+        package PQ100;
+        package VQ100;
+        grade -09;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part XC4005XL {
+        package PC84;
+        package PQ100;
+        package PQ160;
+        package PQ208;
+        package TQ144;
+        package VQ100;
+        grade -09;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part XC4010XL {
+        package BG256;
+        package PC84;
+        package PQ100;
+        package PQ160;
+        package PQ208;
+        package TQ144;
+        package TQ176;
+        grade -09;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part XC4013XL {
+        package BG256;
+        package CB228;
+        package HT144;
+        package HT176;
+        package PG223;
+        package PQ160;
+        package PQ240;
+        package PQ208;
+        grade -08;
+        grade -09;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part XC4020XL {
+        package BG256;
+        package HT144;
+        package HT176;
+        package PQ160;
+        package PQ208;
+        package PQ240;
+        grade -09;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part XC4028XL {
+        package BG256;
+        package BG352;
+        package HQ160;
+        package HQ208;
+        package HQ240;
+        package HQ304;
+        package PG299;
+        grade -09;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part XC4036XL {
+        package BG352;
+        package BG432;
+        package HQ160;
+        package HQ208;
+        package HQ240;
+        package HQ304;
+        package PG411;
+        package CB228;
+        grade -08;
+        grade -09;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part XC4044XL {
+        package BG352;
+        package BG432;
+        package HQ160;
+        package HQ208;
+        package HQ240;
+        package HQ304;
+        package PG411;
+        grade -09;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part XC4052XL {
+        package BG560;
+        package BG432;
+        package HQ240;
+        package HQ304;
+        package PG411;
+        grade -09;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part XC4062XL {
+        package BG432;
+        package HQ240;
+        package HQ304;
+        package BG560;
+        package PG475;
+        package CB228;
+        grade -08;
+        grade -09;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+    part XC4085XL {
+    package BG560;
+    package BG432;
+        package PG559;
+        grade -09;
+        grade -1;
+        grade -2;
+        grade -3;
+    }
+}
+
+target xc4000XV {
+    part XC40110XV {
+        package HQ240;
+        package BG352;
+        package BG432;
+        package BG560;
+        grade -08;
+        grade -09;
+    }
+    part XC40150XV {
+        package HQ240;
+        package BG352;
+        package BG432;
+        package BG560;
+        package PG559;
+        grade -08;
+        grade -09;
+    }
+    part XC40200XV {
+        package BG432;
+        package BG560;
+        grade -08;
+        grade -09;
+    }
+    part XC40250XV {
+        package BG432;
+        package BG560;
+        package PG559;
+        grade -08;
+        grade -09;
+    }
+}
+
+target xc5200 {
+    part XC5202 {
+        grade -3;
+        grade -4;
+        grade -5;
+        grade -6;
+        package VQ64;
+        package PC84;
+        package PQ100;
+        package VQ100;
+        package TQ144;
+        package PG156;
+    }
+    part XC5204 {
+        grade -3;
+        grade -4;
+        grade -5;
+        grade -6;
+        package PC84;
+        package PQ100;
+        package VQ100;
+        package TQ144;
+        package PG156;
+        package PQ160;
+    }
+    part XC5206 {
+        grade -3;
+        grade -4;
+        grade -5;
+        grade -6;
+        package PC84;
+        package PQ100;
+        package VQ100;
+        package TQ144;
+        package PQ160;
+        package TQ176;
+        package PG191;
+        package PQ208;
+    }
+    part XC5210 {
+        grade -3;
+        grade -4;
+        grade -5;
+        grade -6;
+        package PC84;
+        package TQ144;
+        package PQ160;
+        package TQ176;
+        package PQ208;
+        package PG223;
+        package BG225;
+        package PQ240;
+    }
+    part XC5215 {
+        grade -3;
+        grade -4;
+        grade -5;
+        grade -6;
+        package PQ160;
+        package HQ208;
+        package BG225;
+        package HQ240;
+        package PG299;
+        package HQ304;
+        package BG352;
+    }
+}
+
+target xc9500-xl {
+    part XC9536XL {
+        package PC44;
+        package VQ64;
+        package CS48;
+        grade -4;
+        grade -5;
+        grade -7;
+        grade -10;
+    }
+    part XC9572XL {
+        package PC44;
+        package VQ64;
+        package TQ100;
+        grade -5;
+        grade -7;
+        grade -10;
+    }
+    part XC95144XL {
+        package TQ100;
+        package TQ144;
+        package CS144;
+        grade -5;
+        grade -7;
+        grade -10;
+    }
+    part XC95288XL {
+        package TQ144;
+        package PQ208;
+        package BG256;
+        grade -6;
+        grade -10;
+    }
+}
+
+target xc9500 {
+    part XC95108 {
+        package PC84;
+        package PQ100;
+        package TQ100;
+        package PQ160;
+        grade -7;
+        grade -10;
+        grade -15;
+        grade -20;
+    }
+    part XC95144 {
+        package PQ100;
+        package PQ160;
+        package TQ100;
+        grade -7;
+        grade -10;
+        grade -15;
+    }
+    part XC95216 {
+        package HQ208;
+        package PQ160;
+        package BG352;
+        grade -10;
+        grade -15;
+        grade -20;
+    }
+    part XC95288 {
+        package HQ208;
+        package BG352;
+        grade -10;
+        grade -15;
+        grade -20;
+    }
+    part XC9536 {
+        package PC44;
+        package VQ44;
+        package CS48;
+        grade -5;
+        grade -6;
+        grade -7;
+        grade -10;
+        grade -15;
+    }
+    part XC9572 {
+        package PC44;
+        package PC84;
+        package PQ100;
+        package TQ100;
+        grade -7;
+        grade -10;
+        grade -15;
+    }
+}
+
+target xc9500-XV {
+    part XC9536XV {
+        package PC44;
+        package VQ64;
+        package CS48;
+        grade -7;
+        grade -10;
+    }
+    part XC9572XV {
+        package PC44;
+        package VQ64;
+        package TQ100;
+        grade -7;
+        grade -10;
+    }
+    part XC95144XV {
+        package TQ100;
+        package TQ144;
+        package CS144;
+        grade -7;
+        grade -10;
+    }
+    part XC95288XV {
+        package TQ144;
+        package PQ208;
+        package BG256;
+        grade -10;
+        grade -15;
+    }
+}
+
+target virtex {
+    part XCV50 {
+        package PQ240;
+        package BG256;
+        package CS144;
+        package FG256;
+        package TQ144;
+        grade -4;
+        grade -5;
+        grade -6;
+    }
+    part XCV100 {
+        package PQ240;
+        package BG256;
+        package CS144;
+        package FG256;
+        package TQ144;
+        grade -4;
+        grade -5;
+        grade -6;
+    }
+    part XCV150 {
+        package BG352;
+        package PQ240;
+        package BG256;
+        package FG256;
+        package FG456;
+        grade -4;
+        grade -5;
+        grade -6;
+    }
+    part XCV200 {
+        package BG352;
+        package PQ240;
+        package BG256;
+        package FG256;
+        package FG456;
+        grade -4;
+        grade -5;
+        grade -6;
+    }
+    part XCV300 {
+        package BG352;
+        package BG432;
+        package PQ240;
+        package FG456;
+        grade -4;
+        grade -5;
+        grade -6;
+    }
+    part XCV400 {
+        package HQ240;
+        package BG432;
+        package BG560;
+        package FG676;
+        grade -4;
+        grade -5;
+        grade -6;
+    }
+    part XCV600 {
+        package HQ240;
+        package BG432;
+        package BG560;
+        package FG676;
+        package FG680;
+        grade -4;
+        grade -5;
+        grade -6;
+    }
+    part XCV800 {
+        package HQ240;
+        package BG432;
+        package BG560;
+        package FG676;
+        package FG680;
+        grade -4;
+        grade -5;
+        grade -6;
+    }
+    part XCV1000 {
+        package BG560;
+        package FG680;
+        grade -4;
+        grade -5;
+        grade -6;
+    }
+}
+
+target spartan {
+    part XCS05 {
+        package PC84;
+        package VQ100;
+        grade -3;
+        grade -4;
+    }
+    part XCS10 {
+        package PC84;
+        package VQ100;
+        package TQ144;
+        grade -3;
+        grade -4;
+    }
+    part XCS20 {
+        package VQ100;
+        package TQ144;
+        package PQ208;
+        grade -3;
+        grade -4;
+    }
+    part XCS30 {
+        package VQ100;
+        package TQ144;
+        package PQ208;
+        package PQ240;
+        package BG256;
+        grade -3;
+        grade -4;
+    }
+    part XCS40 {
+        package PQ208;
+        package PQ240;
+        package BG256;
+        grade -3;
+        grade -4;
+    }
+}
+
+target spartan-XL {
+    part XCS05XL {
+        package PC84;
+        package VQ100;
+        grade -4;
+        grade -5;
+    }
+    part XCS10XL {
+        package PC84;
+        package VQ100;
+        package TQ144;
+        grade -4;
+        grade -5;
+    }
+    part XCS20XL {
+        package VQ100;
+        package TQ144;
+        package PQ208;
+        grade -4;
+        grade -5;
+    }
+    part XCS30XL {
+        package VQ100;
+        package TQ144;
+        package PQ208;
+        package PQ240;
+        package BG256;
+        grade -4;
+        grade -5;
+    }
+    part XCS40XL {
+        package PQ208;
+        package PQ240;
+        package BG256;
+        grade -4;
+        grade -5;
+    }
+}
+
+target MACH {
+    part MACH110 {
+    }
+    part MACH111 {
+    }
+    part MACH111SP {
+    }
+    part MACH120 {
+    }
+    part MACH130 {
+    }
+    part MACH131 {
+    }
+    part MACH131SP {
+    }
+
+    part MACH210 {
+    }
+    part MACHLV210 {
+    }
+    part MACH211 {
+    }
+    part MACH211SP {
+    }
+    part MACH220 {
+    }
+    part MACH221 {
+    }
+    part MACH221SP {
+    }
+    part MACH230 {
+    }
+    part MACH215 {
+    }
+    part MACH231 {
+    }
+    part MACH231SP {
+    }
+
+    part M4-32 {
+    }
+    part M4-64 {
+    }
+    part M4-96 {
+    }
+    part M4-128 {
+    }
+    part M4-128N {
+    }
+    part M4-192 {
+    }
+    part M4-256 {
+    }
+    part M4LV-32 {
+    }
+    part M4LV-64 {
+    }
+    part M4LV-96 {
+    }
+    part M4LV-128 {
+    }
+    part M4LV-128N {
+    }
+    part M4LV-192 {
+    }
+    part M4LV-256 {
+    }
+
+    part M4A3-32 {
+    }
+    part M4A3-64 {
+    }
+    part M4A3-96 {
+    }
+    part M4A3-128 {
+    }
+    part M4A3-192 {
+    }
+    part M4A3-256 {
+    }
+    part M4A3-384 {
+    }
+    part M4A3-512 {
+    }
+
+    part M4A5-32 {
+    }
+    part M4A5-64 {
+    }
+    part M4A5-96 {
+    }
+    part M4A5-128 {
+    }
+    part M4A5-192 {
+    }
+    part M4A5-256 {
+    }
+
+    part M5-128 {
+    }
+    part M5-192 {
+    }
+    part M5-256 {
+    }
+    part M5-320 {
+    }
+    part M5-384 {
+    }
+    part M5-512 {
+    }
+
+    part M5LV-128 {
+    }
+    part M5LV-192 {
+    }
+    part M5LV-256 {
+    }
+    part M5LV-320 {
+    }
+    part M5LV-384 {
+    }
+    part M5LV-512 {
+    }
+
+    part M5A3-128 {
+    }
+    part M5A3-192 {
+    }
+    part M5A3-256 {
+    }
+    part M5A3-320 {
+    }
+    part M5A3-384 {
+    }
+    part M5A3-512 {
+    }
+
+    part M5A5-128 {
+    }
+    part M5A5-192 {
+    }
+    part M5A5-256 {
+    }
+}
+
+target CoolRunner {
+    part P3Z22V10 {
+    }
+    part P3Z22V10I {
+    }
+    part P5Z22V10 {
+    }
+    part P5Z22V10I {
+    }
+    part PZ3032 {
+    }
+    part PZ3032I {
+    }
+    part PZ5032 {
+    }
+    part PZ5032I {
+    }
+    part PZ3064 {
+    }
+    part PZ3064I {
+    }
+    part PZ5064 {
+    }
+    part PZ5064I {
+    }
+    part PZ3128 {
+    }
+    part PZ3128I {
+    }
+    part PZ5128 {
+    }
+    part PZ5128I {
+    }
+}
+
+target pLSI {
+}
+target pLSI5k {
+}
+target pLSI8k {
+}
+
+target DY6000 {
+    part DY6009{
+    }
+    part DY6020{
+    }
+    part DY6035{
+    }
+    part DY6055{
+    }
+}
+
+target AT40K {
+    part AT40K05 {
+        grade -2;
+    }
+    part AT40K10 {
+        grade -2;
+    }
+    part AT40K20 {
+        grade -2;
+    }
+    part AT40K40 {
+        grade -2;
+    }
+    part AT40K05LV {
+        grade -3;
+    }
+    part AT40K10LV {
+        grade -3;
+    }
+    part AT40K20LV {
+        grade -3;
+    }
+    part AT40K40LV {
+        grade -3;
+    }
+}
+
+target VF1 {
+    part VF1012 {
+    grade -1;
+    grade -2;
+    }
+    part VF1020 {
+    grade -1;
+    grade -2;
+    }
+    part VF1025 {
+    grade -1;
+    grade -2;
+    }
+    part VF1036 {
+    grade -1;
+    grade -2;
+    }
+}
+

@@ -1,0 +1,178 @@
+# part descriptions for orca parts
+part orca2 {
+    smartcut 1;
+    usepfugates 1;   # simple use of PFU gates
+    usepfumux 1;     # turns on use of PFU gates in general mapping
+    ff_fo_scale 0.6; # fanout estimate for FF ctl signals
+    lut4_fo_scale 0.75; # fanout estimate for lut4 and below
+    trylut5 0;       # always try lut5
+}
+part orca3 {
+    smartcut 1;
+    usepfugates 1;   # simple use of PFU gates
+    usepfumux 1;     # turns on use of PFU gates in general mapping
+    ff_fo_scale 0.5; # fanout estimate for FF ctl signals
+    lut4_fo_scale 1.00; # fanout estimate for lut4 and below
+    trylut5 0;       # always try lut5
+    matchmux41 1;
+    useslic 0;   # Use SLIC cells from library.
+}
+part 2C04 {
+    ff 400;
+    pfu 100;
+}
+part 2C06 {
+    ff 576;
+    pfu 144;
+}
+part 2C08 {
+    ff 784;
+    pfu 196;
+}
+part 2C10 {
+    ff 1024;
+    pfu 256;
+}
+part 2C12 {
+    ff 1296;
+    pfu 324;
+}
+part 2C15 {
+    ff 1600;
+    pfu 400;
+}
+part 2C26 {
+    ff 2304;
+    pfu 576;
+}
+part 2C40 {
+    ff 3600;
+    pfu 900;
+}
+part 2C04A {
+    ff 400;
+    pfu 100;
+}
+part 2C06A {
+    ff 576;
+    pfu 144;
+}
+part 2C08A {
+    ff 784;
+    pfu 196;
+}
+part 2C10A {
+    ff 1024;
+    pfu 256;
+}
+part 2C12A {
+    ff 1296;
+    pfu 324;
+}
+part 2C15A {
+    ff 1600;
+    pfu 400;
+}
+part 2C26A {
+    ff 2304;
+    pfu 576;
+}
+part 2C40A {
+    ff 3600;
+    pfu 900;
+}
+part 2T04A {
+    ff 400;
+    pfu 100;
+}
+part 2T06A {
+    ff 576;
+    pfu 144;
+}
+part 2T08A {
+    ff 784;
+    pfu 196;
+}
+part 2T10A {
+    ff 1024;
+    pfu 256;
+}
+part 2T12A {
+    ff 1296;
+    pfu 324;
+}
+part 2T15A {
+    ff 1600;
+    pfu 400;
+}
+part 2T26A {
+    ff 2304;
+    pfu 576;
+}
+part 2T40A {
+    ff 3600;
+    pfu 900;
+}
+part 3T30 {
+    ff 2212;
+    pfu 196;
+    libproperty "or3c00";
+    usepfugates 0;   # not for 3t
+    usepfumux 1;     # turns on use of PFU mux in general mapping
+    lut4_fo_scale 1.00; # fanout estimate for lut4 and below
+    trylut5 0; 
+}
+part 3C55 {
+    ff 2916;
+    pfu 324;
+    libproperty "or3c00";
+    usepfugates 0;   # not for 3c
+    usepfumux 1;     # turns on use of PFU mux in general mapping
+    lut4_fo_scale 1.00; # fanout estimate for lut4 and below
+    trylut5 0; 
+}
+part 3C80 {
+    ff 4356;
+    pfu 484;
+    libproperty "or3c00";
+    usepfugates 0;   # not for 3c
+    usepfumux 1;     # turns on use of PFU mux in general mapping
+    lut4_fo_scale 1.00; # fanout estimate for lut4 and below
+    trylut5 0; 
+}
+part 3T30 {
+    ff 2916;
+    pfu 324;
+    libproperty "or3t00";
+    usepfugates 0;   # not for 3c
+    usepfumux 1;     # turns on use of PFU mux in general mapping
+    lut4_fo_scale 1.00; # fanout estimate for lut4 and below
+    trylut5 0; 
+}
+part 3T55 {
+    ff 2916;
+    pfu 324;
+    libproperty "or3t00";
+    usepfugates 0;   # not for 3c
+    usepfumux 1;     # turns on use of PFU mux in general mapping
+    lut4_fo_scale 1.00; # fanout estimate for lut4 and below
+    trylut5 0; 
+}
+part 3T80 {
+    ff 4356;
+    pfu 484;
+    libproperty "or3t00";
+    usepfugates 0;   # not for 3c
+    usepfumux 1;     # turns on use of PFU mux in general mapping
+    lut4_fo_scale 1.00; # fanout estimate for lut4 and below
+    trylut5 0; 
+}
+part 3T125 {
+    ff 7056;
+    pfu 784;
+    libproperty "or3t00";
+    usepfugates 0;   # not for 3c
+    usepfumux 1;     # turns on use of PFU mux in general mapping
+    lut4_fo_scale 1.00; # fanout estimate for lut4 and below
+    trylut5 0; 
+}

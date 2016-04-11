@@ -1,0 +1,10 @@
+https://www.l2f.inesc-id.pt/~david/wiki/pt/index.php/YACC_Example:_Calculator_with_Variables
+
+http://www.indiastudychannel.com/resources/56696-IMPLEMENTATION-OF-CALCULATOR-USING-YACC.aspx
+
+http://www.cs.man.ac.uk/~pjj/cs212/ho/node4.html
+
+http://72.235.176.168/qnxman/yacc.html
+
+http://72.235.176.168/qnxman/yacc.html
+

@@ -1,0 +1,9 @@
+function[s1,s2,s3]=unda1(A,f)
+t=1:1:1000;
+figure;
+subplot(3,1,1)
+s1=A*sin(2*pi*f*t);
+s2=A*square(2*pi*f*t);
+
+plot(t,s);
+

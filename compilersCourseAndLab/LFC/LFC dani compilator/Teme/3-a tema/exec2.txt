@@ -1,0 +1,16 @@
+!1.(0|1)*01     Toate cuvintele care se termina în 01    
+ este format din 1 sau 0 ; 01 se termina in el
+
+!2.(1)*0        Toate cuvintele care contin exact un 0
+
+
+!3.(^0|11)*11     Toate cuvintele care contin un numar par de 1 si nici un 0
+  
+
+!4.(0|11)*       Toate cuvintele care contin un numar par de 1
+
+
+?5.(0|1)*(01)*(0|1)* 
+
+
+?6.(0|1)*(^01)*(0|1)*

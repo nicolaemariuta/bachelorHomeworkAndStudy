@@ -1,0 +1,27 @@
+#
+#	DATES - combined LEX and YACC example for U.S. and European dates
+#
+CC=cl
+CFLAGS=-c
+OBJS=dates.obj lex.obj errorlib.obj
+
+dates.exe : $(OBJS)
+	$(CC) $(OBJS)
+
+.c.obj :
+	$(CC) $(CFLAGS) $*.c
+
+lex.c : lex.l
+	pclex lex.l
+
+dates.c : dates.y yaccpar.c
+	pcyacc -D -pyaccpar.c dates.y
+
+yytok.h : dates.h
+	tokens dates.h
+
+dates.obj : errorlib.h dates.c
+
+errorlib.obj : yytok.h errorlib.h errorlib.c
+
+lex.obj : dates.h errorlib.h lex.c

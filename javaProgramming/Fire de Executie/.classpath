@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="Folsirea clasei Thread"/>
+	<classpathentry kind="src" path="Extinderea interfetei Runnable"/>
+	<classpathentry kind="src" path="Folosirea unei variabile de terminare"/>
+	<classpathentry kind="src" path="Fire de tip Daemon"/>
+	<classpathentry kind="src" path="Fir de executie Egoist"/>
+	<classpathentry kind="src" path="Producator/consumator"/>
+	<classpathentry kind="src" path="Clasa ThreadGroup"/>
+	<classpathentry kind="src" path="Flux de tip pipe"/>
+	<classpathentry kind="src" path="Folosirea claselor Timer si TimerTask"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

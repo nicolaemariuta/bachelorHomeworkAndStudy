@@ -1,0 +1,13 @@
+function[c] =myfilter(h_es, x)
+A=length(h_es);
+B=length(x);
+c=zeros(1,B);
+ for i=(A+1):1:B
+        for k=1:1:A 
+            c(i)=h_es(k)*x(i-k);
+        end;
+ end;
+ return
+ 
+        
+    

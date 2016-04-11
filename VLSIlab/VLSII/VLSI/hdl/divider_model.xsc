@@ -1,0 +1,52 @@
+N:cat 0:-1:0 ps
+N:cat 1:-1:0 ps
+N:cat 2:-1:0 ps
+N:cat 3:-1:0 ps
+N:cat_init 0:-1:0 ps
+N:cat_init 1:-1:0 ps
+N:cat_init 2:-1:0 ps
+N:cat_init 3:-1:0 ps
+N:rest 0:-1:0 ps
+N:rest 1:-1:0 ps
+N:rest 2:-1:0 ps
+N:rest 3:-1:0 ps
+N:rest 4:-1:0 ps
+N:rest_init 0:-1:0 ps
+N:rest_init 1:-1:0 ps
+N:rest_init 2:-1:0 ps
+N:rest_init 3:-1:0 ps
+N:rest_init 4:-1:0 ps
+N:valid:-1:0 ps
+N:valid_init:-1:0 ps
+B:valid_ins:-1:400 ps
+B:rest_4:-1:400 ps
+B:rest_3:-1:400 ps
+B:rest_2:-1:400 ps
+B:rest_1:-1:400 ps
+B:rest_0:-1:400 ps
+B:cat_3:-1:400 ps
+B:cat_2:-1:400 ps
+B:cat_1:-1:400 ps
+B:cat_0:32:400 ps
+C:cat 0:32:0 ps
+C:cat 1:-1:0 ps
+C:cat 2:-1:0 ps
+C:cat 3:-1:0 ps
+C:rest 0:-1:0 ps
+C:rest 1:-1:0 ps
+C:rest 2:-1:0 ps
+C:rest 3:-1:0 ps
+C:rest 4:-1:0 ps
+C:valid:-1:0 ps
+C:valid_init:-1:0 ps
+C:rest_init 0:-1:0 ps
+C:rest_init 1:-1:0 ps
+C:rest_init 2:-1:0 ps
+C:rest_init 3:-1:0 ps
+C:rest_init 4:-1:0 ps
+C:cat_init 0:32:0 ps
+C:cat_init 1:-1:0 ps
+C:cat_init 2:-1:0 ps
+C:cat_init 3:-1:0 ps
+P:cat_init_0:cat_init_0:cat_0:32:400 ps
+P:cat_0:cat 0:cat_0:32:400 ps

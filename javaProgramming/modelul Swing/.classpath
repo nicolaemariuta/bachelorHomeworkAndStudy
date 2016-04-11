@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="JComponent"/>
+	<classpathentry kind="src" path="Componente atomice Swing"/>
+	<classpathentry kind="src" path="JTabbedPane"/>
+	<classpathentry kind="src" path="JScrollPane"/>
+	<classpathentry kind="src" path="JSSplitPane"/>
+	<classpathentry kind="src" path="Dialoguri Swing"/>
+	<classpathentry kind="src" path="Swing vs ATW"/>
+	<classpathentry kind="src" path="Tabelele Swing"/>
+	<classpathentry kind="src" path="Folosirea modelelor"/>
+	<classpathentry kind="src" path="Folosirea JTree"/>
+	<classpathentry kind="src" path="Ferestre interne"/>
+	<classpathentry kind="src" path="Folosirea JList"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

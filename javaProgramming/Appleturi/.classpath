@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="Crearea unui applet simplu"/>
+	<classpathentry kind="src" path="Structura generala a unui applet"/>
+	<classpathentry kind="src" path="Folosirea Parametrilor"/>
+	<classpathentry kind="src" path="Folosirea Firelor de executie in appleturi"/>
+	<classpathentry kind="src" path="Afisarea Imaginilor"/>
+	<classpathentry kind="src" path="redarea sunetelor"/>
+	<classpathentry kind="src" path="Applet si aplicatie"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

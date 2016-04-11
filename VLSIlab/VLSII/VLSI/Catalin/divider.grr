@@ -1,0 +1,49 @@
+rm -f divider divider.o divider.exe
+cc  -c -g -I/usr/include/alliance  divider.c
+cc  -o divider divider.o -L/usr/lib/alliance -lBvl -lBeh -lBhl -lLog -lCst -lMgn -lMlu -lMlo -lMal -lMcl -lMgl -lMel -lMhl -lMsl -lMvg -lRcn -lMpu -lMph -lMap -lMcp -lMmg -lMut -lm
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libBvl.so when searching for -lBvl
+/usr/bin/ld: cannot find -lBvl
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libBeh.so when searching for -lBeh
+/usr/bin/ld: cannot find -lBeh
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libBhl.so when searching for -lBhl
+/usr/bin/ld: cannot find -lBhl
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libLog.so when searching for -lLog
+/usr/bin/ld: cannot find -lLog
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libCst.so when searching for -lCst
+/usr/bin/ld: cannot find -lCst
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libMgn.so when searching for -lMgn
+/usr/bin/ld: cannot find -lMgn
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libMlu.so when searching for -lMlu
+/usr/bin/ld: cannot find -lMlu
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libMlo.so when searching for -lMlo
+/usr/bin/ld: cannot find -lMlo
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libMal.so when searching for -lMal
+/usr/bin/ld: cannot find -lMal
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libMcl.so when searching for -lMcl
+/usr/bin/ld: cannot find -lMcl
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libMgl.so when searching for -lMgl
+/usr/bin/ld: cannot find -lMgl
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libMel.so when searching for -lMel
+/usr/bin/ld: cannot find -lMel
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libMhl.so when searching for -lMhl
+/usr/bin/ld: cannot find -lMhl
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libMsl.so when searching for -lMsl
+/usr/bin/ld: cannot find -lMsl
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libMvg.so when searching for -lMvg
+/usr/bin/ld: cannot find -lMvg
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libRcn.so when searching for -lRcn
+/usr/bin/ld: cannot find -lRcn
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libMpu.so when searching for -lMpu
+/usr/bin/ld: cannot find -lMpu
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libMph.so when searching for -lMph
+/usr/bin/ld: cannot find -lMph
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libMap.so when searching for -lMap
+/usr/bin/ld: cannot find -lMap
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libMcp.so when searching for -lMcp
+/usr/bin/ld: cannot find -lMcp
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libMmg.so when searching for -lMmg
+/usr/bin/ld: cannot find -lMmg
+/usr/bin/ld: skipping incompatible /usr/lib/alliance/libMut.so when searching for -lMut
+/usr/bin/ld: cannot find -lMut
+collect2: error: ld returned 1 exit status
+make: *** [divider] Error 1

@@ -1,0 +1,11 @@
+#
+#	UNIX style makefile for WC - Word Count program
+#
+CC=cl
+CFLAGS=
+
+wc.exe : wc.c
+	$(CC) $(CFLAGS) wc.c
+
+wc.c : wc.l
+	pclex wc.l

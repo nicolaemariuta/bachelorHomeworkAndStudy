@@ -1,0 +1,6 @@
+# part descriptions for DynaChip 6000 parts
+
+part dyna6k {
+    junk 1;
+    tconfig "EC";
+}

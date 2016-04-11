@@ -1,0 +1,213 @@
+                    SYNPLICITY SOFTWARE LICENSE AGREEMENT
+
+        This is a legal agreement between the you, the user ("Licensee")
+and Synplicity, Inc. ("Synplicity") regarding the software program attached
+to or enclosed with this software license agreement (the "Software").
+By clicking the button below marked "Yes", by opening the packaging of
+the Software, or by installing or using the Software, Licensee agrees
+to be bound by the terms of this Software License Agreement (the
+"Agreement").  If Licensee is obtaining an update, then the term
+"Software" also includes, and the terms and conditions of this Agreement
+also apply to, any pre-existing software and data provided within
+earlier Software releases, to the extent such earlier software and data
+is retained by, embodied in or in any way used or accessed by the
+upgraded Software provided with this Agreement.   IF LICENSEE DOES NOT
+AGREE TO THE TERMS OF THIS AGREEMENT, THEN CLICK ON THE BUTTON MARKED "NO"
+TO TERMINATE THE DOWNLOAD OR INSTALL PROCESS, AND (IF YOU HAVE A COPY)
+RETURN THE SOFTWARE AND ANY ACCOMPANYING ITEMS TO THE PLACE FROM WHICH YOU
+OBTAINED THEM.
+
+        LICENSE.
+Synplicity grants to Licensee, a nonexclusive right to use the SOFTWARE on
+one computer system or on a networked computer system, using only the
+number of nodes for which Licensee has a license and for which Licensee has
+the security key(s) or authorization code(s) provided by Synplicity or its
+agents.  All SOFTWARE must be used within the country for which the systems
+were licensed and must be located at a single site (within a one-kilometer
+radius.)  In addition, all authorized person(s) who access and use the
+SOFTWARE must be within the country for which the systems were licensed and
+must be located at a single site (within a one-kilometer radius from the
+location of the SOFTWARE).
+
+        COPY RESTRICTIONS.
+This SOFTWARE and documentation is protected by United States copyright
+laws and international treaty provisions.  Unauthorized copying of the
+SOFTWARE in whole or in part is expressly forbidden.  Subject to these
+restrictions, Licensee may (i) load the SOFTWARE onto one computer to
+support authorized use and (ii) make one copy of the SOFTWARE solely for
+backup purposes, provided Licensee includes all copyright and trademark
+notices on the back-up copy.  Licensee may not copy any part of the
+documentation, nor modify, adapt, translate into any language, or create
+derivative works based on the documentation without the prior written
+consent of Synplicity.
+
+        OWNERSHIP OF THE SOFTWARE.
+Synplicity retains all right, title, and interest in the SOFTWARE and
+documentation (and any copy thereof), and reserves all rights not expressly
+granted to Licensee.  This License is not a sale of the original SOFTWARE
+or of any copy.
+
+        USE RESTRICTIONS.
+This SOFTWARE is licensed to Licensee for internal use only.  Licensee
+acknowledges that the scope of the licenses granted hereunder do not permit
+Licensee (and Licensee shall not allow any third party) to: (i) decompile,
+disassemble, reverse engineer or attempt to reconstruct, identify or
+discover any source code, underlying ideas, underlying user interface
+techniques or algorithms of the SOFTWARE by any means whatever, or disclose
+any of the foregoing; (ii) provide, lease, lend, use for timesharing or
+service bureau purposes, or otherwise use or allow others to use the
+SOFTWARE for the benefit of third parties; (iii) modify, incorporate into
+or with other software, or create a derivative work of any part of the
+SOFTWARE; (iv) disclose the results of any benchmarking of the SOFTWARE, or
+use such results for its own competing software development activities,
+without the prior written permission of Synplicity; or (v) attempt to
+circumvent any user limits, maximum gate count limits or other license,
+timing or use restrictions that are built in to the Software.
+
+        TRANSFER RESTRICTIONS.
+Licensee shall not sublicense, transfer or assign this Agreement or any of
+the rights or licenses granted under this Agreement, except in the case of
+a merger or sale of all or substantially all of Licensee's assets.
+
+        OWNERSHIP OF DESIGN TECHNIQUES.
+"Design" means the representation of an electronic circuit or device(s),
+derived or created by Licensee through the use of the SOFTWARE in its
+various formats, including, but not limited to, equations, truth tables,
+schematic diagrams, textual descriptions, hardware description languages,
+and netlists.  "Design Techniques" means the Synplicity-supplied data,
+circuit and logic elements, libraries, algorithms, search strategies, rule
+bases, and technical information incorporated in the SOFTWARE and employed
+in the process of creating Designs.  Synplicity retains all right, title
+and interest in and to Design Techniques incorporated into the SOFTWARE,
+including all intellectual property rights embodied therein. Licensee
+acknowledges that Synplicity is in the business of licensing SOFTWARE which
+incorporates Design Techniques. Licensee agrees that in the event Licensee
+voluntarily discloses any design techniques to Synplicity without
+designating such as Licensee's Confidential Information, Synplicity shall
+have the unrestricted, royalty-free right to incorporate such design
+techniques into its software, documentation and other products, and to
+sublicense third parties to use such incorporated design techniques.
+
+        PROTECTION OF CONFIDENTIAL INFORMATION.
+"Confidential Information" means (i) the SOFTWARE, in object and source
+code form, and any related technology, idea, algorithm or information
+contained therein, including without limitation Design Techniques, and any
+trade secrets related to any of the foregoing; (ii) either party's product
+plans, Designs, costs, prices and names; non-published financial
+information; marketing plans; business opportunities; personnel; research;
+development or know-how; (iii) any information designated by the disclosing
+party as confidential in writing or, if disclosed orally, designated as
+confidential at the time of disclosure and reduced to writing and given to
+the receiving party and designated as confidential in writing within thirty
+(30) days; and (iv) the terms and conditions of this Agreement; provided,
+however that "Confidential Information" will not include information that:
+(a) is or becomes generally known or available by publication, commercial
+use or otherwise through no fault of the receiving party; (b) is known and
+has been reduced to tangible form by the receiving party at the time of
+disclosure and is not subject to restriction; (c) is independently
+developed by the receiving party without use of the disclosing party's
+Confidential Information; (d) is lawfully obtained from a third party who
+has the right to make such disclosure; and (e) is released for publication
+by the disclosing party in writing.
+
+Each party will protect the other's Confidential Information from
+unauthorized dissemination and use with the same degree of care that each
+such party uses to protect its own like information. Neither party will use
+the other's Confidential Information for purposes other than those
+necessary to directly further the purposes of this Agreement. Neither party
+will disclose to third parties the other's Confidential Information without
+the prior written consent of the other party.
+
+        TERMINATION.
+Synplicity may terminate this Agreement in the event of breach or default
+by Licensee.  Upon termination Licensee will relinquish all rights under
+this Agreement, and must cease using the SOFTWARE and return or destroy all
+copies (and partial copies) of the SOFTWARE and documentation.
+
+        EXPORT.
+Licensee agrees not to allow the Synplicity SOFTWARE to be sent or used in
+any country except in compliance with applicable U.S. laws and regulations.
+
+        LIMITED WARRANTY AND DISCLAIMER.
+Synplicity warrants (i) that the SOFTWARE will perform substantially in
+accordance with the accompanying documentation for a period of ninety (90)
+days from the date of receipt, and (ii) that the SOFTWARE will be able to
+accurately process date data (including, but not limited to, calculating,
+comparing, and sequencing) from, into and between the twentieth and
+twenty-first centuries, provided that it is used in accordance with the
+product documentation provided by Synplicity, that all associated products
+(such as hardware, software, firmware and the like) used in combination
+with the SOFTWARE properly exchange date data with it, and that Licensee
+is covered under a services or maintenance agreement with Synplicity
+regarding the SOFTWARE.  Synplicity's entire liability and Licensee's
+exclusive remedy for a breach of the preceding limited warranties shall be,
+at Synplicity's option, either (a) return of the license fee, or (b)
+providing a fix, patch, work-around, or replacement of the SOFTWARE that
+does not meet such limited warranty.  In either case, Licensee must return
+the SOFTWARE to Synplicity with a copy of the purchase receipt or similar
+document.  Any replacement will be warranted for the remainder of the
+original warranty period or 30 days, whichever is longer.  Some states/
+jurisdictions do not allow limitations on duration of an implied warranty,
+so the above limitation may not apply.  EXCEPT AS EXPRESSLY SET FORTH ABOVE,
+NO OTHER WARRANTIES OR CONDITIONS, EITHER EXPRESS OR IMPLIED, ARE MADE BY
+SYNPLICITY WITH RESPECT TO THE SOFTWARE AND THE ACCOMPANYING DOCUMENTATION
+(STATUTORY OR OTHERWISE), AND SYNPLICITY EXPRESSLY DISCLAIMS ALL WARRANTIES
+AND CONDITIONS NOT EXPRESSLY STATED HEREIN, INCLUDING BUT NOT LIMITED TO THE
+IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, NONINFRINGEMENT, AND
+FITNESS FOR A PARTICULAR PURPOSE.  SYNPLICITY DOES NOT WARRANT THAT THE
+FUNCTIONS CONTAINED IN THE SOFTWARE WILL MEET LICENSEE'S REQUIREMENTS, BE
+UNINTERRUPTED OR ERROR FREE, OR THAT ALL DEFECTS IN THE PROGRAM WILL BE
+CORRECTED.  Licensee assumes the entire risk as to the results and
+performance of the SOFTWARE.  Some states/jurisdictions do not allow the
+exclusion of implied warranties, so the above exclusion may not apply.
+
+        LIMITATION OF LIABILITY.
+LICENSEE AGREES THAT IN NO EVENT SHALL SYNPLICITY OR ITS AGENTS BE LIABLE
+FOR ANY INDIRECT, SPECIAL, CONSEQUENTIAL OR INCIDENTAL DAMAGES WHATSOEVER
+(INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS,
+BUSINESS INTERRUPTIONS, LOSS OF BUSINESS INFORMATION, OR OTHER PECUNIARY
+LOSS) ARISING OUT OF THE USE OF OR INABILITY TO USE THESE SYNPLICITY
+PRODUCTS, EVEN IF SYNPLICITY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
+DAMAGES.  In no event will Synplicity be liable to Licensee for damages in
+an amount greater than the fees paid for the use of the SOFTWARE.  Some
+states/jurisdictions do not allow the limitation or exclusion of incidental
+or consequential damages, so the above limitations or exclusions may not
+apply.
+
+        INTELLECTUAL PROPERTY RIGHT INFRINGEMENT.
+In the event that a claim alleging infringement of an intellectual property
+right arises concerning the SOFTWARE (including but not limited to patent,
+trade secret, copyright or trademark rights), Synplicity in its sole
+discretion may elect to defend or settle such claim.  Synplicity in the
+event of such a claim may also in its sole discretion elect to terminate
+this Agreement and all rights to use the SOFTWARE, and require the return
+or destruction of the SOFTWARE, with a refund of the fees paid for use of
+the SOFTWARE less a reasonable allowance for use and shipping.
+
+        MISCELLANEOUS.
+If Licensee is a corporation, partnership or similar entity, then the
+license to the Software that is granted under this Agreement is expressly
+conditioned upon acceptance by a person who is authorized to sign for and
+bind the entity.  This Agreement is the entire agreement between Licensee
+and Synplicity with respect to the license to the SOFTWARE, and supersedes
+any previous oral or written communications or documents (including, if
+you are obtaining an update, any agreement that may have been included with
+the initial version of the Software). This Agreement is governed by the
+laws of the State of California, USA.  This Agreement will not be governed
+by the U.N. Convention on Contracts for the International Sale of Goods.
+If any provision of this Agreement is found to be invalid or unenforceable,
+it will be enforced to the extent permissible and the remainder of this
+Agreement will remain in full force and effect.  Failure to prosecute a
+party's rights with respect to a default hereunder will not constitute a
+waiver of the right to enforce rights with respect to the same or any other
+breach.
+
+        GOVERNMENT USERS.
+Use, reproduction, release, modification, or disclosure of this commercial
+computer software, or of any related documentation of any kind, is
+restricted in accordance with FAR 12.212 and DFARS 227.7202, and further
+restricted by this License Agreement.  Synplicity, Inc., 610 Caribbean
+Drive, Sunnyvale, CA 94089, U.S.A.
+
+(revised 3/99)
+

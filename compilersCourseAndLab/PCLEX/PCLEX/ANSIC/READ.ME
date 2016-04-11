@@ -1,0 +1,12 @@
+                        ANSI C Grammar
+
+     This directory contains a complete grammar for ANSI C (in ANSIC.Y), a
+lexical analyzer (in LEX.L), error reporting (in ERRORLIB.C and ERRORLIB.H),
+a driver routine (in MAIN.C), and a MAKEFILE to build a simple ANSI C syntax
+analyzer (in ACC.EXE).  The parser has no semantics.  The lexical analyzer
+ignores proprocessor lines.  The lack of any semantics means areas where
+syntax and semantics overlap like user defined types are incomplete.  The
+error handling is good and illustrates the heuristics given in the tutorials
+(in \DOC\ERROR.DOC) for a real grammar.  It also illustrates a lexical
+analyzer and parser for a real language built with PCLEX and PCYACC.
+A complete writeup on the lexical analyzer is in \DOC\MANUAL.DOC.

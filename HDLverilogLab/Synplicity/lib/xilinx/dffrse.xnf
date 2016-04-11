@@ -1,0 +1,58 @@
+LCANET,5
+PROG,SYNPLIFY,2.6b,"Tue Dec 10 12:09:20 1996"
+PART,4005PC84-4
+PWR,0,GND
+PWR,1,VCC
+SYM, C_tmp, FMAP, MAP=PUC, LIBVER=2.0.0
+PIN, I1, I, CE
+PIN, I2, I, C
+PIN, O, I, C_tmp
+END
+SYM, C_tmp$$and0, AND, LIBVER=2.0.0
+PIN,I1,I,CE
+PIN,I0,I,C
+PIN,O,O,C_tmp$$and0
+END
+SYM,C_tmp$$or,BUF, LIBVER=2.0.0
+PIN,I,I,C_tmp$$and0
+PIN,O,O,C_tmp
+END
+SYM,C_tmp_i,inv, LIBVER=2.0.0
+PIN,I,I,C_tmp
+PIN,O,O,C_tmp_i
+END
+SYM, Q, FMAP, MAP=PUC, LIBVER=2.0.0
+PIN, I1, I, tmp_set
+PIN, I2, I, slave_res
+PIN, O, I, Q
+END
+SYM, Q$$and0, AND, LIBVER=2.0.0
+PIN,I1,I,tmp_set
+PIN,I0,I,slave_res
+PIN,O,O,Q$$and0
+END
+SYM,Q$$or,BUF, LIBVER=2.0.0
+PIN,I,I,Q$$and0
+PIN,O,O,Q
+END
+SYM, master_res, LDCP_1, LIBVER=2.0.0
+PIN, D, I, VCC
+PIN, G, I, C_tmp
+PIN, CLR, I, CLR
+PIN, PRE, I, PRE
+PIN, Q, O, master_res
+END
+SYM, slave_res, LDCP_1, LIBVER=2.0.0
+PIN, D, I, master_res
+PIN, G, I, C_tmp_i
+PIN, CLR, I, CLR
+PIN, PRE, I, PRE
+PIN, Q, O, slave_res
+END
+SYM, tmp_set, DFF, LIBVER=2.0.0, INIT=S
+PIN, D, I, D
+PIN, C, I, C_tmp
+PIN, PRE, I, PRE
+PIN, Q, O, tmp_set
+END
+EOF

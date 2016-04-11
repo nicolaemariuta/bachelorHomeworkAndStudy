@@ -1,0 +1,56 @@
+LCANET,6
+PROG,SYNPLIFY,5.0.8,"Sat Dec 12 19:14:48 1998"
+PART,4003epc84-1
+PWR,0,GND
+PWR,1,VCC
+SYM, Q_2_f, FMAP, MAP=PUC, HU_SET=BN0, RLOC=R0C0, LIBVER=2.0.0
+PIN, I1, I, GE
+PIN, I2, I, D
+PIN, I3, I, Q
+PIN, I4, I, G
+PIN, O, I, N_8
+END
+SYM, Q_2_f$$and0, AND, LIBVER=2.0.0
+PIN,I1,I,G
+PIN,I2,I,Q
+PIN,O,O,Q_2_f$$and0
+END
+SYM, Q_2_f$$and1, AND, LIBVER=2.0.0
+PIN,I1,I,Q
+PIN,I2,I,D
+PIN,O,O,Q_2_f$$and1
+END
+SYM, Q_2_f$$and2, AND, LIBVER=2.0.0
+PIN,I1,I,Q
+PIN,I2,I,GE,,INV
+PIN,O,O,Q_2_f$$and2
+END
+SYM, Q_2_f$$and3, AND, LIBVER=2.0.0
+PIN,I1,I,G,,INV
+PIN,I2,I,D
+PIN,I3,I,GE
+PIN,O,O,Q_2_f$$and3
+END
+SYM,Q_2_f$$or,OR, LIBVER=2.0.0
+PIN,I0,I,Q_2_f$$and0
+PIN,I1,I,Q_2_f$$and1
+PIN,I2,I,Q_2_f$$and2
+PIN,I3,I,Q_2_f$$and3
+PIN,O,O,N_8
+END
+SYM, Q_2, HMAP, MAP=PUC, HU_SET=BN0, RLOC=R0C0, LIBVER=2.0.0
+PIN, I1, I, N_8
+PIN, I2, I, PRE
+PIN, O, I, Q
+END
+SYM,Q_2$$or,OR, LIBVER=2.0.0
+PIN,I0,I,PRE
+PIN,I1,I,N_8
+PIN,O,O,Q
+END
+SIG,Q,O,,
+SIG,PRE,I,,
+SIG,D,I,,
+SIG,G,I,,
+SIG,GE,I,,
+EOF

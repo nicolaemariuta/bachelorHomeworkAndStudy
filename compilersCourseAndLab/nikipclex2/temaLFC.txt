@@ -1,0 +1,7 @@
+[0-1]*(01)          				printf("toate cuvintele care se termina in 01");
+1*01*|1*0|01*       				printf("toate cuvintele care contin exact un 0");
+(11)*  		    				printf("toate cuvintele care contin un numar par de 1 si nici un 0");
+(10*1)*		    				printf("toate cuvintele care contin un numar par de 1");
+[0-1]*(01)[0-1]*				printf("toate cuvintele care contin subsirul 01");
+1*0						printf("toate cuvintele care nu contin subsirul 01");
+1*((01)*0*)*					printf("toate cuvintele care nu contin subsirul 011");

@@ -1,0 +1,14 @@
+     This directory contains the WC program, an example of a simple
+standalone PCLEX application.  The WC program counts the number of
+characters, words, and lines in the standard input.  For example, to run it
+on itself: "wc <wc.l".  This WC program is specific to MS-DOS.  UNIX derived
+WC programs assume that a single character ends lines.  Two characters
+(carriage return and line feed) end lines in MS-DOS files.  The output is
+three numbers, the number of characters, words, and lines in that order.  A
+complete writeup is in \DOC\MANUAL.DOC, section 10.1.
+
+     If you are using the MAKE shipped with Microsoft C, "make wc" updates
+the executables.  If you are using a UNIX style make, "make" is sufficient.
+The "makefile" assumes the compiler is named "cl", change the "CC" macro in
+"makefile" if your C compiler is named something else.  The "NMAKE" program
+shipped with Quick C 2.0 is a UNIX style make.

@@ -1,0 +1,48 @@
+
+PCLEX version 2.04, 14 December 1989
+ABRAXAS SOFTWARE, INC.
+-----------------------------------------------------------------------------
+
+I.  Contents of the PCLEX distribution disks (for your convenience, some of
+    the intermediate files are also included, though not listed here).
+
+
+PCLEX DISK::
+
+directory   \:
+
+  read.me	-- this text file
+  
+  pclex.exe     -- API family mode program DOS-OS/2
+  pclex2.exe    -- OS/2 protected mode program
+
+directory   \doc:
+
+  pclex.doc	-- PCLEX documentation
+
+directory   \skel:
+
+   pclex.sk     -- pclex skeleton file ( pclex -p[.sk] ) special option
+
+II. EXAMPLES
+
+    The examples are in the directories: \WC, \DATES, \ANSIC, and \DIGRAPH.
+Each directory is self-contained, including all source files, a MAKEFILE for
+UNIX-style MAKE programs, and makefile files for Microsoft C 5.0's MAKE.
+The UNIX-style MAKEFILE works with the Quick C 2.0 NMAKE.
+
+a)  WC -- a standalone PCLEX program.  It counts the number of characters,
+	words, and lines in a file.  
+
+b)  DATES -- a simple example of PCLEX and PCYACC working together.  It
+	recognizes U.S. and European format dates.
+
+c)  ANSIC -- a more complex example of PCLEX and PCYACC working together.  It
+	is a ANSI C syntax analyzer.
+
+d)  DIGRAPH -- an example of the REJECT action.  It counts the number of
+	occurrences of letter pairs in a file.
+
+
+
+

@@ -1,0 +1,78 @@
+# Define part parameters for Synplify pAsic mapper
+part ql2003 {
+	pasic2 1;
+	qpart "ql2003";
+}
+part ql2005 {
+	pasic2 1;
+	qpart "ql2005";
+}
+part ql2007 {
+	pasic2 1;
+	qpart "ql2007";
+}
+part ql2009 {
+	pasic2 1;
+	qpart "ql2009";
+}
+part ql2012 {
+	pasic2 1;
+	qpart "ql2012";
+}
+part ql2016 {
+	pasic2 1;
+	qpart "ql2016";
+}
+part ql2020 {
+	pasic2 1;
+	qpart "ql2020";
+}
+part ql3025 {
+	pasic2 1;
+	qpart "ql3025";
+}
+part p8x12b {
+	qpart "p8x12b";
+}
+part p12x16b {
+	qpart "p12x16b";
+}
+part p16x24b {
+	qpart "p16x24b";
+}
+part p24x32b {
+	qpart "p24x32b";
+}
+part p8x12bl {
+	qpart "p8x12bl";
+}
+part p12x16bl {
+	qpart "p12x16bl";
+}
+part p16x24bl {
+	qpart "p16x24bl";
+}
+part cy7c381a {
+	qpart "p8x12b";
+}
+part cy7c382a {
+	qpart "p8x12b";
+}
+part cy7c383a {
+	qpart "p12x16b";
+}
+part cy7c384a {
+	qpart "p12x16b";
+}
+part cy7c385a {
+	qpart "p16x24b";
+}
+part cy7c386a {
+	qpart "p16x24b";
+}
+part cy7c387a {
+	qpart "p24x32b";
+}
+part cy7c388a {
+	qpart "p24x32b";
+}

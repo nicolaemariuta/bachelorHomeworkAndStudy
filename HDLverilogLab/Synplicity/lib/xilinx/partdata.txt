@@ -1,0 +1,323 @@
+# Generic info for 4000 parts
+part xc3000 {
+    xnf_bit_chars 1; # Uses <> for busses, set to 0 to omit
+    xnf_sigs 1;     # Enable use of SIGs for block mode ports
+    supthreshold 5;
+}
+part xc4000 {
+    newmap 1;
+    useblknames  0; # if unset, use RPMs
+    maplogic 1;     # set to 0 to disable logic mapping
+    collapsehf 1;   # post mapping speedup
+    useeqn 0;       # set to 1 for M1.4
+    oneleghmap 1;   # more aggressive use of hmap
+    global_buffers 4; # number of global buffers 
+    clock_buf_thresh 16; # need more than 16 loads to auto insert clock buffer
+    xnf_bit_chars 1; # Uses <> for busses, set to 0 to omit
+    xnf_sigs 1;     # Enable use of SIGs for block mode ports
+    route_threshold 4; # define route/timing bias
+    initialhmaps 1;
+    fast_suplim 10;
+    slow_suplim 10;
+    supthreshold 4;
+	xnf_hiersep "/"; # hierarchy separator in xnf
+}
+part xc5000 {
+    newmap 1;
+    maplogic 1;  # set to 0 to disable logic mapping
+    useeqn 0;    # set to 1 for M1.4 if F5MAP is supported
+    global_buffers 4;
+    clock_buf_thresh 16; # need more than 16 loads to auto insert clock buffer
+    xnf_bit_chars 1; # Uses <> for busses, set to 0 to omit
+    xnf_sigs 1;     # Enable use of SIGs for block mode ports
+    route_threshold 4;
+    fast_suplim 10;
+    slow_suplim 10;
+    supthreshold 5;
+	xnf_hiersep "/"; # hierarchy separator in xnf
+}
+part virtex {
+    newmap 1;
+    maplogic 1;
+    global_buffers 4;
+    clock_buf_thresh 16; # need more than 16 loads to auto insert clock buffer
+    latrs_error 0; # Forces error for latrs instead of warning
+    dffrs_error 0; # Forces error for dffrs instead of warning
+    route_threshold 4;
+    fast_suplim 10;
+    slow_suplim 10;
+    supthreshold 4;
+	enable_buffering 1;
+	use_srl 1;  # Enable mapping to SRL* components
+}
+
+part xc4005xl {
+    rows 14;
+    cols 14;
+    global_buffers 8;
+}
+part xc4010xl {
+    rows 20;
+    cols 20;
+    global_buffers 8;
+}
+part xc4013xl {
+    rows 24;
+    cols 24;
+    global_buffers 8;
+}
+part xc4020xl {
+    rows 28;
+    cols 28;
+    global_buffers 8;
+}
+part xc4028xl {
+    rows 32;
+    cols 32;
+    global_buffers 8;
+}
+part xc4036xl {
+    rows 36;
+    cols 36;
+    global_buffers 8;
+}
+part xc4044xl {
+    rows 40;
+    cols 40;
+    global_buffers 8;
+}
+part xc4052xl {
+    rows 44;
+    cols 44;
+    global_buffers 8;
+}
+part xc4062xl {
+    rows 48;
+    cols 48;
+    global_buffers 8;
+}
+part xc4085xl {
+    rows 56;
+    cols 56;
+    global_buffers 8;
+}
+
+
+
+part xc4013xla {
+    rows 24;
+    cols 24;
+    global_buffers 8;
+}
+part xc4020xla {
+    rows 28;
+    cols 28;
+    global_buffers 8;
+}
+part xc4028xla {
+    rows 32;
+    cols 32;
+    global_buffers 8;
+}
+part xc4036xla {
+    rows 36;
+    cols 36;
+    global_buffers 8;
+}
+part xc4044xla {
+    rows 40;
+    cols 40;
+    global_buffers 8;
+}
+part xc4052xla {
+    rows 44;
+    cols 44;
+    global_buffers 8;
+}
+part xc4062xla {
+    rows 48;
+    cols 48;
+    global_buffers 8;
+}
+part xc4085xla {
+    rows 56;
+    cols 56;
+    global_buffers 8;
+}
+
+
+
+part xc4028ex {
+    rows 32;
+    cols 32;
+    global_buffers 8;
+}
+part xc4036ex {
+    rows 36;
+    cols 36;
+    global_buffers 8;
+}
+
+
+part xc40110xv {
+    rows 64;
+    cols 64;
+    global_buffers 8;
+}
+part xc40150xv {
+    rows 72;
+    cols 72;
+    global_buffers 8;
+}
+part xc40200xv {
+    rows 84;
+    cols 84;
+    global_buffers 8;
+}
+part xc40250xv {
+    rows 92;
+    cols 92;
+    global_buffers 8;
+}
+
+
+part xc5202 {
+    rows 8;
+    cols 8;
+    maxio 84;
+}
+part xc5204 {
+    rows 10;
+    cols 12;
+    maxio 124;
+}
+part xc5206 {
+    rows 14;
+    cols 14;
+    maxio 148;
+}
+part xc5210 {
+    rows 18;
+    cols 18;
+    maxio 196;
+}
+part xc5215 {
+    rows 22;
+    cols 22;
+    maxio 244;
+}
+part xcs05 {
+    rows 10;
+    cols 10;
+    maxio 80;
+}
+part xcs05xl {
+    rows 10;
+    cols 10;
+    maxio 80;
+}
+part xcs10 {
+    rows 14;
+    cols 14;
+    maxio 112;
+}
+part xcs10xl {
+    rows 14;
+    cols 14;
+    maxio 112;
+}
+part xcs20 {
+    rows 20;
+    cols 20;
+    maxio 160;
+}
+part xcs20xl {
+    rows 20;
+    cols 20;
+    maxio 160;
+}
+part xcs30 {
+    rows 24;
+    cols 24;
+    maxio 192;
+}
+part xcs30xl {
+    rows 24;
+    cols 24;
+    maxio 192;
+}
+part xcs40 {
+    rows 28;
+    cols 28;
+    maxio 224;
+}
+part xcs40xl {
+    rows 28;
+    cols 28;
+    maxio 224;
+}
+
+# virtex parts
+
+part xcv50 {
+	rows 16;
+	cols 16;
+	blockrams 8;
+    maxio 180;
+}
+
+part xcv100 {
+	rows 20;
+	cols 30;
+	blockrams 10;
+    maxio 180;
+}
+
+part xcv150 {
+	rows 24;
+	cols 36;
+	blockrams 12;
+    maxio 260;
+}
+
+part xcv200 {
+	rows 28;
+	cols 42;
+	blockrams 14;
+    maxio 260;
+}
+
+part xcv300 {
+	rows 32;
+	cols 48;
+	blockrams 16;
+	maxio 316;
+}
+
+part xcv400 {
+	rows 40;
+	cols 60;
+	blockrams 20;
+	maxio 404;
+}
+
+part xcv600 {
+	rows 48;
+	cols 72;
+	blockrams 24;
+	maxio 500;
+}
+
+part xcv800 {
+	rows 56;
+	cols 84;
+	blockrams 28;
+	maxio 514;
+}
+
+part xcv1000 {
+	rows 64;
+	cols 96;
+	blockrams 32;
+	maxio 514;
+}

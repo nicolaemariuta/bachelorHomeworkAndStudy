@@ -1,0 +1,29 @@
+#
+#	UNIX style makefile for ANSI C syntax analyzer
+#
+CC=cl
+CFLAGS=-c
+OBJS=ansic.obj main.obj lex.obj errorlib.obj
+
+ansic.exe : $(OBJS)
+	$(CC) $(OBJS)
+
+.c.obj :
+	$(CC) $(CFLAGS) $*.c
+
+lex.c : lex.l
+	pclex lex.l
+
+ansic.c : ansic.y yaccpar.c
+	 pcyacc -D -pyaccpar.c ansic.y
+
+ansic.tok : ansic.h
+	tokens -oansic.tok ansic.h
+
+ansic.obj : ansic.c
+
+errorlib.obj : errorlib.h ansic.tok errorlib.c
+
+lex.obj : errorlib.h global.h ansic.h lex.c
+
+main.obj : errorlib.h global.h main.c

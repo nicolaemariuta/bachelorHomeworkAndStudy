@@ -1,0 +1,14 @@
+%{
+static FILE *f;
+%}
+%%
+[ \t]+  fprintf(f," ");
+[\n]+  fprintf(f,"\n");
+[^\b\t\n] fprintf(f,yytext);
+%%
+void main()
+{
+  f=fopen("FISIER OUT CALE","w");
+  yylex();
+  fclose(f);    
+}

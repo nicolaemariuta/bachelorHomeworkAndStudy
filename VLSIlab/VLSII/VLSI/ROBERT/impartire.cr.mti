@@ -1,0 +1,35 @@
+Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider.vhd {1 {vcom -work work2 -2002 -explicit Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider.vhd
+Model Technology ModelSim PE Student Edition vcom 10.2a Compiler 2013.03 Mar 15 2013
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity divider
+-- Compiling architecture divider_arch of divider
+
+} {} {}} Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider_control.vhd {1 {vcom -work work2 -2002 -explicit Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider_control.vhd
+Model Technology ModelSim PE Student Edition vcom 10.2a Compiler 2013.03 Mar 15 2013
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity divider_control
+-- Compiling architecture divider_control_arch of divider_control
+
+} {} {}} Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider_data.vhd {1 {vcom -work work2 -2002 -explicit Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider_data.vhd
+Model Technology ModelSim PE Student Edition vcom 10.2a Compiler 2013.03 Mar 15 2013
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity divider_data
+-- Compiling architecture divider_data_arch of divider_data
+
+} {} {}} Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider_test.vhd {1 {vcom -work work2 -2002 -explicit Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider_test.vhd
+Model Technology ModelSim PE Student Edition vcom 10.2a Compiler 2013.03 Mar 15 2013
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity divider_test
+-- Compiling architecture divider_test_arch of divider_test
+
+} {} {}}

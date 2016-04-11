@@ -1,0 +1,344 @@
+================================================================
+               Synplify(TM) pc_instructions.txt file
+
+            PC INSTALLATION AND LICENSING INSTRUCTIONS 
+
+    Installing Synplify on a PC                     A
+    Configuring A PC Customer License               B
+      Standard PC License                           C
+      Special Floating License                      D
+    Configuring A PC Trial License (Evaluation)     E
+    Windows NT Machines as License Servers          F
+
+================================================================
+
+A) Installing Synplify on a PC
+
+   Installation Steps
+
+        1. Insert the Synplify CD-ROM into your CD-ROM drive.
+
+        2. Read the "readme.txt" file for pointers to additional 
+           resources. To read the file, from the File Manager or 
+           Explorer, double click on the file:
+
+               <CD-ROM drive>:\pc\readme.txt
+
+        3. Install the software from the File Manager or Explorer. 
+           Double-click on the file: 
+
+               <CD-ROM drive>:\pc\setup.exe
+
+           You are guided through the installation process, which 
+           creates the "synplcty" directory.
+
+   If you are running Windows-NT 4.0, read the instructions below 
+   for installing the Sentinel driver. However, if you are evaluating 
+   Synplify, skip this section.
+  
+	Installing the Sentinel Driver
+        The Sentinel driver is needed for all Windows NT applications
+        protected by Rainbow security keys. You must install this 
+        driver for your Synplify license to work on Windows 
+	NT 3.51 and NT 4.0 systems. The driver files are located 
+	in the "synplcty\sentinel" directory on your hard drive 
+	after installation. To install the Sentinel driver, follow
+        these directions. You must have administrator privileges 
+        on your computer to install the Sentinel driver. 
+
+	1.  Go to the synplcty\sentinel directory and double 
+	    click on the "Setupx86.exe" file.
+
+	2.  When the driver installation window opens, click
+	    the Functions menu option and select the 
+	    "Install Sentinel Driver" menu item.
+
+	    A dialog box specifying the path to the 
+            Sentinel driver for I386 pops up. 
+
+        3.  Confirm that the path is correct, then click the OK.
+
+	4.  After the driver is installed, a completion box appears,
+            asking you if you want to restart your computer.
+	    You must restart your computer to activate the driver. 
+
+        Continue with the instructions for Configuring Your PC 
+        License.
+
+================================================================
+
+B) Configuring a PC Customer License
+
+        You must install Synplify before proceeding with 
+        these licensing instructions.
+
+        Synplicity offers these licenses:
+
+          - a standard PC license enabled by an authorization code 
+            and hardware security key (commonly called a dongle). 
+
+          - a floating license enabled by an authorization code and 
+            FLEXlm, a license server program.
+
+	Be sure to follow the correct licensing instructions.
+
+================================================================
+
+C) Standard PC License
+
+    Licensing Steps
+
+        1. Install the Synplify hardware security key (dongle) 
+           on your computer's parallel port.
+
+        2. Locate your Synplicity Software Authorization Form in 
+           your product shipment (or your authorization FAX or 
+           email). Your Synplicity Software Authorization Form 
+           contains your Synplify software license. If you are 
+           missing this information, contact Synplicity:
+
+                  phone: (408) 548-6000
+                  email: support@synplicity.com
+                  call your local technical support representative 
+
+        3. Edit the license.txt file in your "synplcty" 
+           directory, and type in your Synplify license.
+         
+        You are ready to run Synplify. If you have difficulties
+        installing or licensing Synplify, contact Synplicity using 
+        one of the options listed in step 2.    
+
+        Please fill out the Synplicity Software Registration 
+        Form that came with your customer shipment, then return 
+        it to Synplicity.
+
+================================================================
+
+D) Special Floating License
+
+    A floating license lets you run Synplify across Synplify-
+    supported systems on your network.
+    
+    To enable your license, you must set up a license server 
+    that monitors your Synplify licenses.  You can put the 
+    license server on any Synplify-supported platform including a 
+    Windows NT system or a Sun SPARCstation running Solaris.
+
+    For instructions, refer to the appropriate section:
+
+       - PC NT Machines as License Servers 
+       - UNIX Workstations as License Servers, System 
+         Administrators Setup Procedures 
+       - UNIX Workstations as License Servers, Beginners 
+         Setup Procedures 
+ 
+================================================================
+
+E) Configuring a PC Evaluation License
+
+    To evaluate Synplify before making a purchase, you can request 
+    a fully functional Evaluation License of Synplify, which lets you
+    run a full-featured version of Synplify for twenty days.
+    
+    To get an evaluation copy, download the software from our
+    website at http://www.synplicity.com.  After you accept our 
+    licensing agreement and fill the evaluation license request form, 
+    you can download the Synplify software.  After downloading and 
+    installing Synplify, execute the licensing wizard that pops up.
+
+    Licensing Steps
+
+    For Evaluation PC Licenses, Synplify determines a hostid for your 
+    machine and time locks Synplify to your machine.  Here's how 
+    to request and enable your evaluation PC License:
+
+    1. Run the license wizard
+
+       Execute Synplify from the "Synplicity" program group in 
+       Windows 95, 98, or Windows NT from the Start -> Synplicity -> 
+       Synplify menu item.
+ 
+       The Synplify user interface form pops up with a set of 
+       questions to answer. Answer the questions.  Print and fax, 
+       or email the form to Synplicity.
+
+       Repeat the step above to confirm your hostid (sometimes the 
+       hostid changes because of dial-up networking software). If 
+       the hostid changes, add the "-nonet" command line argument to 
+       the "Synplify" icon, and start again.  When your hostid is 
+       stable, proceed to Step 2. 
+
+       If you cannot get a stable hostid, contact Synplicity: 
+
+                       phone: (408) 548-6000 
+                       email:  support@synplicity.com 
+                       call:   your local support representative 
+ 
+       Note:  If you are using Windows 95 or 98, to add the "-nonet" 
+              command line argument, access the Synplify "shortcut" 
+              in your "C:\Windows\Start Menu\Programs\Synplicity" 
+              folder in Explorer.  Select "Synplify," click your 
+              right mouse button, and select "Properties" from the 
+              menu.  Add "-nonet" to the end of the "Target" path, 
+              and click OK.
+  
+    2. Fax or email the license request form.
+
+       A. Within North America, fax it to Synplicity at 
+          (408) 548-0050 or email trial@synplicity.com.
+
+       B. Outside of North America, fax it to your local sales 
+          office. For help locating your local sales office, 
+          view our web site at www.synplicity.com, or call us at 
+          (408) 548-6000.
+ 
+    3. Enter your Trial License into the "license.txt" file. 
+       Upon approval of your request, Synplicity faxes or 
+       emails your Trial License to you.  Enter the Trial 
+       License information using the Synplicity license wizard 
+       editor.  In the wizard introduction, choose edit or enter 
+       license information.
+ 
+    You are now ready to run Synplify. If you have difficulties 
+    installing or licensing Synplify, contact Synplicity:
+ 
+                    phone: (408) 548-6000 
+                    email:  support@synplicity.com 
+                    call:   your local support representative 
+
+================================================================
+
+F) Windows NT Machines as License Servers
+
+    These instructions explain how to set up a Synplify license 
+    server for both node-locked and floating licenses where the 
+    license server is on a PC running Windows NT.
+    
+    Important!  If you purchased Synplify for the PC (but not a 
+                floating license) and you want to run on Windows 
+                NT, do not follow these instructions.  Instead, 
+                follow the instructions for a standard PC 
+                customer license.
+    
+    Before continuing, verify that TCP/IP is installed and that 
+    the client machines can "ping" the server by name. You can 
+    execute the "ping" command from an MS-DOS prompt by typing:
+
+                 ping <host_name>
+    
+    If you installed Synplify on an NT computer, you were 
+    given the option of installing FLEXlm licensing. If you did
+    not select that option, please locate the Synplify CD and 
+    install the FLEXlm for Windows NT option. This option is 
+    only available for Windows NT computers. This creates 
+    the "SYNLM" directory on your "C" disk, as "C:\SYNLM".  
+    This directory name cannot be changed due to a limitation 
+    in NT services.
+    
+    The directory "SYNLM" contains the files necessary to set 
+    up a Windows NT computer as a floating license server.  
+    It includes these files:
+
+       FLEXLM.CPL   - Control Panel extension.	
+       INSTALLS.EXE - Installs lmgrd.exe as an NT service.
+       LMGR325C.DLL - FLEXlm licensing DLL.
+       LMGRD.EXE    - The license server.
+       LMUTIL.EXE   - FLEXlm utility for diagnosing, reporting,
+                      or controlling your license configuration.
+       SYND.EXE     - The Synplicity licensing daemon.
+
+    Licensing Steps
+
+    1. Locate your Synplicity Software Authorization Form in your 
+       product shipment (or your authorization FAX or email). 
+       Your Synplicity Software Authorization Form contains your 
+       Synplify software license. If this information is absent, 
+       email support@synplicity.com, call (408) 548-6000, or 
+       call your local sales representative.
+ 
+    2. Enter your authorization information.
+       Edit the license.txt file located in your "synplcty" 
+       directory, and type in your authorization information. 
+       Copy your license file to "C:\SYNLM\LICENSE.DAT".
+ 
+    3. Start the license using FLEXlm License Manager.
+       In the Control Panel, double click on the FLEXlm License 
+       Manager. In the Setup tab, type a name for the service.
+       "Synplicity Floating License" for example.  Next, fill in 
+       the path to:
+
+       - Lmgrd.exe (this should be C:\SYNLM\lmgrd.exe)
+       - License file (C:\SYNLM\license.dat)
+       - Debug Log  (C:\SYNLM\debug.log)
+
+       Then, click on the License tab to see your license file and 
+       confirm all information is correct.  Now go back to the 
+       Control tab and click the start service button.  A message 
+       should appear that states, "Server Started."  To check the 
+       status of your license, just click the "Status" button.   
+
+    4. Set the license file variable (client).
+       You must supply FLEXlm with the location of your Synplify 
+       license for each computer on which Synplify is to execute.  
+       The client computer need not be the same computer or even
+       the same type of computer as the computer that hosts your 
+       license server.  
+
+       If your license server is on a Windows NT system and 
+       serving a Unix client, follow the instructions in the 
+       Unix license install instructions.
+ 
+       In the following step, 4A or 4B, substitute 
+       <portname>@<servername> into the command, as applicable.  
+       This information is supplied by the SERVER line in your 
+       "license.txt" file.
+ 
+       For example, if your SERVER line is:   
+
+       SERVER  bigdaddyhost  12345678  TCP:1701
+
+       "bigdaddyhost" is the server name, and "1701" is the port 
+       number.  The <portnumber>@<servername> string, in this 
+       case, is "1701@bigdaddyhost."  Create your 
+       <portname>@<servername> string before continuing.
+ 
+       A) If your client is a PC running Windows NT, complete the
+          following steps:
+
+          1) Double click the "System" icon in the Control Panel.
+
+          2) On the "Environment" tab, add SYNPLICITY_LICENSE_FILE 
+             or LM_LICENSE_FILE to the "Variable" field.
+
+          3) If you add SYNPLICITY_LICENSE_FILE to the "Variable"
+             field, enter the <portnumber>@<servername> string in 
+             the "Value" field.   If you add LM_LICENSE_FILE to 
+             the "Variable" field, enter the path to "license.txt"
+             file that authorizes your use of Synplify.
+
+       B) If your client is a PC running Windows 95 or 98, add one of 
+          the following lines to your "autoexec.bat" file:
+
+          set SYNPLICITY_LICENSE_FILE=<portname>@<servername>
+
+          or
+
+          set LM_LICENSE_FILE=<path_to_license_file>
+
+    5. Test your license server to confirm it is running.
+       To verify that the license server is running properly, 
+       set the LM_LICENSE_FILE path to the <path to license file>.
+       Then, enter the following command at the MS-DOS prompt:
+
+       lmutil lmstat -s <portnumber>@<servername> -a
+
+       If the license server is running properly, this command 
+       displays the available licenses and the current users 
+       of those licenses.
+
+    You can now run Synplify.  If you have difficulties installing
+    or licensing Synplify, contact Synplicity: 
+
+		phone:(408) 548-6000 
+                email: support@synplicity.com.
+

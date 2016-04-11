@@ -1,0 +1,31 @@
+  o  Current Alliance environment:
+     - ALLIANCE_TOP    : /opt/alliance-5.0
+  o  Current MBK environment:
+     - MBK_IN_LO       : vst
+     - MBK_OUT_LO      : vst
+     - MBK_IN_PH       : ap
+     - MBK_OUT_PH      : ap
+     - MBK_WORK_LIB    : .
+     - MBK_CATA_LIB    : .
+                         /opt/alliance-5.0/cells/sxlib
+                         /opt/alliance-5.0/cells/dp_sxlib
+                         /opt/alliance-5.0/cells/rflib
+                         /opt/alliance-5.0/cells/ramlib
+                         /opt/alliance-5.0/cells/romlib
+                         /opt/alliance-5.0/cells/padlib
+     - MBK_CATAL_NAME  : CATAL
+     - MBK_VDD         : vdd
+     - MBK_VSS         : vss
+     - RDS_TECHNO_NAME : /opt/alliance-5.0/etc/cmos.rds
+
+  o  Program generation.
+     - Creating Makefile.
+     - Running Makefile.
+rm -f multiplier_pad multiplier_pad.o multiplier_pad.exe
+cc  -c -g -I/opt/alliance-5.0/include  multiplier_pad.c
+cc  -o multiplier_pad multiplier_pad.o -L/opt/alliance-5.0/lib -lBvl -lBeh -lBhl -lLog -lCst -lMgn -lMlu -lMlo -lMal -lMcl -lMgl -lMel -lMhl -lMsl -lMvg -lRcn -lMpu -lMph -lMap -lMcp -lMmg -lMut -lm
+rm -f multiplier_pad.o
+  o  Execute program...
+     - Exit code := 100.
+
+  o  Remove temporary file.

@@ -1,0 +1,153 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\Facultate\AN IV\sem1\PCI\Proiect\PCI-proiect
+T_opt
+Z1 VfbGdHEYz2I>HEcKK?K80d3
+Z2 04 12 17 work divider_test divider_test_arch 1
+Z3 =1-1c6f6549cdd2-50f472b2-3b1-1758
+Z4 o-quiet -auto_acc_if_foreign -work work
+Z5 n@_opt
+Z6 OE;O;6.5;42
+Pbit_arith
+Z7 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z8 w1268196578
+Z9 8E:/Facultate/AN IV/sem1/PCI/Proiect/PCI-proiect/bit_arith.vhd
+Z10 FE:/Facultate/AN IV/sem1/PCI/Proiect/PCI-proiect/bit_arith.vhd
+l0
+L4
+Z11 V:=^@BMmjo:dDb3GY:ibz@3
+Z12 OE;C;6.5;42
+32
+b1
+Z13 Mx1 4 ieee 14 std_logic_1164
+Z14 o-work work
+Z15 tExplicit 1
+Z16 !s100 ohD9HI1_@Inflb=d@`E5X2
+Bbody
+Z17 DBx4 work 9 bit_arith 0 22 :=^@BMmjo:dDb3GY:ibz@3
+R7
+l0
+L25
+Z18 Vh^H_i]en5]^JijzX5e55g0
+R12
+32
+R13
+R14
+R15
+nbody
+Z19 !s100 lN1M^QIFE2j^392PCbC_Q0
+Edivider
+Z20 w1358196973
+Z21 DPx21 C:\modeltech_6.5\ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+32
+Z22 8E:/Facultate/AN IV/sem1/PCI/Proiect/PCI-proiect/divider.vhd
+Z23 FE:/Facultate/AN IV/sem1/PCI/Proiect/PCI-proiect/divider.vhd
+l0
+L4
+Z24 VKJWoJ<>g3VXRSN60_0ih>0
+R12
+R14
+R15
+Z25 !s100 DoLV<;e:JL=JGDPI5<8H:0
+Adivider_arch
+DPx21 C:\modeltech_6.5\ieee 18 std_logic_unsigned 0 22 hEMVMlaNCR^<OOoVNV;m90
+DPx21 C:\modeltech_6.5\ieee 15 std_logic_arith 0 22 GJbAT?7@hRQU9IQ702DT]2
+DEx52 E:\Facultate\AN IV\sem1\PCI\Proiect\PCI-proiect\work 15 divider_control 0 22 [UzLikYTV0:a2SIKD`LK?3
+DEx52 E:\Facultate\AN IV\sem1\PCI\Proiect\PCI-proiect\work 12 divider_data 0 22 Y>7]AhEO2WPgOI<eQfSzz0
+R21
+Z26 DEx52 E:\Facultate\AN IV\sem1\PCI\Proiect\PCI-proiect\work 7 divider 0 22 KJWoJ<>g3VXRSN60_0ih>0
+32
+Mx3 21 C:\modeltech_6.5\ieee 14 std_logic_1164
+Mx2 21 C:\modeltech_6.5\ieee 15 std_logic_arith
+Mx1 21 C:\modeltech_6.5\ieee 18 std_logic_unsigned
+l61
+L16
+Z27 Vf7J@BX8C=_X^3NTSHLZFK2
+R12
+R14
+R15
+Z28 !s100 YB844jVQ1d66[WnaFBBDJ1
+Edivider_control
+Z29 w1358196836
+R7
+Z30 8E:/Facultate/AN IV/sem1/PCI/Proiect/PCI-proiect/divider_control.vhd
+Z31 FE:/Facultate/AN IV/sem1/PCI/Proiect/PCI-proiect/divider_control.vhd
+l0
+L4
+Z32 V[UzLikYTV0:a2SIKD`LK?3
+R12
+32
+R14
+R15
+Z33 !s100 ^zS7`c1M1zk<PFZb]RcoY1
+Adivider_control_arch
+R7
+Z34 DEx4 work 15 divider_control 0 22 [UzLikYTV0:a2SIKD`LK?3
+l29
+L21
+Z35 VBE7TMJQggT<8IAj=m<n]J1
+R12
+32
+R13
+R14
+R15
+Z36 !s100 I6FH6m1<VIjc]D`m]ARj<2
+Edivider_data
+Z37 w1358196612
+Z38 DPx4 ieee 18 std_logic_unsigned 0 22 hEMVMlaNCR^<OOoVNV;m90
+Z39 DPx4 ieee 15 std_logic_arith 0 22 GJbAT?7@hRQU9IQ702DT]2
+R7
+Z40 8E:/Facultate/AN IV/sem1/PCI/Proiect/PCI-proiect/divider_data.vhd
+Z41 FE:/Facultate/AN IV/sem1/PCI/Proiect/PCI-proiect/divider_data.vhd
+l0
+L8
+Z42 VY>7]AhEO2WPgOI<eQfSzz0
+R12
+32
+R14
+R15
+Z43 !s100 A8WbWYk?eIMTUW5^bnGZT0
+Adivider_data_arch
+R38
+R39
+R7
+Z44 DEx4 work 12 divider_data 0 22 Y>7]AhEO2WPgOI<eQfSzz0
+l34
+L27
+Z45 VE7EoXTj2f9bPH@G]o45Q22
+R12
+32
+Z46 Mx3 4 ieee 14 std_logic_1164
+Z47 Mx2 4 ieee 15 std_logic_arith
+Z48 Mx1 4 ieee 18 std_logic_unsigned
+R14
+R15
+Z49 !s100 ==l1Y5X[o^5hO_`^F:>^O1
+Edivider_test
+Z50 w1358197382
+R21
+32
+Z51 8E:/Facultate/AN IV/sem1/PCI/Proiect/PCI-proiect/divider_test.vhd
+Z52 FE:/Facultate/AN IV/sem1/PCI/Proiect/PCI-proiect/divider_test.vhd
+l0
+L4
+Z53 Vkl67enO8^NE?ddMYQH_Ih3
+R12
+R14
+R15
+Z54 !s100 GTDOgC=f7=zcY@SHRYGGU2
+Adivider_test_arch
+R26
+R21
+DEx52 E:\Facultate\AN IV\sem1\PCI\Proiect\PCI-proiect\work 12 divider_test 0 22 kl67enO8^NE?ddMYQH_Ih3
+32
+Mx1 21 C:\modeltech_6.5\ieee 14 std_logic_1164
+l29
+L7
+Z55 Vo4Fj1VASm9R:[@jB0Mi5P1
+R12
+R14
+R15
+Z56 !s100 Ne0JE0jR3<ZW22YZgU7RQ0

@@ -1,0 +1,14 @@
+Comenzi recunoscute de MIPS si folosite (sau de folosit) pentru compilator
+
+add	$1,$2,$3	$1=$2+$3
+addi	$1,$2,const	$1=$2+const
+sub	$1,$2,$3	$1=$2-$3
+mult	$1,$2,$3	$1=$2*$3
+muli	$1,$2,const	$1=$2*const
+div	$1,$2,$3	$1=$2/$3
+divi	$1,$2,const	$1=$2/const
+move	$1,$2		$1=$2
+bne	$1,$2,etich	daca $1!=$2, atunci mergi la etich
+beq	$1,$2,etich	daca $1==$2, atunci mergi la etich
+slt	$1,$2,$3	daca $2<$3, atunci $1=1, altfel $1=0
+j	etich		mergi la etich

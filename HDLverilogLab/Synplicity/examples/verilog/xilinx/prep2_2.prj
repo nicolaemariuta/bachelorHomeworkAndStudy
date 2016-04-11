@@ -1,0 +1,28 @@
+#-- Synplicity, Inc.
+#-- Synplify version 3.0
+#-- Project file V:\rel\latest\examples\verilog\xilinx\prep2_2.prj
+#-- Written on Tue Jul 15 18:56:46 1997
+
+#device options
+set_option -technology XC4000
+set_option -part XC4002A
+set_option -package PC84
+set_option -speed_grade -5
+
+#add_file options
+add_file -verilog "prep2_2.v"
+add_file -constraint "prep2_2.sdc"
+
+#compilation/mapping options
+set_option -default_enum_encoding onehot
+set_option -symbolic_fsm_compiler true
+
+#map options
+set_option -frequency 25.000
+set_option -fanout_limit 100
+set_option -force_gsr true
+set_option -disable_io_insertion false
+set_option -xilinx_m1 true
+
+#set result format/file last
+project -result_file "prep2_2.xnf"

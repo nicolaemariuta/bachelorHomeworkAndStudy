@@ -1,0 +1,24 @@
+2013-03-25 09:58:06,305 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(158)]: --------------------------------------------------------------------------------
+2013-03-25 09:58:06,317 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(159)]: JPPF version information: Version: 3.2.3, Build number: 0914, Build date: 2013-03-12 09:57 CET
+2013-03-25 09:58:06,317 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(160)]: starting node with PID=4544, UUID=04857307-9D71-7B46-4CF3-8C85C8C3509E
+2013-03-25 09:58:06,318 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(161)]: --------------------------------------------------------------------------------
+2013-03-25 09:58:07,415 [INFO ][org.jppf.classloader.ClassLoaderRequestHandler.run(161)]: maxBatchSize = 1
+2013-03-25 09:58:07,500 [INFO ][org.jppf.server.node.NodeExecutionManagerImpl.<init>(131)]: running 4 processing threads
+2013-03-25 09:58:07,500 [INFO ][org.jppf.server.node.NodeExecutionManagerImpl.createThreadManager(158)]: Using default thread manager
+2013-03-25 10:34:13,819 [ERROR][org.jppf.server.node.JPPFNode.run(138)]: Connection reset
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.fill(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.DataInputStream.readInt(Unknown Source)
+	at org.jppf.comm.socket.AbstractSocketWrapper.readInt(AbstractSocketWrapper.java:256)
+	at org.jppf.io.SocketWrapperInputSource.readInt(SocketWrapperInputSource.java:90)
+	at org.jppf.io.IOHelper.readData(IOHelper.java:94)
+	at org.jppf.io.IOHelper.unwrappedData(IOHelper.java:150)
+	at org.jppf.server.node.remote.RemoteNodeIO.deserializeObjects(RemoteNodeIO.java:70)
+	at org.jppf.server.node.AbstractNodeIO.readObjects(AbstractNodeIO.java:115)
+	at org.jppf.server.node.AbstractNodeIO.readTask(AbstractNodeIO.java:84)
+	at org.jppf.server.node.JPPFNode.perform(JPPFNode.java:169)
+	at org.jppf.server.node.JPPFNode.run(JPPFNode.java:129)
+	at org.jppf.node.NodeRunner.main(NodeRunner.java:143)

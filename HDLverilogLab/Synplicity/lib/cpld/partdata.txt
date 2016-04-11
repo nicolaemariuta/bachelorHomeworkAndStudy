@@ -1,0 +1,11 @@
+part pLSI {
+	ff_enable 0;
+}
+part ispLSI {
+	ff_enable 0;
+}
+
+part mach5 {
+	hasce 1;
+	mince 2; # require ce to be shared
+}

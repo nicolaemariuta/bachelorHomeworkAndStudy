@@ -1,0 +1,25 @@
+# Comment lines begin with the # character
+
+# This file (license.txt on the PC, license.dat on UNIX workstations) is used 
+# to enter authorization information for Synplicity customers and evaluations.
+
+# Please cut/paste or enter the FEATURE information from you authorization FAX 
+# or email. Please include the VENDOR_STRING line. Check that there are no  
+# characters or spaces after the backslash on the FEATURE line. If you 
+# are unsure, remove the backslash and join the VENDOR_STRING line with the 
+# FEATURE line to create a single FEATURE line.
+
+# Example:
+# FEATURE synplify_pc synplctyd 2.590 31-dec-99 0 12345678901234567890 \
+# VENDOR_STRING=fpga HOSTID=SKEY=FFFFFFFF ck=00
+
+# The format of your license may differ slightly from this example. There 
+# may be additional SERVER or DAEMON lines that you will need
+# to include. For more information on UNIX licensing, please refer to the 
+# instructions file called "licinstr.txt" in your synplcty directory.
+
+# On PC's, Synplify expects this file to be in your "synplcty" directory.
+# If the variables SYNPLICITY_LICENSE_FILE or LM_LICENSE_FILE are set,
+# Synplify will look for the license data in the files pointed to by
+# those variables. Preference is given to SYNPLICITY_LICENSE_FILE
+# On UNIX computers, LM_LICENSE_FILE must be set.

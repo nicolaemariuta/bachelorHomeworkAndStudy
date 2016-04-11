@@ -1,0 +1,19 @@
+%{
+   
+%}
+
+slashSteluta    \/\*(.|\n)*(\*\/)
+slashslash      \/\/.*
+
+%%
+
+{slashslash}   ( );
+{slashSteluta}   ( );
+
+
+%%
+main()
+{
+    yylex();
+    return 0;
+}

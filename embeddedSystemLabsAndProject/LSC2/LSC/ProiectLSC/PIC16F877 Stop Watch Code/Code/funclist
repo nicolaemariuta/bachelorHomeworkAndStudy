@@ -1,0 +1,14 @@
+_ISR: CODE, 716 0 17
+_InitTimer0: CODE, 747 0 7
+_WriteCommandToLCD: CODE, 346 0 18
+_main: CODE, 395 0 267
+_UpdateTimeCounters: CODE, 662 0 54
+_Init1msecTimerInterrupt: CODE, 746 0 1
+___lwdiv: CODE, 166 0 42
+_DisplayTimeToLCD: CODE, 15 0 133
+_InitLCD: CODE, 244 0 88
+_WriteDataToLCD: CODE, 148 0 18
+___lwmod: CODE, 208 0 36
+_ToggleEpinOfLCD: CODE, 332 0 14
+_ClearLCDScreen: CODE, 364 0 14
+Total: 709

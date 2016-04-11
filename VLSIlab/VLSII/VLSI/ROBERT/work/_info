@@ -1,0 +1,161 @@
+m255
+K4
+z2
+13
+cModel Technology
+Z0 dZ:\home\kalio\Desktop\Facultate\VLSI\ROBERT
+!i10d 8192
+!i10e 25
+!i10f 100
+Edivider
+Z1 w1358165402
+Z2 DPx3 std 6 textio 0 22 Y8d?=bLj9m4jiPLbo;>GT0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 1bm?@Gd;P>[>_lN8Do9gP3
+Z4 dZ:\home\kalio\Desktop\Facultate\VLSI\ROBERT
+Z5 8Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider.vhd
+Z6 FZ:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider.vhd
+l0
+L6
+VX@cP5MF<g>=D^cQL[f=R31
+!s100 l0nz6z_mD::8ChH<_2GGg0
+Z7 OP;C;10.2a;57
+32
+Z8 !s110 1366471190
+!i10b 1
+Z9 !s108 1366471190.006000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider.vhd|
+Z11 !s107 Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider.vhd|
+Z12 o-work work -2002 -explicit -O0
+Z13 tExplicit 1
+Adivider_arch
+R2
+R3
+Z14 DEx4 work 7 divider 0 22 X@cP5MF<g>=D^cQL[f=R31
+l72
+L19
+Z15 VIeE8P;VHfBfXCKYQim6C10
+Z16 !s100 ZPmCZ:fXXTX<IZH611`1^3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+R12
+R13
+Edivider_control
+Z17 w1358174000
+R2
+R3
+R4
+Z18 8Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider_control.vhd
+Z19 FZ:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider_control.vhd
+l0
+L4
+Vb]zA@UfakQ43eVf=7P1mT3
+R7
+32
+Z20 !s110 1366471189
+Z21 !s108 1366471188.985000
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider_control.vhd|
+Z23 !s107 Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider_control.vhd|
+R12
+R13
+!s100 97F>94SoANW43NV`F`_On2
+!i10b 1
+Adivider_control_arch
+R2
+R3
+DEx4 work 15 divider_control 0 22 b]zA@UfakQ43eVf=7P1mT3
+l31
+L22
+VBJJGB]S9Qk5h2W3n1e<iT1
+R7
+32
+R20
+R21
+R22
+R23
+R12
+R13
+!s100 ]G@:?65IQ5d3aT7DDO]S51
+!i10b 1
+Edivider_data
+Z24 w1358165400
+Z25 DPx4 ieee 18 std_logic_unsigned 0 22 @_jbHPR7i^Jh?`2fDCO`m3
+Z26 DPx4 ieee 15 std_logic_arith 0 22 I`lKR?Ob>E^B_e2VdVLiQ0
+R2
+R3
+R4
+Z27 8Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider_data.vhd
+Z28 FZ:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider_data.vhd
+l0
+L5
+VOoXm5c@lC9CFdf9788OU[0
+R7
+32
+R20
+Z29 !s108 1366471189.281000
+Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider_data.vhd|
+Z31 !s107 Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider_data.vhd|
+R12
+R13
+!s100 iE`SdKabVU=FlPg@33^Xd1
+!i10b 1
+Adivider_data_arch
+R25
+R26
+R2
+R3
+DEx4 work 12 divider_data 0 22 OoXm5c@lC9CFdf9788OU[0
+l36
+L27
+VjA:Mk>H2O`EYk0;D9od3b2
+R7
+32
+R20
+R29
+R30
+R31
+R12
+R13
+!s100 G2AhF9kfL<>geT6D<FG?00
+!i10b 1
+Edivider_test
+R1
+R2
+R3
+R4
+Z32 8Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider_test.vhd
+Z33 FZ:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider_test.vhd
+l0
+L3
+VcOzH=<1_MAQ2nn_@Mk_ML2
+R7
+33
+R20
+Z34 !s108 1366471189.631000
+Z35 !s90 -reportprogress|300|-work|work|-2008|-explicit|Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider_test.vhd|
+Z36 !s107 Z:/home/kalio/Desktop/Facultate/VLSI/ROBERT/divider_test.vhd|
+Z37 o-work work -2008 -explicit -O0
+R13
+!s100 :^N^:FPlG5GNUeRk3;>5O0
+!i10b 1
+Adivider_test_arch
+R2
+R3
+DEx4 work 12 divider_test 0 22 cOzH=<1_MAQ2nn_@Mk_ML2
+l23
+L5
+V]40gjKhJg_OONm;k2Pgz_1
+!s100 Sm7Gac=_O5KWSjfXAR@@73
+R7
+33
+R20
+R34
+R35
+R36
+R37
+R13
+!i10b 1

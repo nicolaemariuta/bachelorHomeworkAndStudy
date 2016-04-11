@@ -1,0 +1,108 @@
+entity divider_model is
+   port (
+      cat_init   : in      bit_vector(3 downto 0);
+      rest_init  : in      bit_vector(4 downto 0);
+      valid_init : in      bit;
+      vss        : in      bit;
+      vdd        : in      bit;
+      valid      : out     bit;
+      rest       : out     bit_vector(4 downto 0);
+      cat        : out     bit_vector(3 downto 0)
+ );
+end divider_model;
+
+architecture structural of divider_model is
+Component buf_x2
+   port (
+      i   : in      bit;
+      q   : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end component;
+
+
+begin
+
+cat_0_ins : buf_x2
+   port map (
+      i   => cat_init(0),
+      q   => cat(0),
+      vdd => vdd,
+      vss => vss
+   );
+
+cat_1_ins : buf_x2
+   port map (
+      i   => cat_init(1),
+      q   => cat(1),
+      vdd => vdd,
+      vss => vss
+   );
+
+cat_2_ins : buf_x2
+   port map (
+      i   => cat_init(2),
+      q   => cat(2),
+      vdd => vdd,
+      vss => vss
+   );
+
+cat_3_ins : buf_x2
+   port map (
+      i   => cat_init(3),
+      q   => cat(3),
+      vdd => vdd,
+      vss => vss
+   );
+
+rest_0_ins : buf_x2
+   port map (
+      i   => rest_init(0),
+      q   => rest(0),
+      vdd => vdd,
+      vss => vss
+   );
+
+rest_1_ins : buf_x2
+   port map (
+      i   => rest_init(1),
+      q   => rest(1),
+      vdd => vdd,
+      vss => vss
+   );
+
+rest_2_ins : buf_x2
+   port map (
+      i   => rest_init(2),
+      q   => rest(2),
+      vdd => vdd,
+      vss => vss
+   );
+
+rest_3_ins : buf_x2
+   port map (
+      i   => rest_init(3),
+      q   => rest(3),
+      vdd => vdd,
+      vss => vss
+   );
+
+rest_4_ins : buf_x2
+   port map (
+      i   => rest_init(4),
+      q   => rest(4),
+      vdd => vdd,
+      vss => vss
+   );
+
+valid_ins : buf_x2
+   port map (
+      i   => valid_init,
+      q   => valid,
+      vdd => vdd,
+      vss => vss
+   );
+
+
+end structural;

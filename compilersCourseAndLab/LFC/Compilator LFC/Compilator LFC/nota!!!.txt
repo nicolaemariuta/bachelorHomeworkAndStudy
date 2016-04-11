@@ -1,0 +1,33 @@
+
+Am atasat toate cele necesare pentru rularea compilatorului.
+
+Arhiva contine:
+     programele in lex si yacc date la curs de prof - pentru nota 6
+     un fisier text cu un cod aleator scris de mine pentru testarea programului
+     BorlandC - necesar pentru rulare (Visual C++ poate merge dar ii mai trebuiesc probabil si alte chestii)
+     un document in care am scris toti pasii necesari pentru rulare
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Am rulat compilatorul si intradevar da o eroare de sintaxa la compilare. Mai departe la rularea finala am primit 6 erori.
+solutia este urmatoarea:
+
+2.      in cmd se merge cu calea la acel folder si se ruleaza:
+
+a.     pclex numeFisierLex.l
+
+b.     pcyacc -d numeFisierYacc.y
+acel  -d creaza un fisier YYTAB.H care si el la randul sau trebuie adaugat impreuna cu fisierele .C 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="ICLab2"/>
+	<classpathentry kind="src" path="ICLab6"/>
+	<classpathentry kind="src" path="ICLab3"/>
+	<classpathentry kind="src" path="ICLaab4"/>
+	<classpathentry kind="src" path="Tema1"/>
+	<classpathentry kind="src" path="ICLab7"/>
+	<classpathentry kind="src" path="Tema2"/>
+	<classpathentry kind="src" path="ICLab9"/>
+	<classpathentry kind="src" path="ICLab10"/>
+	<classpathentry kind="src" path="Tema3"/>
+	<classpathentry kind="src" path="ICLab12"/>
+	<classpathentry kind="src" path="Tema4"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

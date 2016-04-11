@@ -1,0 +1,38 @@
+1.Sa se scrie in LEX urmatoarele:
+
+a.toate cuvintele care se termina in 011        (0|1)*011
+b.toate cuvintele care incep cu 011             011(0|1)*
+c.toate cuvintele peste a,b,c care contin numar 
+par de a sau numar par de b sau numar par de c  (aa|bb|cc)*
+
+                                           (b|c)*a(b|c)*a(b|c)*
+
+
+2.Sa se scrie program LEX pentru a indentifica numerele intregi ,reale, 
+si numerele exponentiale cu semn +,-
+-rezultatul se va pune intr-un fisier care se va numi test.out
+-pentru fiecare entiate se va scrie in dreapta lui ce reprezinta(datele de intrare
+sunt intr-un fisier test.in
+
+
+%{
+    int numintregi=0; 
+        numreale = 0 , 
+        numexponentiale =0,
+
+%}
+%%
+\n        {numintregi++;}
+\n        {numreale++;}
+[^ \t\n]+ {numexponentiale++;}
+%%
+main()
+{
+	yylex();
+	printf("Numere intregi de caractere = %d\n",numintregi);
+	printf("Numare reale = %d\n", numreale);
+	printf("Numare cu semn = %d\n" , numexponetiale);
+}
+
+
+

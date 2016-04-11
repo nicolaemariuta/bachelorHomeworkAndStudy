@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="CitireTextField"/>
+	<classpathentry kind="src" path="CardLayout"/>
+	<classpathentry kind="src" path="DesenareCercuri"/>
+	<classpathentry kind="src" path="FereastraDialog"/>
+	<classpathentry kind="src" path="ScrollPane"/>
+	<classpathentry kind="src" path="TextField"/>
+	<classpathentry kind="src" path="TratareaEvenimentelor"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="FileDialog"/>
+	<classpathentry kind="src" path="gridBagLayout"/>
+	<classpathentry kind="src" path="meniuri"/>
+	<classpathentry kind="src" path="MenuEvent"/>
+	<classpathentry kind="src" path="panel"/>
+	<classpathentry kind="src" path="popUpMenu"/>
+	<classpathentry kind="src" path="ScrollBar"/>
+	<classpathentry kind="src" path="TestButton"/>
+	<classpathentry kind="src" path="CheckBox"/>
+	<classpathentry kind="src" path="TestChoice"/>
+	<classpathentry kind="src" path="TestLabe"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

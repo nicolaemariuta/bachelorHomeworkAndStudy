@@ -1,0 +1,234 @@
+__text_start:
+__start:
+    0046 EFCF      LDI	R28,0xFF
+    0047 E1D0      LDI	R29,0x10
+    0048 BFCD      OUT	0x3D,R28
+    0049 BFDE      OUT	0x3E,R29
+    004A 51C0      SUBI	R28,0x10
+    004B 40D0      SBCI	R29,0
+    004C EA0A      LDI	R16,0xAA
+    004D 8308      STD	Y+0,R16
+    004E 2400      CLR	R0
+    004F E0E0      LDI	R30,0
+    0050 E0F1      LDI	R31,1
+    0051 E011      LDI	R17,1
+    0052 30E0      CPI	R30,0
+    0053 07F1      CPC	R31,R17
+    0054 F011      BEQ	0x0057
+    0055 9201      ST	R0,Z+
+    0056 CFFB      RJMP	0x0052
+    0057 8300      STD	Z+0,R16
+    0058 E8EC      LDI	R30,0x8C
+    0059 E0F0      LDI	R31,0
+    005A E0A0      LDI	R26,0
+    005B E0B1      LDI	R27,1
+    005C E010      LDI	R17,0
+    005D 38EC      CPI	R30,0x8C
+    005E 07F1      CPC	R31,R17
+    005F F021      BEQ	0x0064
+    0060 95C8      LPM
+    0061 9631      ADIW	R30,1
+    0062 920D      ST	R0,X+
+    0063 CFF9      RJMP	0x005D
+    0064 940E00A7  CALL	_main
+_exit:
+    0066 CFFF      RJMP	_exit
+FILE: D:\Temp\UART1_RxPoollingMode.c
+(0001) //ICC-AVR application builder : 11/14/2013 1:59:19 PM
+(0002) // Target : M128
+(0003) // Crystal: 11.059Mhz
+(0004) 
+(0005) #include <iom128v.h>
+(0006) #include <macros.h>
+(0007) 
+(0008) void port_init(void)
+(0009) {
+(0010)  PORTA = 0x00;
+_port_init:
+    0067 2422      CLR	R2
+    0068 BA2B      OUT	0x1B,R2
+(0011)  DDRA  = 0x00;
+    0069 BA2A      OUT	0x1A,R2
+(0012)  PORTB = 0x00;
+    006A BA28      OUT	0x18,R2
+(0013)  DDRB  = 0x00;
+    006B BA27      OUT	0x17,R2
+(0014)  PORTC = 0x00; //m103 output only
+    006C BA25      OUT	0x15,R2
+(0015)  DDRC  = 0xFF;
+    006D EF8F      LDI	R24,0xFF
+    006E BB84      OUT	0x14,R24
+(0016)  PORTD = 0x00;
+    006F BA22      OUT	0x12,R2
+(0017)  DDRD  = 0x00;
+    0070 BA21      OUT	0x11,R2
+(0018)  PORTE = 0x00;
+    0071 B823      OUT	0x03,R2
+(0019)  DDRE  = 0x00;
+    0072 B822      OUT	0x02,R2
+(0020)  PORTF = 0x00;
+    0073 92200062  STS	0x62,R2
+(0021)  DDRF  = 0x00;
+    0075 92200061  STS	0x61,R2
+(0022)  PORTG = 0x00;
+    0077 92200065  STS	0x65,R2
+(0023)  DDRG  = 0x00;
+    0079 92200064  STS	0x64,R2
+    007B 9508      RET
+(0024) }
+(0025) 
+(0026) void uart1_init(void)
+(0027) {
+(0028) // TEMA1 
+(0029) // Reconfigurati registrii de mai jos astfel incat comunicatie seriala 
+(0030) // unidirectionala (PC -> DevKit) sa functioneze corect
+(0031) // - BaudRate: 115200
+(0032) // - Dimensiune caracter: 8 bit
+(0033) // - Paritate: dezactivat
+(0034) // - NumarBiti de STOP = 1
+(0035) // - Control transfer date Hardware/Software(xOn/xOff) = None
+(0036) 
+(0037) 
+(0038) 
+(0039)  UCSR1B = 0x00; 
+_uart1_init:
+    007C 2422      CLR	R2
+    007D 9220009A  STS	0x9A,R2
+(0040)  UCSR1A = 0x00;
+    007F 9220009B  STS	0x9B,R2
+(0041)  UCSR1C = 0x06;
+    0081 E086      LDI	R24,6
+    0082 9380009D  STS	0x9D,R24
+(0042)  UBRR1L = 0x05;
+    0084 E085      LDI	R24,5
+    0085 93800099  STS	0x99,R24
+(0043)  UBRR1H = 0x00; 
+    0087 92200098  STS	0x98,R2
+(0044)  UCSR1B = 0x10;
+    0089 E180      LDI	R24,0x10
+    008A 9380009A  STS	0x9A,R24
+    008C 9508      RET
+(0045) 
+(0046) }
+(0047) 
+(0048) 
+(0049) void init_devices(void)
+(0050) {
+(0051)   CLI(); 
+_init_devices:
+    008D 94F8      BCLR	7
+(0052)  XDIV  = 0x00; 
+    008E 2422      CLR	R2
+    008F BE2C      OUT	0x3C,R2
+(0053)  XMCRA = 0x00; 
+    0090 9220006D  STS	0x6D,R2
+(0054)  port_init();
+    0092 DFD4      RCALL	_port_init
+(0055)  uart1_init();
+    0093 DFE8      RCALL	_uart1_init
+(0056) 
+(0057)  MCUCR = 0x00;
+    0094 2422      CLR	R2
+    0095 BE25      OUT	0x35,R2
+(0058)  EICRA = 0x00; 
+    0096 9220006A  STS	0x6A,R2
+(0059)  EICRB = 0x00; 
+    0098 BE2A      OUT	0x3A,R2
+(0060)  EIMSK = 0x00;
+    0099 BE29      OUT	0x39,R2
+(0061)  TIMSK = 0x00; 
+    009A BE27      OUT	0x37,R2
+(0062)  ETIMSK = 0x00; 
+    009B 9220007D  STS	0x7D,R2
+(0063)  SEI(); 
+    009D 9478      BSET	7
+    009E 9508      RET
+(0064) }
+(0065) 
+(0066) void putchar(char c)
+(0067) {
+_putchar:
+  c                    --> Y+0
+    009F 9508      RET
+(0068) // LABORATORUL VIITOR
+(0069) }
+(0070) 		  
+(0071) 	
+(0072) unsigned char getchar(void)
+(0073) {
+(0074) // TEMA2 
+(0075) // - introduceti instructiunile necesare astfel incat:
+(0076) //   a) rutina (getchar) sa astepte (la infinit) sosirea unei noi date (char)
+(0077) //   b) sa returneze noua data (char) sosita 
+(0078) 
+(0079) while(!(UCSR1A & 0x80));
+_getchar:
+    00A0 9020009B  LDS	R2,0x9B
+    00A2 FE27      SBRS	R2,7
+    00A3 CFFC      RJMP	_getchar
+(0080) 			  return UDR1;
+    00A4 9100009C  LDS	R16,0x9C
+    00A6 9508      RET
+(0081)     
+(0082) }
+(0083) 
+(0084) //
+(0085) void main(void)
+(0086) {
+(0087)  unsigned char tmp=0;
+_main:
+  tmp                  --> R20
+    00A7 2744      CLR	R20
+(0088)  init_devices();
+    00A8 DFE4      RCALL	_init_devices
+    00A9 C01B      RJMP	0x00C5
+(0089)  while(1)
+(0090)    {
+(0091) 	 tmp=getchar();
+    00AA DFF5      RCALL	_getchar
+    00AB 2F40      MOV	R20,R16
+(0092) 	 if(tmp=='1')
+    00AC 3301      CPI	R16,0x31
+    00AD F409      BNE	0x00AF
+(0093) 	    tmp=0x01;
+    00AE E041      LDI	R20,1
+(0094) 	 if(tmp=='2')
+    00AF 3342      CPI	R20,0x32
+    00B0 F409      BNE	0x00B2
+(0095) 	    tmp=0x02;
+    00B1 E042      LDI	R20,2
+(0096) 	 if(tmp=='3')
+    00B2 3343      CPI	R20,0x33
+    00B3 F409      BNE	0x00B5
+(0097) 	    tmp=0x04;
+    00B4 E044      LDI	R20,4
+(0098) 	 if(tmp=='4')
+    00B5 3344      CPI	R20,0x34
+    00B6 F409      BNE	0x00B8
+(0099) 	    tmp=0x08;
+    00B7 E048      LDI	R20,0x8
+(0100) 	 if(tmp=='5')
+    00B8 3345      CPI	R20,0x35
+    00B9 F409      BNE	0x00BB
+(0101) 	    tmp=0x10;
+    00BA E140      LDI	R20,0x10
+(0102) 	 if(tmp=='6')
+    00BB 3346      CPI	R20,0x36
+    00BC F409      BNE	0x00BE
+(0103) 	    tmp=0x20;
+    00BD E240      LDI	R20,0x20
+(0104) 	if(tmp=='7')
+    00BE 3347      CPI	R20,0x37
+    00BF F409      BNE	0x00C1
+(0105) 	    tmp=0x40;
+    00C0 E440      LDI	R20,0x40
+(0106) 	if(tmp=='8')
+    00C1 3348      CPI	R20,0x38
+    00C2 F409      BNE	0x00C4
+(0107) 	    tmp=0x80;
+    00C3 E840      LDI	R20,0x80
+(0108) 	 PORTC=tmp;
+FILE: <library>
+    00C4 BB45      OUT	0x15,R20
+    00C5 CFE4      RJMP	0x00AA
+    00C6 9508      RET

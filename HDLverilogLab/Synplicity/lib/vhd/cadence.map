@@ -1,0 +1,59 @@
+# 
+# Define locations of packages for loading
+# This is the built in location map.  The user may have
+# others.
+#
+package std.standard @ $LIB/vhd/std.vhd;
+package ieee.std_logic_1164 @ $LIB/vhd/std1164.vhd;
+
+# enable only in cadence.map
+package ieee.std_logic_arith @ $LIB/vhd/cdn_arith.vhd;
+
+# enable in location.map
+# package ieee.std_logic_arith @ $LIB/vhd/arith.vhd;
+
+package ieee.std_logic_signed @ $LIB/vhd/signed.vhd;
+package ieee.std_logic_unsigned @ $LIB/vhd/unsigned.vhd;
+package ieee.std_logic_misc @ $LIB/vhd/misc.vhd;
+package synopsys.std_logic_arith @ $LIB/vhd/arith.vhd;
+package synopsys.std_logic_signed @ $LIB/vhd/signed.vhd;
+package synopsys.std_logic_unsigned @ $LIB/vhd/unsigned.vhd;
+package synopsys.std_logic_misc @ $LIB/vhd/misc.vhd;
+package ieee.numeric_std @ $LIB/vhd/numeric.vhd;
+package ieee.numeric_bit @ $LIB/vhd/numeric_bit.vhd;
+package xl.xl_std @ $LIB/vhd/xl_std.vhd;
+package xl.xl_gates @ $LIB/vhd/xl_gates.vhd;
+package synergy.signed_arith @ $LIB/vhd/synergy_signed.vhd;
+library act1 @ $LIB/actel/act1.vhd;
+library act2 @ $LIB/actel/act2.vhd;
+library act3 @ $LIB/actel/act3.vhd;
+library a40mx @ $LIB/actel/a40mx.vhd;
+library a42mx @ $LIB/actel/a42mx.vhd;
+library a3200dx @ $LIB/actel/a3200dx.vhd;
+library a54sx @ $LIB/actel/a54sx.vhd;
+package act1.components @ $LIB/actel/act1.vhd;
+package act2.components @ $LIB/actel/act2.vhd;
+package act3.components @ $LIB/actel/act3.vhd;
+package a40mx.components @ $LIB/actel/a40mx.vhd;
+package a42mx.components @ $LIB/actel/a42mx.vhd;
+package a3200dx.components @ $LIB/actel/a3200dx.vhd;
+package a54sx.components @ $LIB/actel/a54sx.vhd;
+library orca @ $LIB/lucent/orca2.vhd;
+package orca.orcacomp @ $LIB/lucent/orca2.vhd;
+library orca2 @ $LIB/lucent/orca2.vhd;
+package orca2.orcacomp @ $LIB/lucent/orca2.vhd;
+library orca3 @ $LIB/lucent/orca3.vhd;
+package orca3.orcacomp @ $LIB/lucent/orca3.vhd;
+library xc3000 @ $LIB/xilinx/xc3000.vhd;
+library xc4000 @ $LIB/xilinx/xc4000.vhd;
+library xc5200 @ $LIB/xilinx/xc5200.vhd;
+library virtex @ $LIB/xilinx/virtex.vhd;
+library altera @ $LIB/altera/altera.vhd;
+package altera.maxplus2 @ $LIB/altera/altera.vhd;
+library lattice @ $LIB/cpld/lattice.vhd;
+package lattice.components @ $LIB/cpld/lattice.vhd;
+package synplify.attributes @ $LIB/vhd/synattr.vhd;
+library lpm @ $LIB/vhd/lpm.vhd;
+package lpm.lpm_components @ $LIB/vhd/lpm.vhd;
+library pasic4 @ $LIB/qlogic/pasic4.vhd;
+package pasic4.components @ $LIB/qlogic/pasic4.vhd;

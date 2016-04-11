@@ -1,0 +1,422 @@
+:Base synplify.HLP
+:Title Synplify
+1 Selected Help Topics=Synplify_Help_Topics
+1 General Information
+2 What's new in Version 5.1=What's_new_in_Version_5.0
+2 Overview of Synpify=Introduction_to_Synpify
+2 Synthesizing with Verilog and VHDL=Verilog_and_VHDL_Input
+2 Getting the best results=Getting_the_Best_Results_From_Synplify
+2 Frequently Asked Questions=Frequently_Asked_Questions
+2 Application Notes=Application_Notes
+2 Customer Support
+3 Customer Support=Customer_Support
+3 Sign Up For New Product Info=upgrade_and_order_synplify_lite
+2 License Agreement
+3 Synplify Software License Agreement=def_help_license
+1 Running Synplify
+2 Getting started=How_to_Run_Synplify
+2 Running in Batch Mode=Batch_Mode_Operation
+2 Synplify Editing Window=Using_the_Synplify_Editor
+2 Symbolic FSM Compiler=Using_the_Symbolic_FSM_Compiler
+2 Hierarchy Browser=Hierarchy_Browser
+2 Menus and function keys=Menus_and_Function_Keys
+2 SCOPE, the constraints editor
+3 Overview=Using_SCOPE
+3 Clocks pane=clocks_pane
+3 Clock to Clock pane=Clock_to_Clock_Pane
+3 Input/Output pane=input_output_pane
+3 Registers pane=register_pane
+3 Multi-cycle pane=Multi-cycle_Pane
+3 Attributes pane=attributes_pane
+3 Other pane=Other_Pane
+2 Area/Delay and Fanout Control
+3 Area/Delay Tradeoff Control=Area/Delay_Tradeoff_Control
+3 Area/Delay for FPGAs and Altera FLEX=Area/Delay_Tradeoff_for_FPGAs_(and_Altera_FLEX)
+3 Fanout Control=Fanout_Control
+2 Output Files, Reports, Log File
+3 Outputing Verilog and VHDL=Writing_Verilog_and_VHDL_Output_From_Synplify
+3 Timing Reports=Timing_Reports
+3 Example Timing Report=Example_Timing_Report
+3 Net Buffering Reports=Net_Buffering_Reports
+3 Resource Usage Reports=Resource_Usage_Reports
+3 The Synplify Log File=The_Synplify_Log_File
+1 Using Tcl
+2 Commands and scripts=Using_Tcl_Scripts_and_Commands
+2 Synplify Tcl commands=Synplify_Tcl_commands
+2 Setting the Project file=Setting_the_Command_File
+2 Project commands=Tcl_Project_Commands
+2 Add file commands=Tcl_File_Commands_for_Open_Projects
+2 Open file command=Editor_Commands
+2 Synthesis control commands=Synthesis_and_Target_Technology_Options_for_Open_Projects
+2 HDL Analyst commands=HDL_Analyst_Commands_for_Open_Projects
+2 Tcl Script Examples
+3 Trying different target technologies=Example_1:_Trying_Five_Different_Target_Technologies
+3 Trying different clock frequency goals=Example_2:_Trying_Different_Clock_Frequency_Goals
+3 Setting many options and using timing constraints=Example_3:__Setting_Many_Options_and_Using_Timing_Constraints
+3 Bottom-up synthesis=Example_4:_Bottom-Up_Synthesis
+2 Vendor-specific Tcl commands
+3 Actel=Actel-Specific_Tcl_Commands
+3 Altera=Altera-Specific_Tcl_Commands
+3 Lattice=Lattice-Specific_Tcl_Commands
+3 Lucent=Lucent-Specific_Tcl_Commands
+3 Philips=Philips-Specific_Tcl_Commands
+3 QuickLogic=QuickLogic-Specific_Tcl_Commands
+3 Vantis=Vantis-Specific_Tcl_Commands
+3 Xilinx=Xilinx-Specific_Tcl_Commands
+1 HDL Analyst
+2 Overview=Using_HDL_Analyst
+2 Introduction to HDL Analyst=Introduction_to_HDL_Analyst
+2 Opening windows=Opening_Windows_in_HDL_Analyst
+2 Setting Up HDL Analyst=Setting_Up_HDL_Analyst
+2 Object information=Object_Information_in_HDL_Analyst
+2 Selecting and unselecting objects=Selecting_and_Unselecting_Objects_in_HDL_Analyst
+2 Cross probing=Cross_Probing_in_HDL_Analyst
+2 Traversing hierarchy=Traversing_Hierarchy_in_HDL_Analyst
+2 Multi-sheet schematics=Multi-Sheet_Schematics_in_HDL_Analyst
+2 Filtering schematics=Filtering_Schematics
+2 Analyzing critical paths=Viewing_Critical_Paths_in_HDL_Analyst
+2 Finding objects by name=Locating_Objects_by_Name_(Find-by-name)
+2 Changing colors=Changing_the_Colors_Used_in_HDL_Analyst
+2 Menus and tool bar=Menus_and_Tool_Bar
+1 Timing Constraints
+2 Constraint Files=Constraint_Files
+2 All Timing Constraints=Timing_Constraints_1
+2 Black Box Timing Constraints=Black_Box_Timing_Constraints
+2 Object naming syntax=Object_Naming_Format
+2 Specifying Timing Constraints=Timing_Constraints_2
+2 Adding Timing Constraints to HDL source code=Adding_Timing_Constraints_to_HDL_Source_Code
+2 HDL Timing Constraints names=HDL_Timing_Constraints_Names
+2 Adding Timing Constraints to Verilog=Adding_Timing_Constraints_to_Verilog_source_code
+2 Adding Timing Constraints to VHDL=Adding_timing_constraints_to_VHDL_source_code
+2 Forward Annotation=Forward_Annotation
+2 Timing Constraint commands
+3 define_clock=define_clock
+3 define_clock_delay=define_clock_delay_Timing_Constraint
+3 define_reg_input_delay=define_reg_input_delay
+3 define_reg_output_delay=define_reg_output_delay
+3 define_input_delay=define_input_delay
+3 define_output_delay=define_output_delay
+3 define_multicycle_path=define_multicycle_path
+3 Black Box constraints=Black_Box_Timing_Constraints
+1 Verilog
+2 General Language Support
+3 Overview=Verilog_HDL_Language_Support_Overview
+2 Examples
+3 List of examples=Table_of_Synthesis_Examples_in_Verilog_HDL
+3 Adder=Adder_example_in_Verilog_HDL
+3 ALU=ALU_example_in_Verilog_HDL
+3 Bus sorter=Bus_sorter_in_Verilog_HDL
+3 Comparator=Comparator_example_in_Verilog_HDL
+3 3-to-8 decoder=3-to-8_Decoder_in_Verilog_HDL
+3 8-to-3 encoder=8-to-3_Encoder_in_Verilog_HDL
+3 Multiplexors=Multiplexor_example_in_Verilog_HDL
+3 Parity generator=Parity_Generator_in_Verilog_HDL
+3 Tri-state drivers=Tri-state_Drivers_in_Verilog_HDL
+3 Flip-flops and latches=Flip-Flops_and_Latches_in_Verilog_HDL
+3 Counter=Counter_in_Verilog_HDL
+3 Shift register=Shift_register_in_Verilog_HDL
+3 State machines=State_machines_in_Verilog_HDL
+2 Synthesizing with Verilog
+3 Synthesis guidelines=Important_Verilog_Synthesis_Guidelines
+3 Creating hardware with Verilog=How_to_Create_Hardware_with_Verilog
+3 Verilog module template=Verilog_Module_Template
+3 Scaleable modules=Scaleable_Modules_in_Verilog_HDL
+3 Instantiating Black Boxes=Instantiating_Black_Boxes_in_Verilog_HDL
+3 Built-In gate primitives=Built-In_Gate_Primitives_in_Verilog_HDL
+3 Hierarchy in Verilog=Hierarchy_in_Verilog_HDL
+3 Asynchronous state machines=Asynchronous_State_Machines_in_Verilog_HDL
+3 Combinational logic=Combinational_Logic_in_Verilog_HDL
+3 Always blocks for combinational=Always_blocks_for_combinational_logic_in_Verilog_HDL
+3 Continuous assignments for combinational logic=Continuous_assignments_for_combinational_logic_in_Verilog_HDL
+3 Resource sharing=Resource_sharing_in_Verilog_HDL
+3 Sequential logic=Sequential_logic_in_Verilog_HDL
+3 Always blocks for flip-flops=Always_blocks_for_flip-flops_in_Verilog_HDL
+3 Continuous assignments for level sensitive latches=Continuous_assignments_for_level_sensitive_latches_in_Verilog_HDL
+3 Always blocks for level sensitive latches=Always_blocks_for_level_sensitive_latches_in_Verilog_HDL
+3 Asynchronous sets and resets=Asynchronous_Sets_and_Resets_in_Verilog_HDL
+3 Synchronous sets and resets=Synchronous_Sets_and_Resets_in_Verilog_HDL
+3 Sets and resets=Sets_and_Resets_in_Verilog_HDL
+3 State machine guidelines=State_machines_guidelines_for_Verilog_HDL
+3 RAM inferencing=Verilog_RAM_Inferencing
+2 Attributes and Directives
+3 Overview=Verilog_Synthesis_Directives_and_Macros
+3 Source code syntax=Verilog_Source_Code_Syntax
+3 Attributes
+4 Overview=Verilog_Synthesis_Attributes
+4 syn_hier=Verilog_syn_hier_Directive
+4 syn_isclock=Verilog_syn_isclock_Directive
+4 syn_netlist_hierarchy=Verilog_syn_netlist_hierarchy_Attribute
+4 syn_noarrayports=Verilog_syn_noarrayports_Directive
+4 syn_noclockbuf=Syn_noclockbuf_2
+4 syn_noprune=Verilog_syn_noprune_Attribute
+4 syn_ramstyle=Verilog_syn_ramstyle_Attribute
+4 syn_useenables=Verilog_syn_useenables_Directive
+3 Directives
+4 Overview=Verilog_Synthesis_Directives
+4 black_box=Black_box_1
+4 Instantiating black boxes=Instantiating_Black_Boxes_in_Verilog_HDL
+4 full_case=Full_case_in_Verilog_HDL
+4 .ispad=.Ispad
+4 parallel_case=Parallel_case_in_Verilog_HDL
+4 state_machine=State_machine_directive_in_Verilog_HDL
+4 syn_encoding=Verilog_syn_encoding_Attribute
+4 syn_keep=Verilog_syn_keep_directive
+4 syn_preserve=Syn_preserve_1
+4 syn_sharing=Syn_sharing_1
+4 syn_tristate=Verilog_syn_tristate_Directive
+4 translate_off/translate_on=Translate_off/Translate_on
+4 synthesis macro=Verilog_HDL_"synthesis"_macro
+2 PREP Benchmark Examples
+3 PREP=PREP
+3 PREP Verilog Benchmark #1=PREP_Verilog_Benchmark__1
+3 PREP Verilog Benchmark #2=PREP_Verilog_Benchmark__2
+3 PREP Verilog Benchmark #3=PREP_Verilog_Benchmark__3
+3 PREP Verilog Benchmark #4=PREP_Verilog_Benchmark__4
+3 PREP Verilog Benchmark #5=PREP_Verilog_Benchmark__5
+3 PREP Verilog Benchmark #6=PREP_Verilog_Benchmark__6
+3 PREP Verilog Benchmark #7=PREP_Verilog_Benchmark__7
+3 PREP Verilog Benchmark #8=PREP_Verilog_Benchmark__8
+3 PREP Verilog Benchmark #9=PREP_Verilog_Benchmark__9
+1 VHDL
+2 General Language Support
+3 Overview=VHDL_Language_Support_Overview
+2 How to use VHDL
+3 Language support overview=Detailed_VHDL_Langauge_Support
+3 Choosing the right statement=A2KEQ1X
+3 Data types=VHDL_Data_Types
+3 Declaring and assigning objects=Declaring_and_assigning_objects_in_VHDL
+3 Signals and ports=Signals
+3 Variables=Variables
+3 Constants=Constants
+3 Libraries and packages=Libraries_and_Packages_in_VHDL
+3 Operators=VHDL_Operators
+3 Combinational logic=Combinational_Logic_in_VHDL
+3 Processes=Process_definition_in_VHDL
+3 Processes for combinational logic=Processes_for_combinational_logic_in_VHDL
+3 Concurrent signal assignments=Concurrent_signal_assignments_for_combinational_logic_in_VHDL
+3 Simple signal assignment=Simple_signal_assignment
+3 Selected signal assignment=Selected_signal_assignment_(WITH-SELECT)
+3 Conditional signal assignment=Conditional_signal_assignment_(WHEN-ELSE)
+3 Resource sharing=Resource_sharing_in_VHDL
+3 Sequential logic=Sequential_logic_in_VHDL
+3 Component instantiation=Component_Instantiation_in_VHDL
+2 Examples
+3 List of examples=Table_of_Synthesis_Examples_in_VHDL
+3 Adder=Adder_example_in_VHDL
+3 ALU=ALU_example_in_VHDL
+3 Bus sorter=Bus_sorter_in_VHDL
+3 3-to-8 decoder=3-to-8_Decoder_in_VHDL
+3 8-to-3 encoder=8-to-3_Encoder_in_VHDL
+3 Comparator=Comparator_example_in_VHDL
+3 Interrupt handler=Interrupt_Handler_in_VHDL
+3 Multiplexor=Multiplexor_example_in_VHDL
+3 Parity generator=Parity_Generator_in_VHDL
+3 Tri-state drivers=Tri-state_Drivers_in_VHDL
+3 Flip-flops and latches=Flip-Flops_and_Latches_in_VHDL
+3 Counters=Counters_in_VHDL
+3 Register file=Register_File_in_VHDL
+3 Shift register=Shift_register_in_VHDL
+3 State machines=State_machines_in_VHDL
+2 Synthesizing with VHDL
+3 Important VHDL synthesis guidelines=Important_VHDL_Synthesis_Guidelines
+3 How to create hardware with VHDL=How_to_Create_Hardware_with_VHDL
+3 Model template (overview)=VHDL_Model_Template_(Overview)
+3 Model template (detailed)=VHDL_Model_Template_(Detailed)
+3 Flip-flops and registers=Using_a_process_to_create_flip-flops_in_VHDL
+3 Level sensitive latches using concurrent assignments=Concurrent_signal_assignments_for_level_sensitive_latches_in_VHDL
+3 Level sensitive latches using processes=Using_processes_for_level_sensitive_latches_in_VHDL
+3 Sets and resets=Sets_and_Resets_in_VHDL
+3 Asynchronous sets and resets=Asynchronous_Sets_and_Resets_in_VHDL
+3 Synchronous sets and resets=Synchronous_Sets_and_Resets_in_VHDL
+3 State machines=State_machines_guidelines_for_VHDL
+3 Asynchronous state machines=Asynchronous_State_Machines_in_VHDL
+3 Hierarchy=Hierarchy_in_VHDL
+3 Scaleable designs=Scaleable_Designs_in_VHDL
+3 Using generics=Using_VHDL_Generics
+3 Using generate statements=Using_VHDL_Generate_Statements
+3 RAM inferencing=VHDL_RAM_Inferencing
+2 Attributes and Directives
+3 Overview=VHDL_Attributes
+3 Source code syntax=VHDL_Source_Code_Syntax
+3 Attributes
+4 Overview=VHDL_synthesis_attributes
+4 syn_hier=VHDL_syn_hier_Attribute
+4 syn_isclock=VHDL_syn_isclock_Directive
+4 syn_netlist_hierarchy=VHDL_syn_netlist_hierarchy_Directive
+4 syn_noarrayports=VHDL_syn_noarrayports_Attribute
+4 syn_noclockbuf=Syn_noclockbuf_3
+4 syn_noprune=VHDL_syn_noprune_Attribute
+4 syn_ramstyle=VHDL_syn_ramstyle_Attribute
+4 syn_useenables=VHDL_syn_useenables_Directive
+3 Directives
+4 Overview=VHDL_Synthesis_Directives
+4 black_box=Black_box_2
+4 black_box_pad_pin=black_box_pad_pin_attribute
+4 black_box_tri_pins=black_box_tri_pins
+4 Instantiating black boxes=Instantiating_Black_Boxes_in_VHDL
+4 syn_encoding=Syn_encoding
+4 syn_keep=VHDL_syn_keep_Directive
+4 syn_preserve=Syn_preserve_2
+4 syn_sharing=Syn_sharing_2
+4 syn_state_machine=State_machine_attribute_in_VHDL
+4 translate_off/translate_on=VHDL_Translate_off/Translate_on_Directive
+2 PREP Benchmark Examples
+3 PREP=PREP_VHDL_Benchmark_Examples
+3 PREP Benchmark #1=PREP_Benchmark__1
+3 PREP Benchmark #2=PREP_Benchmark__2
+3 PREP Benchmark #3=PREP_Benchmark__3
+3 PREP Benchmark #4=PREP_Benchmark__4
+3 PREP Benchmark #5=PREP_Benchmark__5
+3 PREP Benchmark #6=PREP_Benchmark__6
+3 PREP Benchmark #7=PREP_Benchmark__7
+3 PREP Benchmark #8=PREP_Benchmark__8
+3 PREP Benchmark #9=PREP_Benchmark__9
+1 FPGA/CPLD Vendors
+2 Vendor support=FPGA_and_CPLD_Support
+2 Actel
+3 Designing with Actel
+4 Actel FPGAs=Actel_FPGAs
+4 Instantiating Black Boxes or primitives=Instantiating_Black_Boxes_or_Primitives_in_Actel
+4 Fanout control=Fanout_Control_for_Actel_FPGAs
+4 Set/reset priority - Verilog example=Actel_Set/Reset_Priority_Behavior__Verilog_HDL_Example
+4 Set/reset priority - VHDL example=Actel_Set/Reset_Priority_Behavior__VHDL_Example
+4 Disabling pad insertion=Disabling_Pad_Insertion_for_Actel_FPGAs
+4 Synplify reports for Actel=Synplify_Reports_for_Actel_Designs
+4 Set Device Options=formhelp_actel
+3 Actel-specific Attributes
+4 Overview=Actel-Specific_Attributes
+4 alspin=Actel_specific_alspin_Attribute
+4 syn_maxfan=Actel_syn_maxfan
+4 syn_preserve_sr_priority=syn_preserve_sr_priority
+4 syn_radhardlevel=Actel_specific_syn_radhardlevel_Attribute
+2 Altera
+3 Designing with Altera
+4 Altera CPLDs=Altera_CPLDs
+4 Getting the best results with FLEX devices=Setting_Options_for_Altera's_FLEX_Devices
+4 Getting best results with MAX devices=Setting_Options_for_Altera's_MAX_Devices
+4 MAX+plus II settings for Synplify mapping=MAX+plus_II_Settings_When_Using_Synplify_Mapping
+4 MAX+plus II settings when NOT using Synplify mapping -- FAST RESULTS=MAX+plus_II_Settings_When_NOT_Using_Synplify_Mapping_--_FAST_RESULTS
+4 MAX+plus II settings when NOT using Synplify mapping -- SMALL RESULTS=MAX+plus_II_Settings_When_NOT_Using_Synplify_Mapping_--_SMALL_RESULTS
+4 Configuring MAX+plus II to use LMF=How_to_Configure_MAX+plus_II_to_Use_the_Correct_Library_Mapping_File_(LMF)
+4 Instantiating LPM modules=Instantiating_LPM_Paramaterized_Modules
+4 Instantiating macros and black boxes=Instantiating_Macros_in_Altera_Designs
+4 Correct use of EDIF file names=Correct_Use_of_EDIF_File_Names
+4 Recommendation for subdirectories=Recommendation_Regarding_Subdirectories
+4 Synplify Reports for Altera=Synplify_Reports_for_Altera_Designs
+4 Set Device Options - MAX=formhelp_altera_max
+4 Set Device Options - FLEX=formhelp_altera_flex
+4 Verilog examples
+5 Specifying I/O locations=Veilog_Example_of_Specifying_I/O_Locations_in_Altera
+5 Mapping EABs=Altera_EAB_Example_(Verilog_HDL)
+5 Using LPM modules=Using_Altera_LPM_Parameterized_Modules_With_Verilog_Designs
+5 Instantiating Special Buffers=How_to_Instantiate_Special_Buffers_in_Verilog_HDL_Designs
+4 VHDL examples
+5 Specifying I/O locations=Specifying_I/O_Locations_in_Altera_(VHDL_Example)
+5 Mapping EABs=Altera_EAB_Example_(VHDL)
+5 Using LPM components=Using_Altera_LPM_Components_With_VHDL_Designs
+5 Instantiating special buffers=How_to_instantiate_special_buffers_in_VHDL_designs
+3 Altera-specific Attributes
+4 Overview=Altera-Specific_Attributes
+4 altera_area=altera_area_Attribute
+4 altera_chip_pin_lc=altera_chip_pin_lc
+4 altera_implement_in_eab=altera_implement_in_eab
+4 syn_maxfan=Altera-specific_syn_maxfan_Attribute
+2 Lattice
+3 Designing with Lattice
+4 Lattice CPLDs=Lattice_CPLDs
+4 Instantiating macros and black boxes=Instantiating_Macros_and_Black_Boxes_in_Lattice
+4 Set Device Options=formhelp_lattice
+3 Lattice-specific Attributes
+4 Overview=Lattice-Specific_Attributes
+4 lock=lock
+2 Lucent
+3 Designing with Lucent
+4 Lucent FPGAs=Lucent_Technologies_FPGAs
+4 GSR resource=GSR_Resource_for_Lucent_Technologies_FPGAs
+4 Fanout control=Fanout_Control_for_Lucent_Technologies_FPGAs
+4 Disabling I/O insertion=Disabling_I/O_Insertion_for_Lucent_FPGAs
+4 Instantiating macros=Instantiating_Macros_in_Lucent_Technologies_Designs
+4 Synplify reports=Synplify_reports_for_Lucent_Technologies_designs
+4 Set Device Options=formhelp_att
+3 Lucent-specific Attributes
+4 Overview=Lucent-Specific_Attributes
+4 din=din
+4 dout=dout
+4 loc=loc
+4 orca_padtype=orca_padtype
+4 syn_maxfan=Lucent_syn_maxfan
+4 syn_useioff=Lucent_specific_syn_useioff_Attribute
+3 Verilog examples
+4 din, dout example=Din__Dout__Verilog_HDL_Example
+4 orca_padtype example=Orca_padtype__Verilog_HDL_Example
+3 VHDL examples
+4 din, dout example=Din__Dout__VHDL_Example
+4 orca_padtype example=Orca_padtype__VHDL_Example
+2 Philips
+3 Philips CPLDs=Philips_CPLDs
+3 Set Device Options=formhelp_philips
+3 Philips-specific Attributes
+4 Overview=Philips-Specific_Attributes
+2 QuickLogic
+3 Designing with QuickLogic
+4 QuickLogic FPGAs=QuickLogic_Support
+4 Design guidelines=QuickLogic_Design_Guidelines
+4 Setting options for pASIC2 devices=Setting_Options_for_pASIC2_Devices
+4 Setting options for pASIC devices=Setting_Options_for_pASIC_Devices
+4 Mixed schematics & HDL designs=Mixed-Level_Designs
+4 Running Synplify From SpDE=How_to_Run_Synplify_From_SpDE
+4 Synplify Reports=Synplify_Reports_for_QuickLogic_Designs
+4 Set Device Options=formhelp_quicklogic
+3 QuickLogic-specific Attributes
+4 Overview=QuickLogic-Specific_Attributes
+4 ql_padtype=ql_padtype
+4 ql_placement=ql_placement
+4 syn_macro=QuickLogic_specific_syn_macro_Attribute
+4 syn_maxfan=QuickLogic_syn_maxfan
+4 syn_noclockbuf=QuickLogic_syn_noclockbuf
+3 Commands and Directives
+4 Overview=Synplify_Commands_for_QuickLogic_Devices
+4 portprop command=QuickLogic_portprop_command
+4 instprop command=QuickLogic_instprop_command
+4 include directive=QuickLogic_include_directive
+2 Vantis
+3 Vantis Support=AMD_Support
+3 Set Device Options=formhelp_AMD
+3 Vantis-specific Attributes
+4 Overview=Vantis-Specific_Attributes
+2 Xilinx
+3 Designing with Xilinx
+4 Xilinx FPGAs=Xilinx_FPGAs
+4 Design guidelines for Xilinx=Design_guidelines_for_Xilinx_devices
+4 Fanout control=Fanout_Control_for_Xilinx_FPGAs
+4 Startup block for XC4000 and XC5200=Startup_Block_for_the_XC4000_and_XC5200_Series_Parts
+4 Mixed schematics & HDL designs=Mixed-level_Schematic-HDL_Design
+4 Instantiating macros=Instantiating_Macros_in_Xilinx_Designs
+4 Latches=Latches_in_Xilinx
+4 Disabling I/O insertion=Disabling_I/O_Insertion_in_Xilinx_FPGAs
+4 xc_fast, xc_slow, xc_nodelay - Verilog=xc_fast__xc_slow__xc_nodelay__Example_in_Verilog_HDL
+4 xc_fast, xc_slow, xc_nodelay - VHDL=xc_fast__xc_slow__xc_nodelay__Example_in_VHDL
+4 Placing pads - Verilog=How_to_place_pads_in_Verilog_HDL_Xilinx_designs
+4 Placing pads - VHDL=How_to_place_pads_in_VHDL_Xilinx_designs
+4 Synplify reports=Synplify_reports_for_Xilinx_designs
+4 Set Device Options=formhelp_xilinx
+4 Interfacing with M1=Interfacing_With_Xilinx_Place_and_Route
+3 Xilinx-specific Attributes
+4 Overview=Xilinx-Specific_Attributes
+4 syn_maxfan=Xilinx_syn_maxfan
+4 syn_tristatetomux=Xilinx-specific_syn_tristatetomux_Attribute
+4 xc_alias=Xilinx-specific_xc_alias_attribute
+4 xc_clockbuftype=Xilinx-specific_xc_clockbuftype_Attribute
+4 xc_cmos=xc_cmos
+4 xc_fast=xc_fast
+4 xc_ioff=xc_ioff
+4 xc_isgsr=Xilinx_specific_xc_isgsr_Attribute
+4 xc_loc=xc_loc
+4 xc_nodelay=xc_nodelay
+4 xc_padtype=Xilinx-specific_xc_padtype_Attribute
+4 xc_pullup/xc_pulldown=Xilinx_specific_xc_pullup_xc_pulldown_Attribute
+4 xc_slow=xc_slow
+4 xc_ttl=xc_ttl
+1 ModelSim Integration
+2 Overview=ModelSim_Integration
+2 Configuring your workstation=Configuring_Your_Workstation

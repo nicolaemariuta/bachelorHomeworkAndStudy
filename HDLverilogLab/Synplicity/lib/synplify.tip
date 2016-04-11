@@ -1,0 +1,15 @@
+When you view a schematic that is too large to be easily viewed on a single HDL Analyst schematic sheet, HDL Analyst will automatically partition the design into multiple sheets. 
+Symbolic FSM Compiler can be enabled for your entire design by clicking the "Symbolic FSM Compiler" checkbox on the Synplify Project Form.  Synplify will automatically recognize and extract the state machines in your design, and perform the Symbolic FSM Compiler optimizations.
+You can control the encoding of extracted state machines with the attribute syn_encoding on the state register.  The value is a string: "onehot", "gray", or "sequential".  This can be used in both VHDL and Verilog.
+You can control the encoding of enumeration types in VHDL with the syn_encoding attribute.  The value is a string: "onehot", "gray", or "sequential".
+You can find the VHDL compiler configuration dialog under Options.
+State machine encoding attributes can be specified in SCOPE and changes do not require source code changes or recompiling.
+When in a filtered Analyst view, select an input pin and press 'e' to include the driver of the pin in the schematic.
+You can flatten the RTL view to help with searching for extracted statemachines.
+The -route and -improve options to timing constraints give you control over synthesis without modifying your Place and Route constraints.
+The syn_hier attribute with a value of "firm" can be used with SCOPE to preserve a level of hierarchy during optimization.
+One-hot implementations are not always the best choice for state machines, even in FPGAs and CPLDs.  For example, one-hot state machines might result in higher speeds in CPLDs, but cause fitting problems because of the larger number of global signals.
+The syn_hier attribute with a value of "remove" can be used with SCOPE to remove a level of hierarchy before optimization begins.
+Synplify automatically recognizes synchronous RAM in your HDL and implements it with RAM components or flip-flops.
+The syn_ramstyle attribute with a value of "registers" can be used to force a RAM to be implemented as registers.  Apply the attribute using SCOPE using an object name of <modulename>|<raminstname>.
+To reduce the area of your design consider raising the fanout limit/guide.  Buffering and replication can add a substantial number of cells to your design.

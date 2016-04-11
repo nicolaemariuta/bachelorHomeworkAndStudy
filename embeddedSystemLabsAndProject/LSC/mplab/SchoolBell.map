@@ -1,0 +1,963 @@
+HI-TECH Software C Compiler 
+
+Linker command line:
+
+--edf=C:\Program Files (x86)\HI-TECH Software\PICC\9.83\dat\en_msgs.txt -cs \
+  -h+SchoolBell.sym -z -Q16F877 -ol.obj -MSchoolBell.map -E1 \
+  -ACONST=00h-0FFhx32 -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh \
+  -AENTRY=00h-0FFhx32 -ASTRING=00h-0FFhx32 -ABANK0=020h-06Fh \
+  -ABANK1=0A0h-0EFh -ABANK2=0110h-016Fh -ABANK3=0190h-01EFh \
+  -ARAM=020h-06Fh,0A0h-0EFh,0110h-016Fh,0190h-01EFh \
+  -AABS1=020h-07Fh,0A0h-0EFh,0110h-016Fh,0190h-01EFh -ACOMMON=070h-07Fh \
+  -ASFR0=00h-01Fh -ASFR1=080h-09Fh -ASFR2=0100h-010Fh -ASFR3=0180h-018Fh \
+  -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pfunctab=CODE \
+  -ACONFIG=02007h-02007h -pconfig=CONFIG -DCONFIG=2 -AIDLOC=02000h-02003h \
+  -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA \
+  -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
+  startup.obj SchoolBell.obj 
+
+Object code version is 3.10
+
+Machine type is 16F877
+
+
+
+                Name                               Link     Load   Length Selector   Space Scale
+startup.obj     end_init                              0        0        3        0       0
+SchoolBell.obj  config                             2007     2007        1     400E       0
+                text896                             AA7      AA7        6     154E       0
+                text895                             AB5      AB5        B     156A       0
+                text894                               4        4        C        8       0
+                text875                             C10      C10      15D     1820       0
+                text867                             B79      B79       97     16F2       0
+                text862                              2A       2A      7D6       54       0
+                text860                             AC0      AC0       2B     1580       0
+                text857                             D6D      D6D      293     1ADA       0
+                maintext                            AEB      AEB       8E     15D6       0
+                cstackBANK0                          20       20       35       20       1
+                cstackCOMMON                         70       70        E       70       1
+                clrtext                             AAD      AAD        8     155A       0
+                bssBANK1                             A0       A0       50       A0       1
+                dataBANK0                            66       66        4       20       1
+                bssBANK0                             55       55       11       20       1
+                cinit                                10       10       1A       20       0
+                strings                             800      800       B9     1000       0
+
+TOTAL           Name                               Link     Load   Length     Space
+        CLASS   CONST          
+
+        CLASS   CODE           
+                end_init                              0        0        3         0
+                text896                             AA7      AA7        6         0
+                text895                             AB5      AB5        B         0
+                text894                               4        4        C         0
+                text875                             C10      C10      15D         0
+                text867                             B79      B79       97         0
+                text862                              2A       2A      7D6         0
+                text860                             AC0      AC0       2B         0
+                text857                             D6D      D6D      293         0
+                maintext                            AEB      AEB       8E         0
+                clrtext                             AAD      AAD        8         0
+                cinit                                10       10       1A         0
+
+        CLASS   STRCODE        
+
+        CLASS   ENTRY          
+
+        CLASS   STRING         
+                strings                             800      800       B9         0
+
+        CLASS   BANK0          
+                cstackBANK0                          20       20       35         1
+                dataBANK0                            66       66        4         1
+                bssBANK0                             55       55       11         1
+
+        CLASS   BANK1          
+                bssBANK1                             A0       A0       50         1
+
+        CLASS   BANK2          
+
+        CLASS   BANK3          
+
+        CLASS   RAM            
+
+        CLASS   ABS1           
+                abs_s1                               7E       7E        2         1
+
+        CLASS   COMMON         
+                cstackCOMMON                         70       70        E         1
+
+        CLASS   SFR0           
+
+        CLASS   SFR1           
+
+        CLASS   SFR2           
+
+        CLASS   SFR3           
+
+        CLASS   CONFIG         
+                config                             2007     2007        1         0
+
+        CLASS   IDLOC          
+
+        CLASS   EEDATA         
+
+
+
+SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
+
+                reset_vec                      000000  000003  000003         0       0  CODE        2
+                text894                        000004  00000C  000010         8       0  CODE        2
+                cstackBANK0                    000020  00004A  00006A        20       1  BANK0       1
+                cinit                          000010  00001A  00002A        20       0  CODE        2
+                text862                        00002A  0007D6  000800        54       0  CODE        2
+                cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
+                bssBANK1                       0000A0  000050  0000F0        A0       1  BANK1       1
+                strings                        000800  0000B9  0008B9      1000       0  STRING      2
+                text896                        000AA7  000006  000AAD      154E       0  CODE        2
+                clrtext                        000AAD  000008  000AB5      155A       0  CODE        2
+                text895                        000AB5  00000B  000AC0      156A       0  CODE        2
+                text860                        000AC0  00002B  000AEB      1580       0  CODE        2
+                maintext                       000AEB  00008E  000B79      15D6       0  CODE        2
+                text867                        000B79  000097  000C10      16F2       0  CODE        2
+                text875                        000C10  00015D  000D6D      1820       0  CODE        2
+                text857                        000D6D  000293  001000      1ADA       0  CODE        2
+                config                         002007  000001  002008      400E       0  CONFIG      2
+
+
+UNUSED ADDRESS RANGES
+
+        Name                Unused          Largest block    Delta
+        BANK0            006A-006F              6           1
+        BANK2            0110-016F             60           1
+        BANK3            0190-01EF             60           1
+        CODE             0003-0003              1           2
+                         08B9-0AA6            1EE
+                         1000-1FFF            800
+        CONST            0003-0003              1           2
+                         08B9-0AA6            100
+                         1000-1FFF            100
+        EEDATA           2100-21FF            100           2
+        ENTRY            0003-0003              1           2
+                         08B9-0AA6            100
+                         1000-1FFF            100
+        IDLOC            2000-2003              4           2
+        RAM              006A-006F              6           1
+                         0110-016F             60
+                         0190-01EF             60
+        SFR0             0000-001F             20           1
+        SFR1             0080-009F             20           1
+        SFR2             0100-010F             10           1
+        SFR3             0180-018F             10           1
+        STRCODE          0003-0003              1           2
+                         08B9-0AA6            1EE
+                         1000-1FFF           1000
+        STRING           0003-0003              1           2
+                         08B9-0AA6            100
+                         1000-1FFF            100
+
+                                  Symbol Table
+
+??_DisplayDateOnLCD             cstackCOMMON 0075
+??_DisplayTimeToLCD             cstackCOMMON 0075
+??_GetADCValue                  cstackCOMMON 0072
+??_GetChar                      cstackCOMMON 0073
+??_GetChar2                     cstackCOMMON 0075
+??_GetDate_RTC                  cstackCOMMON 0078
+??_GetTime_RTC                  cstackCOMMON 0078
+??_InitADC                      cstackCOMMON 0070
+??_InitKeypad                   cstackCOMMON 0070
+??_Init_I2C                     cstackCOMMON 0070
+??_ReadBFrom_RTC                cstackCOMMON 0074
+??_Read_I2C                     cstackCOMMON 0070
+??_Restart_I2C                  cstackCOMMON 0070
+??_SendACK_I2C                  cstackCOMMON 0070
+??_SendNACK_I2C                 cstackCOMMON 0070
+??_SetDate_RTC                  cstackCOMMON 007B
+??_SetTime_RTC                  cstackCOMMON 007B
+??_Start_I2C                    cstackCOMMON 0070
+??_Stop_I2C                     cstackCOMMON 0070
+??_WriteBTo_RTC                 cstackCOMMON 0073
+??_Write_I2C                    cstackCOMMON 0070
+??___awdiv                      cstackCOMMON 0074
+??___bmul                       cstackCOMMON 0071
+??___lbdiv                      cstackCOMMON 0071
+??___lbmod                      cstackCOMMON 0071
+??___lwdiv                      cstackCOMMON 007A
+??___wmul                       cstackCOMMON 0074
+??_afiareDefault                cstackCOMMON 0079
+??_clearScreen                  cstackCOMMON 0073
+??_detectieIncendiu             cstackBANK0  0020
+??_disp_num                     cstackCOMMON 007A
+??_initLCD                      cstackCOMMON 0073
+??_main                         cstackCOMMON 007E
+??_pulseEpin                    cstackCOMMON 0070
+??_readSwitches                 cstackCOMMON 0070
+??_tastaApasata                 cstackBANK0  0020
+??_test                         cstackCOMMON 0075
+??_verificareOreSonerie         cstackCOMMON 007A
+??_writeChar                    cstackCOMMON 0072
+??_writeCommand                 cstackCOMMON 0072
+??_writeString                  cstackCOMMON 0073
+?_DisplayDateOnLCD              cstackCOMMON 0070
+?_DisplayTimeToLCD              cstackCOMMON 0070
+?_GetADCValue                   cstackCOMMON 0070
+?_GetChar                       cstackCOMMON 0070
+?_GetChar2                      cstackCOMMON 0073
+?_GetDate_RTC                   cstackCOMMON 0070
+?_GetTime_RTC                   cstackCOMMON 0070
+?_InitADC                       cstackCOMMON 0070
+?_InitKeypad                    cstackCOMMON 0070
+?_Init_I2C                      cstackCOMMON 0070
+?_ReadBFrom_RTC                 cstackCOMMON 0071
+?_Read_I2C                      cstackCOMMON 0070
+?_Restart_I2C                   cstackCOMMON 0070
+?_SendACK_I2C                   cstackCOMMON 0070
+?_SendNACK_I2C                  cstackCOMMON 0070
+?_SetDate_RTC                   cstackCOMMON 0078
+?_SetTime_RTC                   cstackCOMMON 0078
+?_Start_I2C                     cstackCOMMON 0070
+?_Stop_I2C                      cstackCOMMON 0070
+?_WriteBTo_RTC                  cstackCOMMON 0071
+?_Write_I2C                     cstackCOMMON 0070
+?___awdiv                       cstackCOMMON 0070
+?___bmul                        cstackCOMMON 0070
+?___lbdiv                       cstackCOMMON 0070
+?___lbmod                       cstackCOMMON 0070
+?___lwdiv                       cstackCOMMON 0076
+?___wmul                        cstackCOMMON 0070
+?_afiareDefault                 cstackCOMMON 0070
+?_clearScreen                   cstackCOMMON 0070
+?_detectieIncendiu              cstackCOMMON 0070
+?_disp_num                      cstackCOMMON 0078
+?_initLCD                       cstackCOMMON 0070
+?_main                          cstackCOMMON 0070
+?_pulseEpin                     cstackCOMMON 0070
+?_readSwitches                  cstackCOMMON 0070
+?_tastaApasata                  cstackCOMMON 0070
+?_test                          cstackCOMMON 0070
+?_verificareOreSonerie          cstackCOMMON 0070
+?_writeChar                     cstackCOMMON 0070
+?_writeCommand                  cstackCOMMON 0070
+?_writeString                   cstackCOMMON 0070
+DisplayDateOnLCD@pDateArray     cstackCOMMON 0075
+DisplayTimeToLCD@pTimeArray     cstackCOMMON 0075
+GetADCValue@Channel             cstackCOMMON 0074
+GetChar2@key                    cstackCOMMON 0075
+GetChar@contor                  cstackCOMMON 0073
+GetChar@key                     cstackCOMMON 0075
+ReadBFrom_RTC@Address           cstackCOMMON 0075
+ReadBFrom_RTC@NOBytes           cstackCOMMON 0072
+ReadBFrom_RTC@i                 cstackCOMMON 0076
+ReadBFrom_RTC@pData             cstackCOMMON 0071
+SetDate_RTC@Date                cstackCOMMON 007D
+SetDate_RTC@Day                 cstackCOMMON 007A
+SetDate_RTC@Month               cstackCOMMON 0078
+SetDate_RTC@Year                cstackCOMMON 0079
+SetTime_RTC@Hours               cstackCOMMON 0078
+SetTime_RTC@Minutes             cstackCOMMON 0079
+SetTime_RTC@Mode                cstackCOMMON 007D
+SetTime_RTC@Seconds             cstackCOMMON 007A
+WriteBTo_RTC@Address            cstackCOMMON 0075
+WriteBTo_RTC@NOBytes            cstackCOMMON 0072
+WriteBTo_RTC@i                  cstackCOMMON 0076
+WriteBTo_RTC@pData              cstackCOMMON 0071
+Write_I2C@Byte                  cstackCOMMON 0070
+_ACKDT                          (abs)        048D
+_ACKEN                          (abs)        048C
+_ACKSTAT                        (abs)        048E
+_ADCON0                         (abs)        001F
+_ADCON1                         (abs)        009F
+_ADRESH                         (abs)        001E
+_ADRESL                         (abs)        009E
+_DisplayDateOnLCD               text862      002A
+_DisplayTimeToLCD               text862      01B9
+_GO_nDONE                       (abs)        00FA
+_GetADCValue                    text862      07DB
+_GetChar                        text875      0C10
+_GetChar2                       text862      067B
+_GetDate_RTC                    text857      0DA1
+_GetTime_RTC                    text857      0DCC
+_InitADC                        text895      0AB5
+_InitKeypad                     text896      0AA7
+_Init_I2C                       text894      0004
+_OPTION_REG                     (abs)        0081
+_PEN                            (abs)        048A
+_PORTB                          (abs)        0006
+_PORTD                          (abs)        0008
+_RB0                            (abs)        0030
+_RB1                            (abs)        0031
+_RB2                            (abs)        0032
+_RB3                            (abs)        0033
+_RB4                            (abs)        0034
+_RB5                            (abs)        0035
+_RB6                            (abs)        0036
+_RB7                            (abs)        0037
+_RCEN                           (abs)        048B
+_RD0                            (abs)        0040
+_RD1                            (abs)        0041
+_RD4                            (abs)        0044
+_RD5                            (abs)        0045
+_RD6                            (abs)        0046
+_RD7                            (abs)        0047
+_RSEN                           (abs)        0489
+_RTCArray                       bssBANK0     0062
+_ReadBFrom_RTC                  text857      0E9D
+_Read_I2C                       text857      0FD4
+_Restart_I2C                    text857      0FDC
+_SEN                            (abs)        0488
+_SSPADD                         (abs)        0093
+_SSPBUF                         (abs)        0013
+_SSPCON                         (abs)        0014
+_SSPIF                          (abs)        0063
+_SSPSTAT                        (abs)        0094
+_SendACK_I2C                    text857      0FEA
+_SendNACK_I2C                   text857      0FE2
+_SetDate_RTC                    text857      0F2F
+_SetTime_RTC                    text857      0ED8
+_Start_I2C                      text857      0FC5
+_Stop_I2C                       text857      0FCD
+_TRISA                          (abs)        0085
+_TRISB                          (abs)        0086
+_TRISC3                         (abs)        043B
+_TRISC4                         (abs)        043C
+_TRISD0                         (abs)        0440
+_TRISD1                         (abs)        0441
+_TRISD4                         (abs)        0444
+_TRISD5                         (abs)        0445
+_TRISD6                         (abs)        0446
+_TRISD7                         (abs)        0447
+_TRISE                          (abs)        0089
+_Temp                           bssBANK0     005F
+_WriteBTo_RTC                   text857      0F8E
+_Write_I2C                      text857      0FB7
+__Habs1                         abs1         0000
+__Hbank0                        bank0        0000
+__Hbank1                        bank1        0000
+__Hbank2                        bank2        0000
+__Hbank3                        bank3        0000
+__HbssBANK0                     bssBANK0     0000
+__HbssBANK1                     bssBANK1     0000
+__Hcinit                        cinit        0000
+__Hclrtext                      clrtext      0000
+__Hcode                         code         0000
+__Hcommon                       common       0000
+__Hconfig                       config       2008
+__HcstackBANK0                  cstackBANK0  0000
+__HcstackCOMMON                 cstackCOMMON 0000
+__HdataBANK0                    dataBANK0    0000
+__Heeprom_data                  eeprom_data  0000
+__Hend_init                     end_init     0003
+__Hfunctab                      functab      0000
+__HidataBANK0                   idataBANK0   0000
+__Hidloc                        idloc        0000
+__Hinit                         init         0000
+__Hintentry                     intentry     0000
+__Hmaintext                     maintext     0000
+__Hpa_nodes                     pa_nodes     0000
+__Hpowerup                      powerup      0000
+__Hram                          ram          0000
+__Hreset_vec                    reset_vec    0000
+__Hsfr0                         sfr0         0000
+__Hsfr1                         sfr1         0000
+__Hsfr2                         sfr2         0000
+__Hsfr3                         sfr3         0000
+__Hstrings                      strings      0000
+__Htext                         text         0000
+__Labs1                         abs1         0000
+__Lbank0                        bank0        0000
+__Lbank1                        bank1        0000
+__Lbank2                        bank2        0000
+__Lbank3                        bank3        0000
+__LbssBANK0                     bssBANK0     0000
+__LbssBANK1                     bssBANK1     0000
+__Lcinit                        cinit        0000
+__Lclrtext                      clrtext      0000
+__Lcode                         code         0000
+__Lcommon                       common       0000
+__Lconfig                       config       2007
+__LcstackBANK0                  cstackBANK0  0000
+__LcstackCOMMON                 cstackCOMMON 0000
+__LdataBANK0                    dataBANK0    0000
+__Leeprom_data                  eeprom_data  0000
+__Lend_init                     end_init     0000
+__Lfunctab                      functab      0000
+__LidataBANK0                   idataBANK0   0000
+__Lidloc                        idloc        0000
+__Linit                         init         0000
+__Lintentry                     intentry     0000
+__Lmaintext                     maintext     0000
+__Lpa_nodes                     pa_nodes     0000
+__Lpowerup                      powerup      0000
+__Lram                          ram          0000
+__Lreset_vec                    reset_vec    0000
+__Lsfr0                         sfr0         0000
+__Lsfr1                         sfr1         0000
+__Lsfr2                         sfr2         0000
+__Lsfr3                         sfr3         0000
+__Lstrings                      strings      0000
+__Ltext                         text         0000
+__S0                            (abs)        2008
+__S1                            (abs)        00F0
+__S2                            (abs)        0000
+___awdiv                        text857      0E4A
+___awdiv@counter                cstackCOMMON 0074
+___awdiv@dividend               cstackCOMMON 0072
+___awdiv@divisor                cstackCOMMON 0070
+___awdiv@quotient               cstackCOMMON 0076
+___awdiv@sign                   cstackCOMMON 0075
+___bmul                         text857      0E8F
+___bmul@multiplicand            cstackCOMMON 0070
+___bmul@multiplier              cstackCOMMON 0072
+___bmul@product                 cstackCOMMON 0071
+___lbdiv                        text862      0226
+___lbdiv@counter                cstackCOMMON 0072
+___lbdiv@dividend               cstackCOMMON 0071
+___lbdiv@divisor                cstackCOMMON 0070
+___lbdiv@quotient               cstackCOMMON 0073
+___lbmod                        text862      0241
+___lbmod@counter                cstackCOMMON 0073
+___lbmod@dividend               cstackCOMMON 0072
+___lbmod@divisor                cstackCOMMON 0070
+___lbmod@rem                    cstackCOMMON 0074
+___lwdiv                        text862      0712
+___lwdiv@counter                cstackCOMMON 007C
+___lwdiv@dividend               cstackCOMMON 0078
+___lwdiv@divisor                cstackCOMMON 0076
+___lwdiv@quotient               cstackCOMMON 007A
+___wmul                         text862      03B9
+___wmul@multiplicand            cstackCOMMON 0072
+___wmul@multiplier              cstackCOMMON 0070
+___wmul@product                 cstackCOMMON 0074
+__end_of_DisplayDateOnLCD       text862      00B0
+__end_of_DisplayTimeToLCD       text862      0226
+__end_of_GetADCValue            text862      0800
+__end_of_GetChar                text875      0C29
+__end_of_GetChar2               text862      06D5
+__end_of_GetDate_RTC            text857      0DCC
+__end_of_GetTime_RTC            text857      0E0F
+__end_of_InitADC                text895      0AC0
+__end_of_InitKeypad             text896      0AAD
+__end_of_Init_I2C               text894      0010
+__end_of_ReadBFrom_RTC          text857      0ED8
+__end_of_Read_I2C               text857      0FDC
+__end_of_Restart_I2C            text857      0FE2
+__end_of_SendACK_I2C            text857      0FF3
+__end_of_SendNACK_I2C           text857      0FEA
+__end_of_SetDate_RTC            text857      0F8E
+__end_of_SetTime_RTC            text857      0F2F
+__end_of_Start_I2C              text857      0FCD
+__end_of_Stop_I2C               text857      0FD4
+__end_of_WriteBTo_RTC           text857      0FB7
+__end_of_Write_I2C              text857      0FC5
+__end_of___awdiv                text857      0E8F
+__end_of___bmul                 text857      0E9D
+__end_of___lbdiv                text862      0241
+__end_of___lbmod                text862      025D
+__end_of___lwdiv                text862      073C
+__end_of___wmul                 text862      03D2
+__end_of_afiareDefault          text857      0DA1
+__end_of_clearScreen            text862      06FB
+__end_of_detectieIncendiu       text862      03B9
+__end_of_disp_num               text857      0E4A
+__end_of_initLCD                text867      0BD7
+__end_of_main                   maintext     0B79
+__end_of_pulseEpin              text867      0BED
+__end_of_readSwitches           text875      0D6A
+__end_of_tastaApasata           text862      067B
+__end_of_test                   text860      0AEB
+__end_of_verificareOreSonerie   text862      01B9
+__end_of_writeChar              text862      06EB
+__end_of_writeCommand           text867      0BFF
+__end_of_writeString            text862      0712
+__pbssBANK0                     bssBANK0     0055
+__pbssBANK1                     bssBANK1     00A0
+__pcstackBANK0                  cstackBANK0  0020
+__pcstackCOMMON                 cstackCOMMON 0070
+__pdataBANK0                    dataBANK0    0066
+__pidataBANK0                   idataBANK0   0000
+__pmaintext                     maintext     0AEB
+__pstrings                      strings      0800
+__ptext857                      text857      0D6D
+__ptext858                      text862      00B0
+__ptext859                      text862      025D
+__ptext860                      text860      0AC0
+__ptext861                      text862      03D2
+__ptext862                      text862      002A
+__ptext863                      text862      01B9
+__ptext864                      text857      0E0F
+__ptext865                      text862      06EB
+__ptext866                      text862      06FB
+__ptext867                      text867      0B79
+__ptext868                      text857      0DA1
+__ptext869                      text857      0F2F
+__ptext870                      text857      0ED8
+__ptext871                      text857      0DCC
+__ptext872                      text862      06D5
+__ptext873                      text867      0BED
+__ptext874                      text862      067B
+__ptext875                      text875      0C10
+__ptext876                      text857      0E9D
+__ptext877                      text857      0F8E
+__ptext878                      text862      07DB
+__ptext879                      text867      0BD7
+__ptext880                      text875      0C29
+__ptext881                      text857      0E4A
+__ptext882                      text862      0241
+__ptext883                      text862      0226
+__ptext884                      text862      0712
+__ptext885                      text862      03B9
+__ptext886                      text857      0E8F
+__ptext887                      text857      0FEA
+__ptext888                      text857      0FE2
+__ptext889                      text857      0FD4
+__ptext890                      text857      0FDC
+__ptext891                      text857      0FCD
+__ptext892                      text857      0FB7
+__ptext893                      text857      0FC5
+__ptext894                      text894      0004
+__ptext895                      text895      0AB5
+__ptext896                      text896      0AA7
+__ptext897                      text897      0000
+__size_of_DisplayDateOnLCD      (abs)        0000
+__size_of_DisplayTimeToLCD      (abs)        0000
+__size_of_GetADCValue           (abs)        0000
+__size_of_GetChar               (abs)        0000
+__size_of_GetChar2              (abs)        0000
+__size_of_GetDate_RTC           (abs)        0000
+__size_of_GetTime_RTC           (abs)        0000
+__size_of_InitADC               (abs)        0000
+__size_of_InitKeypad            (abs)        0000
+__size_of_Init_I2C              (abs)        0000
+__size_of_ReadBFrom_RTC         (abs)        0000
+__size_of_Read_I2C              (abs)        0000
+__size_of_Restart_I2C           (abs)        0000
+__size_of_SendACK_I2C           (abs)        0000
+__size_of_SendNACK_I2C          (abs)        0000
+__size_of_SetDate_RTC           (abs)        0000
+__size_of_SetTime_RTC           (abs)        0000
+__size_of_Start_I2C             (abs)        0000
+__size_of_Stop_I2C              (abs)        0000
+__size_of_WriteBTo_RTC          (abs)        0000
+__size_of_Write_I2C             (abs)        0000
+__size_of___awdiv               (abs)        0000
+__size_of___bmul                (abs)        0000
+__size_of___lbdiv               (abs)        0000
+__size_of___lbmod               (abs)        0000
+__size_of___lwdiv               (abs)        0000
+__size_of___wmul                (abs)        0000
+__size_of_afiareDefault         (abs)        0000
+__size_of_clearScreen           (abs)        0000
+__size_of_detectieIncendiu      (abs)        0000
+__size_of_disp_num              (abs)        0000
+__size_of_initLCD               (abs)        0000
+__size_of_main                  (abs)        0000
+__size_of_pulseEpin             (abs)        0000
+__size_of_readSwitches          (abs)        0000
+__size_of_tastaApasata          (abs)        0000
+__size_of_test                  (abs)        0000
+__size_of_verificareOreSonerie  (abs)        0000
+__size_of_writeChar             (abs)        0000
+__size_of_writeCommand          (abs)        0000
+__size_of_writeString           (abs)        0000
+_afiareDefault                  text857      0D6D
+_apasat                         dataBANK0    0066
+_clearScreen                    text862      06EB
+_detectieIncendiu               text862      025D
+_disp_num                       text857      0E0F
+_exit                           init         0000
+_initLCD                        text867      0B79
+_intervalSonerie                dataBANK0    0068
+_main                           maintext     0AEB
+_oraNext                        bssBANK0     0060
+_oraPrev                        bssBANK0     0061
+_oreSonerie                     bssBANK1     00A0
+_prevH1                         bssBANK0     0055
+_prevM1                         bssBANK0     0057
+_prevM2                         bssBANK0     0059
+_prevS1                         bssBANK0     005B
+_prevS2                         bssBANK0     005D
+_pulseEpin                      text867      0BD7
+_readSwitches                   text875      0C29
+_tastaApasata                   text862      03D2
+_test                           text860      0AC0
+_verificareOreSonerie           text862      00B0
+_writeChar                      text862      06D5
+_writeCommand                   text867      0BED
+_writeString                    text862      06FB
+afiareDefault@count             cstackCOMMON 0079
+afiareDefault@count2            cstackCOMMON 007B
+btemp                           (abs)        007E
+clear_ram                       clrtext      0AAD
+detectieIncendiu@ADC_value      cstackBANK0  002E
+detectieIncendiu@ADC_value_2    cstackBANK0  0030
+detectieIncendiu@count          cstackBANK0  0024
+detectieIncendiu@count2         cstackBANK0  0026
+detectieIncendiu@digit1         cstackBANK0  0036
+detectieIncendiu@digit2         cstackBANK0  0034
+detectieIncendiu@digit3         cstackBANK0  0032
+detectieIncendiu@digit4         cstackBANK0  002C
+detectieIncendiu@fum            cstackBANK0  002A
+detectieIncendiu@temperatura    cstackBANK0  0028
+disp_num@TenthDigit             cstackCOMMON 007C
+disp_num@UnitDigit              cstackCOMMON 007B
+disp_num@numb                   cstackCOMMON 0078
+end_of_initialization           cinit        0026
+intlevel0                       functab      0000
+intlevel1                       functab      0000
+intlevel2                       functab      0000
+intlevel3                       functab      0000
+intlevel4                       functab      0000
+intlevel5                       functab      0000
+l1376                                            
+l1379                                            
+l1382                                            
+l1385                                            
+l1391                                            
+l1394                                            
+l2141                                            
+l2202                                            
+l2237                                            
+l2914                                            
+l2923                                            
+l2931                                            
+l2938                                            
+l2941                                            
+l2944                                            
+l3585                                            
+l3591                                            
+l3597                                            
+l3603                                            
+l3609                                            
+l3615                                            
+l3627                                            
+l4270                                            
+l4276                                            
+l4916                                            
+l4922                                            
+l4932                                            
+l4952                                            
+l4958                                            
+l5069                                            
+l643                                             
+l717                                             
+l7769                                            
+l7771                                            
+l7773                                            
+l7775                                            
+l7777                                            
+l7779                                            
+l7781                                            
+l7783                                            
+l7793                                            
+l7795                                            
+l7797                                            
+l7801                                            
+l7803                                            
+l7805                                            
+l7813                                            
+l7815                                            
+l7821                                            
+l7829                                            
+l7831                                            
+l7837                                            
+l7839                                            
+l7849                                            
+l7853                                            
+l7857                                            
+l7863                                            
+l7865                                            
+l7867                                            
+l7873                                            
+l7877                                            
+l7881                                            
+l7887                                            
+l7889                                            
+l7893                                            
+l7895                                            
+l7901                                            
+l7905                                            
+l7907                                            
+l7911                                            
+l7917                                            
+l7921                                            
+l7931                                            
+l7935                                            
+l7939                                            
+l7943                                            
+l7949                                            
+l8053                                            
+l8055                                            
+l8057                                            
+l8059                                            
+l8061                                            
+l8071                                            
+l8075                                            
+l8079                                            
+l8089                                            
+l8093                                            
+l8095                                            
+l8097                                            
+l8099                                            
+l8103                                            
+l8105                                            
+l8111                                            
+l8115                                            
+l8117                                            
+l8127                                            
+l8197                                            
+l8199                                            
+l8201                                            
+l8203                                            
+l8205                                            
+l8207                                            
+l8209                                            
+l8211                                            
+l8213                                            
+l8215                                            
+l8217                                            
+l8219                                            
+l8221                                            
+l8223                                            
+l8225                                            
+l8227                                            
+l8229                                            
+l8231                                            
+l8241                                            
+l8245                                            
+l8247                                            
+l8253                                            
+l8263                                            
+l8265                                            
+l8267                                            
+l8269                                            
+l8271                                            
+l8273                                            
+l8275                                            
+l8277                                            
+l8279                                            
+l8281                                            
+l8285                                            
+l8287                                            
+l8289                                            
+l8291                                            
+l8293                                            
+l8295                                            
+l8297                                            
+l8299                                            
+l8301                                            
+l8303                                            
+l8305                                            
+l8307                                            
+l8309                                            
+l8311                                            
+l8313                                            
+l8315                                            
+l8317                                            
+l8319                                            
+l8321                                            
+l8323                                            
+l8325                                            
+l8329                                            
+l8333                                            
+l8335                                            
+l8337                                            
+l8339                                            
+l8343                                            
+l8345                                            
+l8347                                            
+l8349                                            
+l8351                                            
+l8353                                            
+l8355                                            
+l8357                                            
+l8359                                            
+l8371                                            
+l8373                                            
+l8375                                            
+l8377                                            
+l8379                                            
+l8381                                            
+l8383                                            
+l8405                                            
+l8409                                            
+l8423                                            
+l8425                                            
+l8429                                            
+l8433                                            
+l8437                                            
+l8439                                            
+l8441                                            
+l8443                                            
+l8445                                            
+l8447                                            
+l8449                                            
+l8451                                            
+l8453                                            
+l8455                                            
+l8457                                            
+l8459                                            
+l8461                                            
+l8463                                            
+l8465                                            
+l8467                                            
+l8469                                            
+l8471                                            
+l8473                                            
+l8475                                            
+l8477                                            
+l8479                                            
+l8481                                            
+l8483                                            
+l8485                                            
+l8497                                            
+l8501                                            
+l8503                                            
+l8505                                            
+l8507                                            
+l8509                                            
+l8511                                            
+l8513                                            
+l8515                                            
+l8517                                            
+l8519                                            
+l8521                                            
+l8523                                            
+l8525                                            
+l8527                                            
+l8529                                            
+l8531                                            
+l8533                                            
+l8535                                            
+l8537                                            
+l8539                                            
+l8541                                            
+l8543                                            
+l8545                                            
+l8547                                            
+l8549                                            
+l8551                                            
+l8553                                            
+l8555                                            
+l8557                                            
+l8559                                            
+l8561                                            
+l8573                                            
+l8579                                            
+l8581                                            
+l8593                                            
+l8599                                            
+l8601                                            
+l8609                                            
+l8611                                            
+l8613                                            
+l8615                                            
+l8623                                            
+l8625                                            
+l8627                                            
+l8629                                            
+l8631                                            
+l8633                                            
+l8635                                            
+l8637                                            
+l8639                                            
+l8641                                            
+l8643                                            
+l8645                                            
+l8647                                            
+l8649                                            
+l8651                                            
+l8653                                            
+l8659                                            
+l8661                                            
+l8663                                            
+l8665                                            
+l8667                                            
+l8669                                            
+l8671                                            
+l8673                                            
+l8675                                            
+l8677                                            
+l8679                                            
+l8681                                            
+l8685                                            
+l8693                                            
+l8695                                            
+l8697                                            
+l8699                                            
+l8701                                            
+l8703                                            
+l8705                                            
+l8707                                            
+l8709                                            
+l8711                                            
+l8713                                            
+l8715                                            
+l8717                                            
+l8719                                            
+l8721                                            
+l8729                                            
+l8733                                            
+l8745                                            
+l8747                                            
+l8749                                            
+l8751                                            
+l8753                                            
+l8755                                            
+l8757                                            
+l8759                                            
+l8761                                            
+l8763                                            
+l8765                                            
+l8767                                            
+l8769                                            
+l8773                                            
+l8779                                            
+l8781                                            
+main@tasta                      cstackBANK0  0054
+reset_vec                       reset_vec    0000
+start                           init         0000
+start_initialization            cinit        0010
+tastaApasata@ch1                cstackBANK0  002D
+tastaApasata@ch1_2837           cstackBANK0  0039
+tastaApasata@ch2                cstackBANK0  002F
+tastaApasata@ch2_2838           cstackBANK0  003B
+tastaApasata@count              cstackBANK0  0023
+tastaApasata@count2             cstackBANK0  0025
+tastaApasata@count2_2853        cstackBANK0  0029
+tastaApasata@count_2852         cstackBANK0  0027
+tastaApasata@day                cstackBANK0  004B
+tastaApasata@hour               cstackBANK0  0045
+tastaApasata@i                  cstackBANK0  004F
+tastaApasata@k                  cstackBANK0  0051
+tastaApasata@m1                 cstackBANK0  0031
+tastaApasata@m1_2841            cstackBANK0  003D
+tastaApasata@m2                 cstackBANK0  0033
+tastaApasata@m2_2842            cstackBANK0  003F
+tastaApasata@minute             cstackBANK0  0047
+tastaApasata@month              cstackBANK0  004D
+tastaApasata@s1                 cstackBANK0  0035
+tastaApasata@s1_2845            cstackBANK0  0041
+tastaApasata@s2                 cstackBANK0  0037
+tastaApasata@s2_2846            cstackBANK0  0043
+tastaApasata@second             cstackBANK0  0049
+tastaApasata@tasta              cstackBANK0  0053
+tastaApasata@year               cstackBANK0  002B
+test@count                      cstackCOMMON 0075
+test@count2                     cstackCOMMON 0077
+test@message                    cstackCOMMON 0079
+verificareOreSonerie@dif        cstackBANK0  0034
+verificareOreSonerie@newH1      cstackBANK0  0022
+verificareOreSonerie@newM1      cstackBANK0  0024
+verificareOreSonerie@newM2      cstackBANK0  0026
+verificareOreSonerie@newMinute  cstackBANK0  002E
+verificareOreSonerie@newS1      cstackBANK0  0028
+verificareOreSonerie@newS2      cstackBANK0  002A
+verificareOreSonerie@newSecond  cstackBANK0  0032
+verificareOreSonerie@oraCurenta cstackBANK0  0036
+verificareOreSonerie@prevMinute cstackBANK0  002C
+verificareOreSonerie@prevSecond cstackBANK0  0030
+writeChar@LCDChar               cstackCOMMON 0072
+writeCommand@Command            cstackCOMMON 0072
+writeString@s                   cstackCOMMON 0073
+wtemp0                          (abs)        007E

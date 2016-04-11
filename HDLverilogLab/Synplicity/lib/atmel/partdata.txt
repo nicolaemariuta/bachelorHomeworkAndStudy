@@ -1,0 +1,74 @@
+# part descriptions for Atmel parts
+
+part AT40K05 {
+    numbreg 256;
+    numbcell 256 ;
+    numbio 128;
+    rambits 2048;
+    ramblocks 16;
+}
+
+part AT40K10 {
+    numbreg 576;
+    numbcell 576;
+    numbio 192;
+    rambits 4608;
+    ramblocks 36;
+}
+
+part AT40K20 {
+    numbreg 1024;
+    numbcell 1024;
+    numbio 256;
+    rambits 8192;
+    ramblocks 64;
+}
+# removed on atmel'e request
+#part AT40K30 {
+#    numbreg 1600;
+#    numbcell 1600;
+#    numbio 320;
+#    rambits 12800;
+#    ramblocks 100;
+#}
+
+part AT40K40 {
+    numbreg 2304;
+    numbcell 2304;
+    numbio 384;
+    rambits 18432;
+    ramblocks 144;
+}
+
+part AT40K05LV {
+    numbreg 256;
+    numbcell 256 ;
+    numbio 128;
+    rambits 2048;
+    ramblocks 16;
+}
+
+part AT40K10LV {
+    numbreg 576;
+    numbcell 576;
+    numbio 192;
+    rambits 4608;
+    ramblocks 36;
+}
+
+part AT40K20LV {
+    numbreg 1024;
+    numbcell 1024;
+    numbio 256;
+    rambits 8192;
+    ramblocks 64;
+}
+
+part AT40K40LV {
+    numbreg 2304;
+    numbcell 2304;
+    numbio 384;
+    rambits 18432;
+    ramblocks 144;
+}
+

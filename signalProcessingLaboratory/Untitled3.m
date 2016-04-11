@@ -1,0 +1,10 @@
+clear all;
+close all;
+omega=0.5;
+t=1:100;
+s=sin(omega*t);
+subplot(3,1,1),stem(s);
+x1=s(1:2:length(s));
+subplot(3,1,2),stem(x1);
+x2=s(1:10:length(s));
+subplot(3,1,3),stem(x2);

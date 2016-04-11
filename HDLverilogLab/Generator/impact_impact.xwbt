@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=D:\cursuri\LDH\Generator\impact.xsl
+OUTFILE=D:\cursuri\LDH\Generator\impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=D:\cursuri\LDH\Generator
+LICENSE=iMPACT
+USER_INFO=iMPACT

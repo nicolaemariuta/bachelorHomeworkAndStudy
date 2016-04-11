@@ -1,0 +1,542 @@
+================================================================
+            Synplify(TM) unix_instructions.txt file
+
+            UNIX INSTALLATION AND LICENSING INSTRUCTIONS 
+
+    Installing Synplify on a Unix Workstation        A
+    Setting up a Unix Workstation Customer License   B
+    Unix Workstations as License Servers, 
+     System Administrators Setup Procedures          C
+    Unix Workstations as License Servers, 
+     Beginners Setup Procedures                      D
+    Setting up a Unix Workstation Trial License      E
+      (For Evaluations)
+
+================================================================
+
+A) Installing Synplify on a Unix Workstation 
+
+   The installation instructions in this example show you how to
+   install a Synplify license on a Sun SPARCstation running Solaris 
+   2.5.1 or greater or an HP workstation running HP-UX 10.20.
+
+    Installation Steps
+
+        Note:  The following characters indicate whether or not 
+               you are logged into the root account:
+
+               (#) pound character indicates the UNIX C-shell prompt 
+                   when you are logged into the "root" account. 
+                %  percent character indicates you are not logged in 
+                   as "root."
+
+        1. Insert the Synplify CD-ROM into your CD-ROM drive. 
+
+        2. Using a non-root account, type:
+
+           %  volcheck
+           %  cd /cdrom/synplcty/<platform>  (<platform> is 
+                                              "solaris" or "hp")
+           %  more readme.txt  (Displays the readme.txt file 
+                                telling you where to find the 
+                                latest information)
+           %  ./install.sh     (Installs Synplify)
+
+           Do not use "root" privileges when typing the preceding
+           commands.
+
+        The installation shell script guides you through the 
+        installation procedure to create the "synplcty" 
+        directory.  After the "install.sh" script finishes, 
+        set up your Synplify license. For license setup instructions, 
+        refer to the license setup section that best fits your 
+        licensing environment and type of Synplify license.
+
+======================================================================
+
+B)  Setting Up a Unix Workstation Customer License
+
+    You must Install Synplify before proceeding with these licensing 
+    instructions. See "Installing Synplify on a Unix Workstation" for 
+    instructions.
+    
+    Synplicity offers two types of Unix licenses, node-locked and
+    floating. A node-locked Synplify license lets you execute Synplify
+    only on the machine for which it was licensed. A floating Synplify
+    license lets you and your coworkers execute Synplify across a 
+    network of Synplify-supported Windows on NT, Sun Solaris, and HP
+    HP-UX systems, up to the number of seats your license supports.
+    
+    To enable your license, configure a "license server" to monitor 
+    your Synplify licenses.  You can configure any Synplify-supported 
+    platform as the license server.
+
+======================================================================
+
+C)  Unix Workstations as License Servers, 
+       System Administrators Setup Procedures 
+
+    These instructions explain how to configure a Synplify 
+    license server for both node-locked and floating licenses, 
+    where the license server is on a Unix workstation. 
+
+    If you want to use a Unix Workstation as your license 
+    server, but you have not configured license servers, refer to 
+    "Unix Workstations as License Servers, Beginners Setup 
+    Procedures."
+
+    If you want to use a Windows NT system as your license
+    server, refer to "PC NT Machines as License Servers."
+
+    The Synplify install script installs the platform-specific 
+    FLEXlm utilities for each platform in the corresponding 
+    "../synplcty/<platform>" directory.  For example, the 
+    FLEXlm utilities for a Solaris license server are in the 
+    "../synplcty/solaris" directory structure.
+
+   
+ Licensing Steps
+
+    1. Locate the Synplicity Software Authorization Form in 
+       your product shipment (or your authorization fax or 
+       email). The Synplicity Software Authorization Form 
+       contains your Synplify software license. If you are 
+       missing this information, contact Synplicity 
+
+          email: support@synplicity.com 
+          phone: (408) 548-6000 
+          call your local sales representative
+
+    2. Enter your Synplify license into your existing or new 
+       "license.dat" file.
+
+    3. Run the appropriate lmgrd or lmreread utility in the 
+       directory that matches the platform of your license 
+       server. You can run the lmgrd and lmreread utilities as 
+       any nonprivileged user. To avoid errors, do NOT run  
+       lmgrd or lmreread utilities as root!
+ 
+    You can now run Synplify. If you have difficulties 
+    installing or licensing Synplify, contact Synplicity 
+
+          email: support@synplicity.com 
+          phone: (408) 548-6000 
+          call your local sales representative 
+
+    Please fill out the Synplicity Software Registration Form 
+    that came with your customer shipment, then return it to 
+    Synplicity.
+
+==================================================================
+
+D) UNIX Workstations as License Servers, Beginners Setup Procedures
+
+    Use these instructions if you are a novice at setting up
+    software "license servers".  Synplify uses the FLEXlm license 
+    manager software for its licensing software. 
+    
+    The "license server" program runs special software that tracks
+    the number of licenses currently in use and who is using them. 
+    The license server can run on the same computer that is running 
+    Synplify, or it can be on a completely different computer. The 
+    license server can reside on any Synplify-supported platform, 
+    including a PC running Windows NT, a Sun SPARCstation running 
+    Solaris, or an HP workstation running HP-UX.
+    
+    Synplicity offers two types of Unix licenses, node-locked 
+    and floating. With a node-locked Synplify license, you can 
+    execute Synplify only on the machine for which it was 
+    licensed.  With floating Synplify licenses, you and your 
+    coworkers can execute Synplify across a network of Synplify-
+    supported Windows NT, Sun Solaris, and HP HP-UX systems, up
+    to the number of seats your license supports.
+
+    These instructions explain how to set up a Synplify license 
+    server for both node-locked and floating licenses where the 
+    license server is on a Unix workstation. 
+    
+    If you want to use a Windows NT system as your license
+    server, refer to section "PC NT Machines as License Servers"
+    in the pc installation instructions. 
+
+    The assistance of a system administrator can be helpful, if 
+    one is available. Also, read the section "UNIX Workstations 
+    as License Servers, System Administrators Setup Procedures." 
+
+    Important! While following the licensing steps below, make
+               substitutions as outlined below that correctly 
+               specify your environment when you enter commands.
+
+           -   Replace <synplicity_home> with the name of the path 
+               that describes the network location of your Synplify
+               software.
+
+           -   Replace <platform> with the system type that hosts your
+               "license server". "solaris" and "hp" are the valid
+               platform strings.
+
+           -   Replace <license_file_path> with the name of the path 
+               that describes the network location of your "
+               license.dat" file.
+
+    Licensing Steps
+
+    1. Locate your Synplify authorization information.
+
+       A) Locate your Synplicity Software Authorization Form in 
+          your product shipment (or your authorization fax or 
+          email). Your Synplicity Software Authorization Form 
+          contains your Synplify software license. 
+
+      B)  If you are missing your Synplify software license, 
+          contact Synplicity:
+
+                email: support@synplicity.com 
+                phone: (408) 548-6000, 
+                call:  your local sales representative
+
+          Be prepared to supply the <host_id> and <host_name> strings.
+          To get this information, you can use these commands:
+
+          1) Enter the following string at your command prompt 
+             to determine the <host_id> string of your machine:
+
+             % <synplicity_home>/synplcty/<platform>/lmhostid
+
+          2) Enter this string at your command prompt to 
+             determine the <host_name> string of your machine:
+
+             % hostname
+ 
+    2. Enter your authorization information
+
+       A) Enter your authorization information (or copy it, if 
+          you received an electronic copy) into a "license.dat" 
+          file. Put this license file anywhere you want, EXCEPT
+          in the Synplicity software directory, "synplcty," so that 
+          it doesn't get overwritten in a future installation to 
+          upgrade the software.
+
+       B) Update the DAEMON line in the "license.dat" file 
+          to the full path for the Synplicity license 
+          daemon. Change: 
+
+     DAEMON synplctyd synplcty/synplctyd
+
+           to:
+
+     DAEMON synplctyd <synplicity_home>/synplcty/<platform>/synplctyd
+
+       C) If you did not send a host name when requesting your 
+          license, you must update the SERVER line in the 
+          "license.dat" file as shown in the example bellow. 
+          If you DID send a host name, continue with Step 3.
+
+          Example:  SERVER <host_name> <host_id> 1701
+
+          Replace <host_name> with the host name of the system
+          that hosts your license server, and verify that the 
+          <host_id> is correct. If the <host_name> string is
+          incorrect, you can correct the string. If the <host_id>
+          is correct, call Synplicity immediately at (408) 548-6000
+          or email support@synplicity.com to get an updated license.
+ 
+    3. Start the Synplicity License Manager Daemon. To prevent 
+       security violations, DO NOT perform this step while 
+       logged into the "root" account.  Perform this step while 
+       logged into the system as a nonprivileged user.
+
+       A) Enter the following string at your command prompt to 
+          start the Synplicity license manager daemon:
+
+          % <synplicity_home>/synplcty/<platform>/lmgrd \
+            -l /usr/tmp/lmgrd.log -c <full_license_file_path>
+
+          Notes:
+          1) The -l switch specifies the destination of the FLEXlm
+             log file.
+
+          2) The -c switch specifies that your license file will be
+             used. 
+ 
+       B) Based on your system environment, enter one of the 
+          following commands to verify that your Synplicity 
+          license manager daemon is running:
+
+            % ps -auxw | grep lmgrd
+		or
+	    % ps -ef | grep lmgrd
+
+          If the daemon is running, the system lists "lmgrd"
+          as a currently executing process.
+ 
+    4. For each client system--that is, each user account that  
+       is to execute Synplify--set the LM_LICENSE_FILE 
+       environment variable to instruct FLEXlm where to find 
+       the Synplify license. The client system can be the same
+       system as your license server, but this is a requirement. 
+       The client system can be any Synplify-supported system
+       on the network that can access the "license.dat" file.
+ 
+       Complete these instructions for all Unix clients:
+
+       A) The LM_LICENSE_FILE variable tells FLEXlm where to 
+          find your license file. To see if your LM_LICENSE_FILE 
+          variable is already defined, enter the following command 
+          at the command prompt:
+
+          %  echo $LM_LICENSE_FILE
+ 
+          In Steps 4B and 4C (you must complete either 4B or 4C, 
+          but not both), substitute your valid <licnserv> string 
+          into the command. Using the <licnserv> string lets you 
+          specify your license file without entering an explicit
+          filename. Using the <licnserv> is highly recommended.  
+          Create a <licnserv> string as follows: 
+ 
+          <port_number>@<host_name>
+   
+          For example, if your "license.dat" file has the
+          following "SERVER" line:
+
+          SERVER  bigdaddyhost  12345678  1701
+
+          "1701" is your <port_number> string; "bigdaddyhost" 
+          is your <host_name> string.  Your <licnserv> string is 
+          "1701@bigdaddyhost" which is a concatenation of the 
+          <port_number> and <host_name> strings.
+         
+          Create your <licnserv> string now, before continuing.
+ 
+          B) If the LM_LICENSE_FILE variable IS NOT DEFINED, 
+             set the LM_LICENSE_FILE variable to find your 
+             license file using one of the options below:
+
+             From a C shell, enter:
+                 %  setenv LM_LICENSE_FILE <licnserv>
+
+             From a Korn or Bourne shell, enter:
+                 $  LM_LICENSE_FILE=<licnserv>
+                 $  export LM_LICENSE_FILE
+
+          C) If the LM_LICENSE_FILE variable IS DEFINED, there 
+             are license files in use by other software.  In 
+             this case, reset your LM_LICENSE_FILE environment 
+             variable, adding your license file to the list:
+
+             Important! If a <licnserv> (or full pathname) for
+                        an old Synplicity "license.dat" file is 
+                        in the LM_LICENSE_FILE list, remove it
+                        from the list when you reset the 
+                        LM_LICENSE_FILE environment variable.
+
+             When using multiple license files, the <port_number> 
+             string on the SERVER line must be unique for each 
+             license file.  If the Synplicity license file would 
+             cause a duplication, change its <port_number> string 
+             to another valid and unique port number; to avoid 
+             duplication, use a valid port number that is greater
+             than any of the other ports currently in use.
+
+             To reset your LM_LICENSE_FILE variable:
+
+             1) From a C shell, enter:
+
+     % setenv LM_LICENSE_FILE <licnserv_1>:..:<licnserv_n>:<licnserv>
+
+                Where <licnserv_1> through <licnserv_n> represent
+                other license files.  You may see <licnserv> 
+                strings expressed as full pathnames to the license 
+                file.  However, this is not recommended for Synplicity
+                software. Also, notice the use of the colon (:) as a 
+                delimiting character between <licnserv> strings.
+
+             2) From a Korn or Bourne shell, enter:
+
+      $ LM_LICENSE_FILE=<licnserv_1>:..:<licnserv_n>:<licnserv>
+      $ export LM_LICENSE_FILE
+
+          If your license server is hosted by a Unix system, but 
+          your client software is executes on a Windows NT system, 
+          complete the steps described in Step 5 after completing the 
+          remainder of Step 4.
+
+          D) Enter the string below at the command prompt to verify 
+             the path to the "license.dat" file is set correctly to 
+             your LM_LICENSE_FILE environment variable:
+
+             % echo $LM_LICENSE_FILE
+
+          E) Put the commands to set your LM_LICENSE_FILE environment
+             variable in your shell start-up script (.cshrc, .kshrc, 
+             or .profile files), to set your LM_LICENSE_FILE variable
+             automatically each time you log in.
+ 
+       5. Configure the license manager daemon to start each time you 
+          boot your system.  You must have root privileges to complete
+          this step, because you must edit your Unix system files. You 
+          may need assistance from a system administrator.
+
+          A) Create a nonprivileged "flexlm" user account.  Use this 
+             separate, nonprivileged user account (not your regular 
+             account, or root account) in step 5B. To create this user
+             account, add this entry to your password file:
+
+         flexlm:*:2000:250:FLEXlm License Manager:/nonexistent:/bin/sh
+ 
+             This nonpriviledged account has the following 
+             properties: 
+
+             - Password set to '*' as interactive access is not 
+               required.
+               
+             - A unique userid ("2000" is only an example).  No other 
+               account should use this number.
+
+             - A unique groupid ("250" is only an example).  No other 
+               account should use this number.
+
+             - A shell of /bin/sh
+ 
+          B) To start the lmgrd license server every time your 
+             machine boots, add the following as a long single line 
+             to your "/etc/rc.local" file:
+
+          su flexlm -c "<synplicity_home>/synplcty/<platform>/lmgrd \
+          -l /usr/tmp/lmgrd.log -c <full_license_file_path>"
+
+             Use the quotation marks as shown.
+
+       6. Verify your authorization using the "lmstat" utility.  
+          Enter the following string at the command prompt to execute 
+          the "lmstat" utility:
+
+          % <synplicity_home>/synplcty/<platform>/lmstat -a
+
+          No errors should be reported. A message similar to the 
+          following messsage should be returned:
+ 
+       lmstat - Copyright (C) 1989-1994 Globetrotter Software, Inc.
+       Flexible License Manager status on Wed 5/17/99 14:40
+       License server status (License file: <full_license_file_path>):
+       synplicity: license server UP (MASTER)
+       Vendor daemon status (on <machine name>):
+       synplctyd (v3.x): UP
+       Feature usage info:
+       Users of Synplify:  (Total of 1 licenses available)
+ 
+         You can now run Synplify. If you have difficulties 
+         installing or licensing Synplify, refer to the 
+         Troubleshooting section below.
+
+         Please fill out the Synplicity Software Registration Form 
+         that came with your product shipment, then return it to 
+         Synplicity.
+            
+
+   Troubleshooting
+
+    If you have difficulties installing or licensing Synplify, please 
+    read this section before contacting Synplicity or your local 
+    technical support representative.
+
+    If lmstat reports errors, read the log file "/usr/tmp/lmgrd.log".  
+    The log file gives you hints about the problems, which can be 
+    helpful when you are trying to resolve problems. Repeat the 
+    Licensing steps as necessary.  Some common problems include: 
+            
+    - Typographical errors in the "license.dat" file.
+
+    - An improperly set LM_LICENSE_FILE environment variable. 
+      See Step 4.
+
+    - You have multiple Synplicity license manager daemons (lmgrd)
+      executing.  In this case, "kill" the older process and try 
+      again. 
+  
+    If you still have trouble, ask your system administrator for 
+    assistance, or send email to support@synplicity.com. 
+
+    When contacting Synplicity, please include:
+
+    - Your "license.dat" file 
+
+    - The "support.log" file.  Create the "support.log" file using 
+      the following commands:
+
+      % echo $LM_LICENSE_FILE > support.log
+      % ps -auxw | grep lmgrd >> support.log
+      % ps -auxw | grep synplctyd >> support.log
+      % <synplicity_home>/synplcty/<platform>/lmstat -a >> support.log
+
+Note: Based on your system environment, you might need to use the 
+      ps -ef command instead of the ps -auxw command; the rest of 
+      the command line remains the same.
+
+
+E) Setting Up a UNIX Workstation Trial License (for Evaluations)
+
+    Synplicity offers two types of Unix licenses, node-locked 
+    and floating. With a node-locked Synplify license, you can 
+    execute Synplify only on the machine for which it was 
+    licensed.  With floating Synplify licenses, you and your 
+    coworkers can execute Synplify across a network of Synplify-
+    supported Windows NT, Sun Solaris, and HP HP-UX systems up
+    to the number of seats supported by your license.
+
+    To evaluate Synplify before purchasing it, you can download a 
+    full-featured Synplify program which you can use for twenty days
+    from our web site, http://www.synplicity.com. 
+    
+    To get an evaluation copy, visit the Synplicity web site and 
+    download the software.  You must accept the licensing terms 
+    and complete the trial request form before downloading the 
+    software. After downloading and installing Synplify, execute
+    the licensing wizard that pops up.
+
+    Licensing Steps
+
+    1. Run the license wizard:
+
+       Enter "Synplify" at the command prompt to start the Synplify 
+       software.  Synplify prompts you with a series of questions to 
+       answer. Answer the questions, and either print and fax, or 
+       email the form to Synplicity.
+
+       If Synplify cannot automatically determine your <host_id> and 
+       <host_name> strings:
+
+       A) Determine your "hostid" by entering the following at the 
+          command prompt:
+
+          %  <synplicity_home>/synplcty/<platform>/lmhostid
+
+	Replace <synplicity_home> with the complete pathname that
+        describes the location of your Synplicity software.
+        Replace <platform> with the machine type that hosts your
+        license server.
+
+      B) Determine your "hostname" by typing:
+
+          %  hostname	
+ 
+   2. FAX or email the license request form
+
+      - Within North America, fax request forms to Synplicity at 
+        (408) 548-0050 or email to trial@synplicity.com
+
+      - Outside of North America, fax request forms to your local 
+        sales office. For help locating your local sales office, 
+        visit the Synplicity web site at www.synplicity.com, or 
+        call Synplicity at (408) 548-6000.
+ 
+   3. Enter your authorization information
+
+      Upon approval of your request, Synplicity will either fax or
+      email your trial license to you.  Continue with the licensing 
+      instructions as described in "Setting Up a Unix Workstation 
+      Customer License."
+            
+   You can now run Synplify.  If you have difficulties installing or
+   licensing Synplify, call Synplicity at (408) 548-6000 or send email
+   to support@synplicity.com.

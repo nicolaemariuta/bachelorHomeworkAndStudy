@@ -1,0 +1,299 @@
+
+part flex6000 {
+    maxcarrychain 40;
+    max_clique_size 8; # labs have 10 cells - leave min of 2 free
+    fix_fanout 0;
+    reg_pack 0;    # disable
+    carry_speedup 1; # set to use carry chain for crit path
+    use_chain 1;
+    enable_timing_driven_pnr 1;
+}
+part flex8000 {
+    maxcarrychain 16; # harder to route 
+    max_clique_size 6;
+    fix_fanout 0;
+    reg_pack 0;    # disable
+    carry_speedup 1; # set to use carry chain for crit path
+    enable_timing_driven_pnr 1;
+}
+part flex10k {
+    maxcarrychain 40;
+    max_clique_size 6;
+    fix_fanout 1;  # enables replication and buffering
+    reg_pack 1;    # set to take advantage of register packing
+    carry_speedup 1; # set to use carry chain for crit path
+    use_chain 1;
+    enable_timing_driven_pnr 0;
+}
+part apex20k {
+    maxcarrychain 40;
+    max_clique_size 8; # labs have 10 cells - leave min of 2 free
+    fix_fanout 0;
+    reg_pack 0;    # disable
+    carry_speedup 1; # set to use carry chain for crit path
+    use_chain 1;
+    enable_timing_driven_pnr 1;
+}
+
+part epf8282 {
+    num_lc 208;
+    num_io 74;
+    num_reg 208;
+}
+
+part epf8452 {
+    num_lc 336;
+    num_io 116;
+    num_reg 336;
+}
+
+part epf8636 {
+    num_lc 504;
+    num_io 132;
+    num_reg 504;
+}
+
+part epf8820 {
+    num_lc 672;
+    num_io 148;
+    num_reg 672;
+}
+
+part epf81188 {
+    num_lc 1008;
+    num_io 180;
+    num_reg 1008;
+}
+
+part epf81500 {
+    num_lc 1296;
+    num_io 204;
+    num_reg 1296;
+}
+
+part epf10k10 {
+    num_lc 576;
+    num_io 150;
+    num_reg 576;
+    enable_timing_driven_pnr 1;
+}
+
+part epf10k10a {
+    num_lc 576;
+    num_io 150;
+    num_reg 576;
+    enable_timing_driven_pnr 1;
+}
+
+part epf10k20 {
+    num_lc 1152;
+    num_io 198;
+    num_reg 1152;
+    enable_timing_driven_pnr 1;
+}
+
+part epf10k30 {
+    num_lc 1728;
+    num_io 248;
+    num_reg 1728;
+    enable_timing_driven_pnr 1;
+}
+
+part epf10k30a {
+    num_lc 1728;
+    num_io 248;
+    num_reg 1728;
+    enable_timing_driven_pnr 1;
+}
+
+part epf10k30b {
+    num_lc 1728;
+    num_io 248;
+    num_reg 1728;
+    enable_timing_driven_pnr 1;
+}
+
+part epf10k30e {
+    num_lc 1728;
+    num_io 248;
+    num_reg 1728;
+    enable_timing_driven_pnr 1;
+}
+
+part epf10k40 {
+    num_lc 2304;
+    num_io 278;
+    num_reg 2304;
+    enable_timing_driven_pnr 1;
+}
+
+part epf10k50 {
+    num_lc 2880;
+    num_io 310;
+    num_reg 2880;
+    enable_timing_driven_pnr 1;
+}
+
+part epf10k50v {
+    num_lc 2880;
+    num_io 310;
+    num_reg 2880;
+    enable_timing_driven_pnr 1;
+}
+
+part epf10k50b {
+    num_lc 2880;
+    num_io 310;
+    num_reg 2880;
+    enable_timing_driven_pnr 1;
+}
+
+part epf10k50e {
+    num_lc 2880;
+    num_io 310;
+    num_reg 2880;
+    enable_timing_driven_pnr 1;
+}
+
+part epf10k70 {
+    num_lc 3744;
+    num_io 358;
+    num_reg 3744;
+}
+
+part epf10k100 {
+    num_lc 4992;
+    num_io 406;
+    num_reg 4992;
+}
+
+part epf10k100a {
+    num_lc 4992;
+    num_io 406;
+    num_reg 4992;
+}
+
+part epf10k100b {
+    num_lc 4992;
+    num_io 406;
+    num_reg 4992;
+}
+
+part epf10k100e {
+    num_lc 4992;
+    num_io 406;
+    num_reg 4992;
+}
+
+part epf10k130 {
+    num_lc 6656;
+    num_io 470;
+    num_reg 6656;
+}
+
+part epf10k130v {
+    num_lc 6656;
+    num_io 470;
+    num_reg 6656;
+}
+
+part epf10k130b {
+    num_lc 6656;
+    num_io 470;
+    num_reg 6656;
+}
+
+part epf10k130e {
+    num_lc 6656;
+    num_io 470;
+    num_reg 6656;
+}
+
+part epf10k180b {
+    num_lc 9728;
+    num_io 470;
+    num_reg 9728;
+}
+
+part epf10k200e {
+    num_lc 9984;
+    num_io 470; # not sure about i/o count
+    num_reg 9984;
+}
+
+part epf10k250a {
+    num_lc 12160;
+    num_io 470;
+    num_reg 12160;
+}
+
+part epf10k250b {
+    num_lc 12160;
+    num_io 470;
+    num_reg 12160;
+}
+
+part epf10k250e {
+    num_lc 12160;
+    num_io 470;
+    num_reg 12160;
+}
+
+part epf6010 {
+    num_lc 800;
+    num_io 160;
+    num_reg 800;
+}
+part epf6016 {
+    num_lc 1320;
+    num_io 204;
+    num_reg 1320;
+}
+part epf6016a {
+    num_lc 1320;
+    num_io 204;
+    num_reg 1320;
+}
+part epf6024a {
+    num_lc 1960;
+    num_io 215;
+    num_reg 1950;
+}
+
+# QUARTUS APEX
+part epf20k100 {
+    num_lc 4160;
+    num_io 250;
+    num_reg 9999;  # ???
+}
+part epf20k160 {
+    num_lc 6400;
+    num_io 320;
+    num_reg 9999;  # ???
+}
+part epf20k200 {
+    num_lc 8320;
+    num_io 320;
+    num_reg 9999;  # ???
+}
+part epf20k300 {
+    num_lc 11520;
+    num_io 420;
+    num_reg 9999;  # ???
+}
+part epf20k400 {
+    num_lc 16640;
+    num_io 500;
+    num_reg 9999;  # ???
+}
+part epf20k600 {
+    num_lc 24320;
+    num_io 620;
+    num_reg 9999;  # ???
+}
+part epf20k1000 {
+    num_lc 42240;
+    num_io 780;
+    num_reg 9999;  # ???
+}
+

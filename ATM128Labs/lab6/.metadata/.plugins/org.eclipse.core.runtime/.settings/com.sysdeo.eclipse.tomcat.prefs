@@ -1,0 +1,8 @@
+#Tue Jul 22 12:51:48 EEST 2008
+tomcatDir=C\:\\Didactic\\Tomcat 6.0
+configMode=serverFile
+eclipse.preferences.version=1
+fixTomcatHomeBug=fixed
+contextsDir=C\:\\Didactic\\Tomcat 6.0\\conf\\Catalina\\localhost
+tomcatVersion=tomcatV6
+tomcatConfigFile=C\:\\Didactic\\Tomcat 6.0\\conf\\server.xml

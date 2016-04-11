@@ -1,0 +1,327 @@
+#
+# This file contains confidential and proprietary information
+# of Synplicity, Inc.
+#
+#  Copyright (c) 1995 Synplicity, Inc.
+#  All rights reserved.
+#
+# $Header: s:/rcs/mappers/altera/lib/RCS/altera.syn 1.13 1999/01/28 02:07:04 robert Exp $
+#
+@ER
+ycHRL0FROkCM0sNRl0HOEMNoRDs0CNORcF0kMR0IHEhRtRblNbRC80BFRQ
+h3yQRBh#RHR0NOHRPC]]Qt3R
+y1h aRRH#lbNbC08RF)RazH RMER0ClRDVR
+Mq pa)BqRcRhauv)Q;R
+HBhp)R)BphH;
+RiBpRiBp;R
+HpR7hp;7h
+7HRhRzu7uhz;R
+HBRQhB;Qh
+7HRjjR7;R
+H774R4H;
+RR7.7
+.;HdR7R;7d
+TFRjsRJ_jUr9F;
+RRT4JUs_r;49
+TFR.sRJ_.Ur9F;
+RRTdJUs_r;d9
+BFRmRzaBamz;R
+bRk0sCMRkjMRkjb;
+RMRHPMRk(MRk(pRB)
+h;bHRRMkPRj4_k_UkMR_kjkk4_MpUR7
+h;bNRRMR8Pkkj_4M_kgjRk__k4kRMgBRQhp;7h
+RbRFRsPkkj_4M_k4kjRj4_k_4kMjQRBhjRk__k4k;MU
+RbRNR88k4M4rjc:9MRk4c4r:Rj97uhz,z7huh,7zku,MJjRsr_Ud9:j;R
+bRPHMR_kjkk4_4M_k4k.Rj4_k__k4k.M4R_kjkk4_M;4j
+RbRGPFsRzBmamRBz7aRhRzuk4M4r;c9
+RbRbGlkR_kjkJ4_sr_6d9:jR_kjkJ4_sr_6d9:jR,7d77.,4j,7,_kjkk4_MkURMr44d9:j,_kjkk4_MRg
+RJRRsr_Ud9:j,_kjkk4_4M_k4
+.;b8RRVRVsJUs_rjd:9sRJ_dUr:Rj9kkj_4s_J_d6r:Rj9BRpik;M(
+R
+yUHRL0FROkCM0sNRl0HOEMNoRDs0CNORUF0kMR0IHEhRtRblNbRC80BFRQyh
+RhBQRRH#NHO0PpCRm
+W3y R1aHhR#NRlb8bCRR0Fa )zRRHM0RECD
+lVMpRqaq )RhBUauhR);Qv
+BHRpR)hBhp);R
+HBRpiB;pi
+pHR7phR7
+h;HhR7z7uRh;zu
+BHRQBhRQ
+h;HjR7R;7j
+7HR44R7;R
+H77.R.H;
+RR7d7
+d;HcR7R;7c
+7HR66R7;R
+H77nRnH;
+RR7(7
+(;FjRTR_JsU9rj;R
+FTJ4Rsr_U4
+9;F.RTR_JsU9r.;R
+FTJdRsr_Ud
+9;FcRTR_JsU9rc;R
+FTJ6Rsr_U6
+9;FnRTR_JsU9rn;R
+FTJ(Rsr_U(
+9;FmRBzkaRM;4U
+RbR0CskRjkMRjkM;R
+bRPHMR4kM4MRk4B4Rp;)h
+RbRHRMPkkj_4M_k4k.Rj4_k_4kM.QRBhb;
+RMRHPjRk__k4kdM4R_kjkk4_MR4dp;7h
+RbRFRsPkkj_4M_k4kcRj4_k_4kMcjRk__k4kdM4R_kjkk4_M;4.
+RbRNR88k6M4rjU:9MRk4U6r:Rj9JUs_rj(:9hR7z7u,h,zu7uhz,z7huh,7z7u,h,zu7uhz,jkM;R
+bR8NMPjRk__k4knM4R_kjkk4_MR4nkkj_4M_k4p.R7
+h;bHRRMkPRj4_k__k4k(M4R_kjkk4_4M_k4k(Rj4_k_4kMcb;
+RFRGskPRMR4UkUM4Rz7huMRk4U6r9b;
+RlRbkkGRj4_k__Js6:r(jk9Rj4_k__Js6:r(j79R(n,7,,7677c,d.,7,,747kj,j4_k_4kMdR
+RRMRk4(6r:,j9kkj_4M_k4JnRsr_U(9:j,_kjkk4_4M_k4
+(;b8RRVRVsJUs_rj(:9sRJ_(Ur:Rj9kkj_4s_J_(6r:Rj9BRpik4M4;y
+
+
+#yR0VkV3M#$
+1yRFRlCNCD0sbNRsHHl0CHP#CRIRCk#RR0FO0FMsRFDb	NOH
+MoyR
+yRbBF$osHE50RO42RgRg61b$MDHHO0R$,Q3MO
+RyRqRDDsEHo0s#RCs#CP3C8
+
+y
+MpRqaq )R1BqB q7RQu)vN;
+P0R38sVbH4lR;P
+NRN3l0ROE4F;
+Rmq_z
+a;H_RqQ
+h;bkRLVRRLqz_ma_RqQ
+h;
+qMRp)a qXR u)RuQ
+v;N3PR0b8VsRHl4N;
+PlR3NE0OR
+4;F_Rqm;za
+qHR_;Qh
+HbRMLPRRmq_zqaR_;Qh
+R
+Mq pa)BqRqY))RQu)vN;
+P0R38sVbH4lR;P
+NRN3l0ROE4F;
+Rmq_z
+a;H_RqQ
+h;bkRLVRRLqz_ma_RqQ
+h;
+qMRp)a qBRp Rppuv)Q;P
+NR830VHbsl;R4
+RNP30lNO4ER;R
+Fqz_maH;
+RQq_hb;
+RVLkRqLR_amzRQq_h
+;
+MpRqaq )Rw1ma)RuQ
+v;N3PR0b8VsRHl4N;
+PlR3NE0OR
+4;F_Rqm;za
+qHR_;Qh
+LbRkLVRRmq_zqaR_;Qh
+R
+Mq pa)tqRpqmAp)RuQ
+v;N3PR0b8VsRHl4N;
+PlR3NE0OR
+4;F_Rqm;za
+qHR_;Qh
+LbRkLVRRmq_zqaR_;Qh
+
+
+yyHRuMsRF8RCsVRFsVDFDFMIHoCRODRD#HH#RlsbF00NM3R
+yaRECBFR#kCsORDsC$F#RMER0CsRF8
+CsyR
+yDDOCDMRHRsONsl$RF
+8CMpRqaq )RB1_qu)R);Qv
+RNP3V08blsHR
+4;FzRmaNRVD;#C
+BFRmRzaV#NDCH;
+RhBQ;R
+HQ
+j;H4RQ;R
+HQR.;y#RkCF8RMRD$N00REECRC,N8RPHMN8DHN#0CRCk#RRFVBamzRR
+bV#NDCNRVDR#CV#NDC
+;
+MpRqaq )RB1_qq)B1)RuQ
+v;N3PR0b8VsRHl4F;
+RamzRDVN#
+C;FmRBzVaRNCD#;R
+HB;q1
+BHRQ
+h;HjRQ;R
+HQ
+4;H.RQ;RRyk8#CRDFM$0RNRC0ERNEC8H,RMDPNH08NCk#R#FCRVmRBz
+aRbNRVDR#CV#NDCNRVD;#C
+R
+Mq pa)1qR_)BqB_q1A)RuQ
+v;N3PR0b8VsRHl4F;
+RamzRDVN#
+C;FmRBzVaRNCD#;R
+HB;q1
+BHRQ
+h;HjRQ;R
+HQ
+4;H.RQ;RRyk8#CRDFM$0RNRC0ERNEC8H,RMDPNH08NCk#R#FCRVmRBz
+aRFqRB1amzRDVN#
+C;bNRVDR#CV#NDCNRVD;#C
+R
+Mq pa)1qR_aBhBRq)uv)Q;P
+NR830VHbsl;R4
+mFRzVaRNCD#;R
+FBamzRDVN#
+C;HQRBhH;
+R
+T;HhR ;R
+Hzhu7;R
+bV#NDCNRVDR#CV#NDC
+;
+yORDCRDDHOMRNN#O8lCRF
+8CMpRqaq )RB1_qu1R);Qv
+RNP3V08blsHR
+4;FzRmaNRVD;#C
+BHRq
+1;HjRQ;R
+HQ
+4;H.RQ;R
+HQ
+d;bNRVDR#CV#NDCNRVD;#C
+R
+Mq pa)1qR_1Bq_uAR);Qv
+RNP3V08blsHR
+4;FzRmaNRVD;#C
+BHRq
+1;HjRQ;R
+HQ
+4;H.RQ;R
+HQ
+d;FqRB1amzRDVN#
+C;bNRVDR#CV#NDCNRVD;#C
+R
+Mq pa)1qR_1BqqRh7uv)Q;P
+NR830VHbsl;R4
+mFRz
+a;HqRB1H;
+R;Qj
+qsRp)a qqRB17Bq )RuQOvRRmq_zLa=kNVO#_RqQBh=q
+1;bMRN8zRmazRmakRLV#ON,;Qj
+R
+yDRk0IEH0R0Dk_MVkOF0HM0RN0LsHk
+0CyFRh0-CRRCbsP0CM#DROHMJHosRVFIlRFHs	MRo3RCz#
+FyRMRD$IsECCCRMO#C#NRs$0VFRFCsORblNboHM3R
+Mq pa)pqRzuaR);Qv
+RNP3V08blsHR
+4;F_RqmRzaV#NDCH;
+R4Qh;R
+HQ;h.
+QHRh
+d;HhRQcb;
+RDVN#VCRNCD#RDVN#
+C;
+qMRp)a q_R1pRzauv)Q;P
+NR830VHbsl;R4
+mFRzVaRNCD#;R
+HQ
+j;H4RQ;R
+HQ
+.;HdRQ;R
+bV#NDCNRVDR#CV#NDC
+;
+MpRqaq )Rp1_zAa_RQu)vN;
+P0R38sVbH4lR;R
+FmRzaV#NDCH;
+R;Qj
+QHR4H;
+R;Q.
+QHRdF;
+R1BqmRzaV#NDCb;
+RDVN#VCRNCD#RDVN#
+C;
+zyR#RC8HOMRF0kMCosRCsMCNs0F
+qMRp)a q_R1v.zX4)RuQ
+v;N3PR0b8VsRHl4F;
+R
+Z;HjRQ;R
+HQ
+4;H R1pb;
+RPHMRp1 h R1p1hR 
+p;bMRN8jRlRRljQ1j, ;ph
+NbRMl8R44RlR,Q41; p
+FbRsRRZZjRl,;l4
+R
+Mq pa)1qR_)Bpq.h7RQu)vN;
+P0R38sVbH4lR;R
+FZH;
+R)BphH;
+R
+7;bMRN8RRZZpRB)7h,;M
+
+Raqp R)q1w_7w)RuQ
+v;N3PR0b8VsRHl4F;
+R
+T;H;R7
+RHOB;pi
+BHRp;)h
+uHR)
+h;bMRHPDROsDROspRB)
+h;bMRHPsRbCsRbC)Ruhb;
+RV8VsT#RR7TRRiBpRsODRCbs;M
+
+Raqp R)q1w_7wu R);Qv
+RNP3V08blsHR
+4;F;RT
+7HR;O
+HRiBp;R
+HBhp);R
+Hu;)h
+ HRh
+q;bMRHPDROsDROspRB)
+h;bMRHPsRbCsRbC)Ruhb;
+RGlkRssRR7TRRq h;R
+b8sVV#RRTTRRsBRpiORDsb;sC
+R
+Mq pa)1qR_apqRQu)vN;
+P0R38sVbH4lR;R
+FTH;
+R
+7;HhRt;R
+bHRMPoRRot
+h;bNRD0RRTTRR7o
+;
+MpRqaq )Rp1_qRa)uv)Q;P
+NR830VHbsl;R4
+TFR;R
+H7H;
+R;th
+)HRhb;
+RPHMRooRR;th
+DbRNs0MRTTRRo7RR;)h
+R
+Mq pa)1qR_apq)u1R);Qv
+RNP3V08blsHR
+4;F;RT
+7HR;R
+Ht
+h;HhR);R
+H1
+h;bMRHPRRoohRt;R
+bDMN0sT#RR7TRR)oRhhR1;M
+
+Raqp R)qNGbC._j	DDOCD)RuQ
+v;FFROlkLF0F;
+RosCF;k0
+OFRF;k0
+OFRNF#Ok
+0;HDRO	H;
+R08NN
+N;HNR80;NL
+8HRNO0N;R
+H8NN08H;
+RDNOsH;
+RD#OsH;
+RF#DN
+8;HMRCNH;
+RMOH;R
+HOON#H
+M;C
+;
+

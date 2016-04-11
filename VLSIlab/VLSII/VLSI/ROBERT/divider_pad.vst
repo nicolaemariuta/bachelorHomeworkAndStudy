@@ -1,0 +1,632 @@
+entity divider_pad is
+   port (
+      vdd    : in      bit;
+      vss    : in      bit;
+      vdde   : in      bit;
+      vsse   : in      bit;
+      op_a   : in      bit_vector(3 downto 0);
+      op_b   : in      bit_vector(3 downto 0);
+      reset  : in      bit;
+      start  : in      bit;
+      clk    : in      bit;
+      ready  : out     bit;
+      result : out     bit_vector(7 downto 0)
+ );
+end divider_pad;
+
+architecture structural of divider_pad is
+Component pvsse_sp
+   generic (
+      CONSTANT area : natural := 86000
+   );
+   port (
+      ck   : in      bit;
+      vdde : in      bit;
+      vddi : in      bit;
+      vsse : in      bit;
+      vssi : in      bit
+ );
+end component;
+
+Component pvdde_sp
+   generic (
+      CONSTANT area : natural := 86000
+   );
+   port (
+      ck   : in      bit;
+      vdde : in      bit;
+      vddi : in      bit;
+      vsse : in      bit;
+      vssi : in      bit
+ );
+end component;
+
+Component pvddeck_sp
+   generic (
+      CONSTANT area     : natural := 86000;
+      CONSTANT cin_ck   : natural := 127;
+      CONSTANT tpll_ck  : natural := 1055;
+      CONSTANT rdown_ck : natural := 126;
+      CONSTANT tphh_ck  : natural := 963;
+      CONSTANT rup_ck   : natural := 183
+   );
+   port (
+      cko  : out     mux_bit bus;
+      ck   : in      bit;
+      vdde : in      bit;
+      vddi : in      bit;
+      vsse : in      bit;
+      vssi : in      bit
+ );
+end component;
+
+Component pvssi_sp
+   generic (
+      CONSTANT area : natural := 86000
+   );
+   port (
+      ck   : in      bit;
+      vdde : in      bit;
+      vddi : in      bit;
+      vsse : in      bit;
+      vssi : in      bit
+ );
+end component;
+
+Component pvddi_sp
+   generic (
+      CONSTANT area : natural := 86000
+   );
+   port (
+      ck   : in      bit;
+      vdde : in      bit;
+      vddi : in      bit;
+      vsse : in      bit;
+      vssi : in      bit
+ );
+end component;
+
+Component pi_sp
+   generic (
+      CONSTANT area      : natural := 86000;
+      CONSTANT cin_pad   : natural := 654;
+      CONSTANT tpll_pad  : natural := 1487;
+      CONSTANT rdown_pad : natural := 234;
+      CONSTANT tphh_pad  : natural := 233;
+      CONSTANT rup_pad   : natural := 273
+   );
+   port (
+      pad  : in      bit;
+      t    : out     bit;
+      ck   : in      bit;
+      vdde : in      bit;
+      vddi : in      bit;
+      vsse : in      bit;
+      vssi : in      bit
+ );
+end component;
+
+Component pck_sp
+   generic (
+      CONSTANT area      : natural := 86000;
+      CONSTANT cin_pad   : natural := 1326;
+      CONSTANT tpll_pad  : natural := 1443;
+      CONSTANT rdown_pad : natural := 58;
+      CONSTANT tphh_pad  : natural := 228;
+      CONSTANT rup_pad   : natural := 68
+   );
+   port (
+      pad  : in      bit;
+      ck   : out     bit;
+      vdde : in      bit;
+      vddi : in      bit;
+      vsse : in      bit;
+      vssi : in      bit
+ );
+end component;
+
+Component po_sp
+   generic (
+      CONSTANT area    : natural := 86000;
+      CONSTANT cin_i   : natural := 191;
+      CONSTANT tpll_i  : natural := 2176;
+      CONSTANT rdown_i : natural := 15;
+      CONSTANT tphh_i  : natural := 2032;
+      CONSTANT rup_i   : natural := 16#00000010#
+   );
+   port (
+      i    : in      bit;
+      pad  : out     bit;
+      ck   : in      bit;
+      vdde : in      bit;
+      vddi : in      bit;
+      vsse : in      bit;
+      vssi : in      bit
+ );
+end component;
+
+Component divider
+   port (
+      op_a   : in      bit_vector(3 downto 0);
+      op_b   : in      bit_vector(3 downto 0);
+      result : out     bit_vector(7 downto 0);
+      clk    : in      bit;
+      reset  : in      bit;
+      start  : in      bit;
+      ready  : out     bit;
+      vdd    : in      bit;
+      vss    : in      bit
+ );
+end component;
+
+signal op_aa        : bit_vector( 3 downto 0);
+signal op_bb        : bit_vector( 3 downto 0);
+signal resultresult : bit_vector( 7 downto 0);
+signal startstart   : bit;
+signal resetreset   : bit;
+signal readyready   : bit;
+signal clock        : bit;
+signal cki          : bit;
+
+begin
+
+p20 : pvsse_sp
+   Generic Map (
+      area => 86000
+   )
+   port map (
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p21 : pvdde_sp
+   Generic Map (
+      area => 86000
+   )
+   port map (
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p22 : pvddeck_sp
+   Generic Map (
+      area     => 86000,
+      cin_ck   => 127,
+      tpll_ck  => 1055,
+      rdown_ck => 126,
+      tphh_ck  => 963,
+      rup_ck   => 183
+   )
+   port map (
+      cko  => clock,
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p23 : pvssi_sp
+   Generic Map (
+      area => 86000
+   )
+   port map (
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p24 : pvddi_sp
+   Generic Map (
+      area => 86000
+   )
+   port map (
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p0 : pi_sp
+   Generic Map (
+      area      => 86000,
+      cin_pad   => 654,
+      tpll_pad  => 1487,
+      rdown_pad => 234,
+      tphh_pad  => 233,
+      rup_pad   => 273
+   )
+   port map (
+      pad  => op_a(0),
+      t    => op_aa(0),
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p1 : pi_sp
+   Generic Map (
+      area      => 86000,
+      cin_pad   => 654,
+      tpll_pad  => 1487,
+      rdown_pad => 234,
+      tphh_pad  => 233,
+      rup_pad   => 273
+   )
+   port map (
+      pad  => op_a(1),
+      t    => op_aa(1),
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p2 : pi_sp
+   Generic Map (
+      area      => 86000,
+      cin_pad   => 654,
+      tpll_pad  => 1487,
+      rdown_pad => 234,
+      tphh_pad  => 233,
+      rup_pad   => 273
+   )
+   port map (
+      pad  => op_a(2),
+      t    => op_aa(2),
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p3 : pi_sp
+   Generic Map (
+      area      => 86000,
+      cin_pad   => 654,
+      tpll_pad  => 1487,
+      rdown_pad => 234,
+      tphh_pad  => 233,
+      rup_pad   => 273
+   )
+   port map (
+      pad  => op_a(3),
+      t    => op_aa(3),
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p4 : pi_sp
+   Generic Map (
+      area      => 86000,
+      cin_pad   => 654,
+      tpll_pad  => 1487,
+      rdown_pad => 234,
+      tphh_pad  => 233,
+      rup_pad   => 273
+   )
+   port map (
+      pad  => op_b(0),
+      t    => op_bb(0),
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p5 : pi_sp
+   Generic Map (
+      area      => 86000,
+      cin_pad   => 654,
+      tpll_pad  => 1487,
+      rdown_pad => 234,
+      tphh_pad  => 233,
+      rup_pad   => 273
+   )
+   port map (
+      pad  => op_b(1),
+      t    => op_bb(1),
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p6 : pi_sp
+   Generic Map (
+      area      => 86000,
+      cin_pad   => 654,
+      tpll_pad  => 1487,
+      rdown_pad => 234,
+      tphh_pad  => 233,
+      rup_pad   => 273
+   )
+   port map (
+      pad  => op_b(2),
+      t    => op_bb(2),
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p7 : pi_sp
+   Generic Map (
+      area      => 86000,
+      cin_pad   => 654,
+      tpll_pad  => 1487,
+      rdown_pad => 234,
+      tphh_pad  => 233,
+      rup_pad   => 273
+   )
+   port map (
+      pad  => op_b(3),
+      t    => op_bb(3),
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p8 : po_sp
+   Generic Map (
+      area    => 86000,
+      cin_i   => 191,
+      tpll_i  => 2176,
+      rdown_i => 15,
+      tphh_i  => 2032,
+      rup_i   => 16#00000010#
+   )
+   port map (
+      i    => resultresult(0),
+      pad  => result(0),
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p9 : po_sp
+   Generic Map (
+      area    => 86000,
+      cin_i   => 191,
+      tpll_i  => 2176,
+      rdown_i => 15,
+      tphh_i  => 2032,
+      rup_i   => 16#00000010#
+   )
+   port map (
+      i    => resultresult(1),
+      pad  => result(1),
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p10 : po_sp
+   Generic Map (
+      area    => 86000,
+      cin_i   => 191,
+      tpll_i  => 2176,
+      rdown_i => 15,
+      tphh_i  => 2032,
+      rup_i   => 16#00000010#
+   )
+   port map (
+      i    => resultresult(2),
+      pad  => result(2),
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p11 : po_sp
+   Generic Map (
+      area    => 86000,
+      cin_i   => 191,
+      tpll_i  => 2176,
+      rdown_i => 15,
+      tphh_i  => 2032,
+      rup_i   => 16#00000010#
+   )
+   port map (
+      i    => resultresult(3),
+      pad  => result(3),
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p12 : po_sp
+   Generic Map (
+      area    => 86000,
+      cin_i   => 191,
+      tpll_i  => 2176,
+      rdown_i => 15,
+      tphh_i  => 2032,
+      rup_i   => 16#00000010#
+   )
+   port map (
+      i    => resultresult(4),
+      pad  => result(4),
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p13 : po_sp
+   Generic Map (
+      area    => 86000,
+      cin_i   => 191,
+      tpll_i  => 2176,
+      rdown_i => 15,
+      tphh_i  => 2032,
+      rup_i   => 16#00000010#
+   )
+   port map (
+      i    => resultresult(5),
+      pad  => result(5),
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p14 : po_sp
+   Generic Map (
+      area    => 86000,
+      cin_i   => 191,
+      tpll_i  => 2176,
+      rdown_i => 15,
+      tphh_i  => 2032,
+      rup_i   => 16#00000010#
+   )
+   port map (
+      i    => resultresult(6),
+      pad  => result(6),
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p15 : po_sp
+   Generic Map (
+      area    => 86000,
+      cin_i   => 191,
+      tpll_i  => 2176,
+      rdown_i => 15,
+      tphh_i  => 2032,
+      rup_i   => 16#00000010#
+   )
+   port map (
+      i    => resultresult(7),
+      pad  => result(7),
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p16 : pi_sp
+   Generic Map (
+      area      => 86000,
+      cin_pad   => 654,
+      tpll_pad  => 1487,
+      rdown_pad => 234,
+      tphh_pad  => 233,
+      rup_pad   => 273
+   )
+   port map (
+      pad  => start,
+      t    => startstart,
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p17 : pi_sp
+   Generic Map (
+      area      => 86000,
+      cin_pad   => 654,
+      tpll_pad  => 1487,
+      rdown_pad => 234,
+      tphh_pad  => 233,
+      rup_pad   => 273
+   )
+   port map (
+      pad  => reset,
+      t    => resetreset,
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p18 : pck_sp
+   Generic Map (
+      area      => 86000,
+      cin_pad   => 1326,
+      tpll_pad  => 1443,
+      rdown_pad => 58,
+      tphh_pad  => 228,
+      rup_pad   => 68
+   )
+   port map (
+      pad  => clk,
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+p19 : po_sp
+   Generic Map (
+      area    => 86000,
+      cin_i   => 191,
+      tpll_i  => 2176,
+      rdown_i => 15,
+      tphh_i  => 2032,
+      rup_i   => 16#00000010#
+   )
+   port map (
+      i    => readyready,
+      pad  => ready,
+      ck   => cki,
+      vdde => vdde,
+      vddi => vdd,
+      vsse => vsse,
+      vssi => vss
+   );
+
+divider : divider
+   port map (
+      op_a   => clock&resetreset&op_aa(3 downto 2),
+      op_b   => op_aa(1 downto 0)&op_bb(3 downto 2),
+      result => op_bb(1 downto 0)&startstart&resultresult(7 downto 3),
+      clk    => resultresult(2),
+      reset  => resultresult(1),
+      start  => resultresult(0),
+      ready  => readyready,
+      vdd    => vdd,
+      vss    => vss
+   );
+
+
+end structural;

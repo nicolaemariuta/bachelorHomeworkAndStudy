@@ -1,0 +1,11 @@
+_WriteCommandToLCD: CODE, 1768 0 18
+_main: CODE, 1803 0 245
+_InitADC: CODE, 1506 0 11
+___lwdiv: CODE, 1579 0 42
+_GetADCValue: CODE, 1542 0 37
+_InitLCD: CODE, 1652 0 94
+_WriteDataToLCD: CODE, 1635 0 17
+_ToggleEpinOfLCD: CODE, 1746 0 22
+___wmul: CODE, 1517 0 25
+_ClearLCDScreen: CODE, 1621 0 14
+Total: 525

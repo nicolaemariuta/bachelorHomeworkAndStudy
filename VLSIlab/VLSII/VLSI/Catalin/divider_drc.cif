@@ -1,0 +1,12 @@
+(rds to CIF driver cvs version $Revision: 1.1.1.1 $
+technology /opt/alliance-5.0/etc/cmos.rds
+Wed Apr 24 14:33:48 2013
+divider_drc
+user);
+
+DS1 50 2;
+9 divider_drc;
+DF;
+
+C1;
+E 
